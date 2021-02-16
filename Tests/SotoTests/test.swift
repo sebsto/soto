@@ -12,6 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+import Dispatch
 import Foundation
 import NIO
 @testable import SotoCore
@@ -72,3 +73,18 @@ enum TestEnvironment {
         return AWSClient.loggingDisabled
     }()
 }
+
+func runDetached(_ process: @escaping () async throws -> ()) {
+    let dg = DispatchGroup()
+    dg.enter()
+    _ = Task.runDetached {
+        do {
+            try await process()
+        } catch {
+            XCTFail("\(error)")
+        }
+        dg.leave()
+    }
+    dg.wait()
+}
+
