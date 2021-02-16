@@ -313,46 +313,31 @@ class S3Tests: XCTestCase {
 
     func testListPaginator() {
         let name = TestEnvironment.generateResourceName()
-        let eventLoop = Self.s3.client.eventLoopGroup.next()
         var list: [S3.Object] = []
-        var list2: [S3.Object] = []
-        let response = Self.createBucket(name: name, s3: Self.s3)
-            .flatMap { (_) -> EventLoopFuture<Void> in
-                // put 16 files into bucket
-                let futureResults: [EventLoopFuture<S3.PutObjectOutput>] = (1...16).map {
-                    let body = "testMultipleUpload - " + $0.description
-                    let filename = "file" + $0.description
-                    return Self.s3.putObject(.init(body: .string(body), bucket: name, key: filename))
-                }
-                return EventLoopFuture.whenAllSucceed(futureResults, on: eventLoop).map { _ in }
-            }
-            .flatMap { _ in
-                return Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5)) { result, eventLoop in
-                    list.append(contentsOf: result.contents ?? [])
-                    return eventLoop.makeSucceededFuture(true)
+        s3Test(bucket: name) {
+            try await Task.withGroup(resultType: Void.self) { group in
+                for index in (1...16) {
+                    let body = "testMultipleUpload - " + index.description
+                    let filename = "file" + index.description
+                    await group.add {
+                        _ = try await Self.s3.putObject(.init(body: .string(body), bucket: name, key: filename))
+                    }
                 }
             }
-            .flatMap { _ in
-                // test both types of paginator
-                return Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5), []) { list, result, eventLoop in
-                    return eventLoop.makeSucceededFuture((true, list + (result.contents ?? [])))
-                }
+            _ = try await Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5)) { result, eventLoop in
+                list.append(contentsOf: result.contents ?? [])
+                return eventLoop.makeSucceededFuture(true)
+            }.get()
+            let list2 = try await Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5), []) { list, result, eventLoop in
+                return eventLoop.makeSucceededFuture((true, list + (result.contents ?? [])))
+            }.get()
+            let list3 = try await Self.s3.listObjectsV2(.init(bucket: name)).contents
+            XCTAssertEqual(list.count, list3?.count)
+            for i in 0..<list.count {
+                XCTAssertEqual(list[i].key, list3?[i].key)
+                XCTAssertEqual(list2[i].key, list3?[i].key)
             }
-            .flatMap { result in
-                list2 = result
-                return Self.s3.listObjectsV2(.init(bucket: name))
-            }
-            .map { (response: S3.ListObjectsV2Output) in
-                XCTAssertEqual(list.count, response.contents?.count)
-                for i in 0..<list.count {
-                    XCTAssertEqual(list[i].key, response.contents?[i].key)
-                    XCTAssertEqual(list2[i].key, response.contents?[i].key)
-                }
-            }
-            .flatAlways { _ in
-                return Self.deleteBucket(name: name, s3: Self.s3)
-            }
-        XCTAssertNoThrow(try response.wait())
+        }
     }
 
     func testStreamRequestObject() {
