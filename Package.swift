@@ -546,24 +546,28 @@ let package = Package(
         .target(name: "SotoXRay", dependencies: [.product(name: "SotoCore", package: "soto-core")], path: "./Sources/Soto/Services/XRay", swiftSettings: [.unsafeFlags(["-Xfrontend", "-enable-experimental-concurrency"])]),
         .target(name: "CSotoZlib", linkerSettings: [.linkedLibrary("z")]),
 
-        .testTarget(name: "SotoTests", dependencies: [
-            "SotoACM",
-            "SotoAPIGateway",
-            "SotoApiGatewayV2",
-            "SotoCloudFront",
-            "SotoCloudTrail",
-            "SotoDynamoDB",
-            "SotoEC2",
-            "SotoGlacier",
-            "SotoIAM",
-            "SotoLambda",
-            "SotoRoute53",
-            "SotoS3",
-            "SotoSES",
-            "SotoSNS",
-            "SotoSQS",
-            "SotoSSM",
-            "SotoSTS"
-        ])
+        .testTarget(
+            name: "SotoTests",
+            dependencies: [
+                "SotoACM",
+                "SotoAPIGateway",
+                "SotoApiGatewayV2",
+                "SotoCloudFront",
+                "SotoCloudTrail",
+                "SotoDynamoDB",
+                "SotoEC2",
+                "SotoGlacier",
+                "SotoIAM",
+                "SotoLambda",
+                "SotoRoute53",
+                "SotoS3",
+                "SotoSES",
+                "SotoSNS",
+                "SotoSQS",
+                "SotoSSM",
+                "SotoSTS"
+            ],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-enable-experimental-concurrency"])]
+        )
     ]
 )
