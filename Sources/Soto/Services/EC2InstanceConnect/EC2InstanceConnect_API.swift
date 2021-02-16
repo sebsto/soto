@@ -67,6 +67,10 @@ public struct EC2InstanceConnect: AWSService {
     public func sendSSHPublicKey(_ input: SendSSHPublicKeyRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<SendSSHPublicKeyResponse> {
         return self.client.execute(operation: "SendSSHPublicKey", path: "/", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
+
+    public func sendSSHPublicKey(_ input: SendSSHPublicKeyRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> SendSSHPublicKeyResponse {
+        return try await self.client.execute(operation: "SendSSHPublicKey", path: "/", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
 }
 
 extension EC2InstanceConnect {

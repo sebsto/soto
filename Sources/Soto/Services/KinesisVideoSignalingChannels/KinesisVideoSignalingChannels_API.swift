@@ -67,9 +67,17 @@ public struct KinesisVideoSignalingChannels: AWSService {
         return self.client.execute(operation: "GetIceServerConfig", path: "/v1/get-ice-server-config", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getIceServerConfig(_ input: GetIceServerConfigRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetIceServerConfigResponse {
+        return try await self.client.execute(operation: "GetIceServerConfig", path: "/v1/get-ice-server-config", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// This API allows you to connect WebRTC-enabled devices with Alexa display devices. When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer. The offer is delivered as soon as the master is connected to the specified signaling channel. This API returns the SDP answer from the connected master. If the master is not connected to the signaling channel, redelivery requests are made until the message expires.
     public func sendAlexaOfferToMaster(_ input: SendAlexaOfferToMasterRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<SendAlexaOfferToMasterResponse> {
         return self.client.execute(operation: "SendAlexaOfferToMaster", path: "/v1/send-alexa-offer-to-master", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func sendAlexaOfferToMaster(_ input: SendAlexaOfferToMasterRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> SendAlexaOfferToMasterResponse {
+        return try await self.client.execute(operation: "SendAlexaOfferToMaster", path: "/v1/send-alexa-offer-to-master", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 }
 

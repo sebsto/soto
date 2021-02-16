@@ -68,6 +68,10 @@ public struct QLDBSession: AWSService {
     public func sendCommand(_ input: SendCommandRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<SendCommandResult> {
         return self.client.execute(operation: "SendCommand", path: "/", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
+
+    public func sendCommand(_ input: SendCommandRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> SendCommandResult {
+        return try await self.client.execute(operation: "SendCommand", path: "/", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
 }
 
 extension QLDBSession {

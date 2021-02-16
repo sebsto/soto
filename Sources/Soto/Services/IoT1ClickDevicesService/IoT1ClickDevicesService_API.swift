@@ -71,10 +71,18 @@ public struct IoT1ClickDevicesService: AWSService {
         return self.client.execute(operation: "ClaimDevicesByClaimCode", path: "/claims/{claimCode}", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func claimDevicesByClaimCode(_ input: ClaimDevicesByClaimCodeRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ClaimDevicesByClaimCodeResponse {
+        return try await self.client.execute(operation: "ClaimDevicesByClaimCode", path: "/claims/{claimCode}", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Given a device ID, returns a DescribeDeviceResponse object describing the
     ///  details of the device.
     public func describeDevice(_ input: DescribeDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DescribeDeviceResponse> {
         return self.client.execute(operation: "DescribeDevice", path: "/devices/{deviceId}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func describeDevice(_ input: DescribeDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeDeviceResponse {
+        return try await self.client.execute(operation: "DescribeDevice", path: "/devices/{deviceId}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Given a device ID, finalizes the claim request for the associated device.
@@ -86,9 +94,17 @@ public struct IoT1ClickDevicesService: AWSService {
         return self.client.execute(operation: "FinalizeDeviceClaim", path: "/devices/{deviceId}/finalize-claim", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func finalizeDeviceClaim(_ input: FinalizeDeviceClaimRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> FinalizeDeviceClaimResponse {
+        return try await self.client.execute(operation: "FinalizeDeviceClaim", path: "/devices/{deviceId}/finalize-claim", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Given a device ID, returns the invokable methods associated with the device.
     public func getDeviceMethods(_ input: GetDeviceMethodsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetDeviceMethodsResponse> {
         return self.client.execute(operation: "GetDeviceMethods", path: "/devices/{deviceId}/methods", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getDeviceMethods(_ input: GetDeviceMethodsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetDeviceMethodsResponse {
+        return try await self.client.execute(operation: "GetDeviceMethods", path: "/devices/{deviceId}/methods", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Given a device ID, initiates a claim request for the associated device.
@@ -100,10 +116,18 @@ public struct IoT1ClickDevicesService: AWSService {
         return self.client.execute(operation: "InitiateDeviceClaim", path: "/devices/{deviceId}/initiate-claim", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func initiateDeviceClaim(_ input: InitiateDeviceClaimRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> InitiateDeviceClaimResponse {
+        return try await self.client.execute(operation: "InitiateDeviceClaim", path: "/devices/{deviceId}/initiate-claim", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Given a device ID, issues a request to invoke a named device method (with possible
     ///  parameters). See the "Example POST" code snippet below.
     public func invokeDeviceMethod(_ input: InvokeDeviceMethodRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<InvokeDeviceMethodResponse> {
         return self.client.execute(operation: "InvokeDeviceMethod", path: "/devices/{deviceId}/methods", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func invokeDeviceMethod(_ input: InvokeDeviceMethodRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> InvokeDeviceMethodResponse {
+        return try await self.client.execute(operation: "InvokeDeviceMethod", path: "/devices/{deviceId}/methods", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Using a device ID, returns a DeviceEventsResponse object containing an
@@ -112,14 +136,26 @@ public struct IoT1ClickDevicesService: AWSService {
         return self.client.execute(operation: "ListDeviceEvents", path: "/devices/{deviceId}/events", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listDeviceEvents(_ input: ListDeviceEventsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListDeviceEventsResponse {
+        return try await self.client.execute(operation: "ListDeviceEvents", path: "/devices/{deviceId}/events", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Lists the 1-Click compatible devices associated with your AWS account.
     public func listDevices(_ input: ListDevicesRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListDevicesResponse> {
         return self.client.execute(operation: "ListDevices", path: "/devices", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listDevices(_ input: ListDevicesRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListDevicesResponse {
+        return try await self.client.execute(operation: "ListDevices", path: "/devices", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Lists the tags associated with the specified resource ARN.
     public func listTagsForResource(_ input: ListTagsForResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListTagsForResourceResponse> {
         return self.client.execute(operation: "ListTagsForResource", path: "/tags/{resource-arn}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listTagsForResource(_ input: ListTagsForResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListTagsForResourceResponse {
+        return try await self.client.execute(operation: "ListTagsForResource", path: "/tags/{resource-arn}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Adds or updates the tags associated with the resource ARN. See AWS IoT 1-Click Service Limits for the maximum number of tags allowed per
@@ -128,9 +164,17 @@ public struct IoT1ClickDevicesService: AWSService {
         return self.client.execute(operation: "TagResource", path: "/tags/{resource-arn}", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func tagResource(_ input: TagResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws {
+        return try await self.client.execute(operation: "TagResource", path: "/tags/{resource-arn}", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Disassociates a device from your AWS account using its device ID.
     public func unclaimDevice(_ input: UnclaimDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<UnclaimDeviceResponse> {
         return self.client.execute(operation: "UnclaimDevice", path: "/devices/{deviceId}/unclaim", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func unclaimDevice(_ input: UnclaimDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UnclaimDeviceResponse {
+        return try await self.client.execute(operation: "UnclaimDevice", path: "/devices/{deviceId}/unclaim", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Using tag keys, deletes the tags (key/value pairs) associated with the specified
@@ -139,10 +183,18 @@ public struct IoT1ClickDevicesService: AWSService {
         return self.client.execute(operation: "UntagResource", path: "/tags/{resource-arn}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func untagResource(_ input: UntagResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws {
+        return try await self.client.execute(operation: "UntagResource", path: "/tags/{resource-arn}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Using a Boolean value (true or false), this operation
     ///  enables or disables the device given a device ID.
     public func updateDeviceState(_ input: UpdateDeviceStateRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<UpdateDeviceStateResponse> {
         return self.client.execute(operation: "UpdateDeviceState", path: "/devices/{deviceId}/state", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func updateDeviceState(_ input: UpdateDeviceStateRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdateDeviceStateResponse {
+        return try await self.client.execute(operation: "UpdateDeviceState", path: "/devices/{deviceId}/state", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 }
 

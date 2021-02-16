@@ -66,6 +66,10 @@ public struct WorkMailMessageFlow: AWSService {
     public func getRawMessageContent(_ input: GetRawMessageContentRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetRawMessageContentResponse> {
         return self.client.execute(operation: "GetRawMessageContent", path: "/messages/{messageId}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
+
+    public func getRawMessageContent(_ input: GetRawMessageContentRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetRawMessageContentResponse {
+        return try await self.client.execute(operation: "GetRawMessageContent", path: "/messages/{messageId}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
 }
 
 extension WorkMailMessageFlow {

@@ -67,6 +67,10 @@ public struct ConnectContactLens: AWSService {
     public func listRealtimeContactAnalysisSegments(_ input: ListRealtimeContactAnalysisSegmentsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListRealtimeContactAnalysisSegmentsResponse> {
         return self.client.execute(operation: "ListRealtimeContactAnalysisSegments", path: "/realtime-contact-analysis/analysis-segments", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
+
+    public func listRealtimeContactAnalysisSegments(_ input: ListRealtimeContactAnalysisSegmentsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListRealtimeContactAnalysisSegmentsResponse {
+        return try await self.client.execute(operation: "ListRealtimeContactAnalysisSegments", path: "/realtime-contact-analysis/analysis-segments", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
 }
 
 extension ConnectContactLens {

@@ -66,6 +66,10 @@ public struct MobileAnalytics: AWSService {
     @discardableResult public func putEvents(_ input: PutEventsInput, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<Void> {
         return self.client.execute(operation: "PutEvents", path: "/2014-06-05/events", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
+
+    public func putEvents(_ input: PutEventsInput, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws {
+        return try await self.client.execute(operation: "PutEvents", path: "/2014-06-05/events", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
 }
 
 extension MobileAnalytics {

@@ -68,9 +68,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "AssociateAwsAccountWithPartnerAccount", path: "/partner-accounts", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func associateAwsAccountWithPartnerAccount(_ input: AssociateAwsAccountWithPartnerAccountRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> AssociateAwsAccountWithPartnerAccountResponse {
+        return try await self.client.execute(operation: "AssociateAwsAccountWithPartnerAccount", path: "/partner-accounts", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Associates a wireless device with a thing.
     public func associateWirelessDeviceWithThing(_ input: AssociateWirelessDeviceWithThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<AssociateWirelessDeviceWithThingResponse> {
         return self.client.execute(operation: "AssociateWirelessDeviceWithThing", path: "/wireless-devices/{Id}/thing", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func associateWirelessDeviceWithThing(_ input: AssociateWirelessDeviceWithThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> AssociateWirelessDeviceWithThingResponse {
+        return try await self.client.execute(operation: "AssociateWirelessDeviceWithThing", path: "/wireless-devices/{Id}/thing", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Associates a wireless gateway with a certificate.
@@ -78,9 +86,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "AssociateWirelessGatewayWithCertificate", path: "/wireless-gateways/{Id}/certificate", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func associateWirelessGatewayWithCertificate(_ input: AssociateWirelessGatewayWithCertificateRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> AssociateWirelessGatewayWithCertificateResponse {
+        return try await self.client.execute(operation: "AssociateWirelessGatewayWithCertificate", path: "/wireless-gateways/{Id}/certificate", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Associates a wireless gateway with a thing.
     public func associateWirelessGatewayWithThing(_ input: AssociateWirelessGatewayWithThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<AssociateWirelessGatewayWithThingResponse> {
         return self.client.execute(operation: "AssociateWirelessGatewayWithThing", path: "/wireless-gateways/{Id}/thing", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func associateWirelessGatewayWithThing(_ input: AssociateWirelessGatewayWithThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> AssociateWirelessGatewayWithThingResponse {
+        return try await self.client.execute(operation: "AssociateWirelessGatewayWithThing", path: "/wireless-gateways/{Id}/thing", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Creates a new destination that maps a device message to an AWS IoT rule.
@@ -88,9 +104,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "CreateDestination", path: "/destinations", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func createDestination(_ input: CreateDestinationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateDestinationResponse {
+        return try await self.client.execute(operation: "CreateDestination", path: "/destinations", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Creates a new device profile.
     public func createDeviceProfile(_ input: CreateDeviceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<CreateDeviceProfileResponse> {
         return self.client.execute(operation: "CreateDeviceProfile", path: "/device-profiles", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func createDeviceProfile(_ input: CreateDeviceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateDeviceProfileResponse {
+        return try await self.client.execute(operation: "CreateDeviceProfile", path: "/device-profiles", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Creates a new service profile.
@@ -98,9 +122,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "CreateServiceProfile", path: "/service-profiles", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func createServiceProfile(_ input: CreateServiceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateServiceProfileResponse {
+        return try await self.client.execute(operation: "CreateServiceProfile", path: "/service-profiles", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Provisions a wireless device.
     public func createWirelessDevice(_ input: CreateWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<CreateWirelessDeviceResponse> {
         return self.client.execute(operation: "CreateWirelessDevice", path: "/wireless-devices", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func createWirelessDevice(_ input: CreateWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateWirelessDeviceResponse {
+        return try await self.client.execute(operation: "CreateWirelessDevice", path: "/wireless-devices", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Provisions a wireless gateway.
@@ -108,9 +140,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "CreateWirelessGateway", path: "/wireless-gateways", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func createWirelessGateway(_ input: CreateWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateWirelessGatewayResponse {
+        return try await self.client.execute(operation: "CreateWirelessGateway", path: "/wireless-gateways", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Creates a task for a wireless gateway.
     public func createWirelessGatewayTask(_ input: CreateWirelessGatewayTaskRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<CreateWirelessGatewayTaskResponse> {
         return self.client.execute(operation: "CreateWirelessGatewayTask", path: "/wireless-gateways/{Id}/tasks", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func createWirelessGatewayTask(_ input: CreateWirelessGatewayTaskRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateWirelessGatewayTaskResponse {
+        return try await self.client.execute(operation: "CreateWirelessGatewayTask", path: "/wireless-gateways/{Id}/tasks", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Creates a gateway task definition.
@@ -118,9 +158,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "CreateWirelessGatewayTaskDefinition", path: "/wireless-gateway-task-definitions", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func createWirelessGatewayTaskDefinition(_ input: CreateWirelessGatewayTaskDefinitionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> CreateWirelessGatewayTaskDefinitionResponse {
+        return try await self.client.execute(operation: "CreateWirelessGatewayTaskDefinition", path: "/wireless-gateway-task-definitions", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Deletes a destination.
     public func deleteDestination(_ input: DeleteDestinationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DeleteDestinationResponse> {
         return self.client.execute(operation: "DeleteDestination", path: "/destinations/{Name}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func deleteDestination(_ input: DeleteDestinationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteDestinationResponse {
+        return try await self.client.execute(operation: "DeleteDestination", path: "/destinations/{Name}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Deletes a device profile.
@@ -128,9 +176,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "DeleteDeviceProfile", path: "/device-profiles/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func deleteDeviceProfile(_ input: DeleteDeviceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteDeviceProfileResponse {
+        return try await self.client.execute(operation: "DeleteDeviceProfile", path: "/device-profiles/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Deletes a service profile.
     public func deleteServiceProfile(_ input: DeleteServiceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DeleteServiceProfileResponse> {
         return self.client.execute(operation: "DeleteServiceProfile", path: "/service-profiles/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func deleteServiceProfile(_ input: DeleteServiceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteServiceProfileResponse {
+        return try await self.client.execute(operation: "DeleteServiceProfile", path: "/service-profiles/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Deletes a wireless device.
@@ -138,9 +194,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "DeleteWirelessDevice", path: "/wireless-devices/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func deleteWirelessDevice(_ input: DeleteWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteWirelessDeviceResponse {
+        return try await self.client.execute(operation: "DeleteWirelessDevice", path: "/wireless-devices/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Deletes a wireless gateway.
     public func deleteWirelessGateway(_ input: DeleteWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DeleteWirelessGatewayResponse> {
         return self.client.execute(operation: "DeleteWirelessGateway", path: "/wireless-gateways/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func deleteWirelessGateway(_ input: DeleteWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteWirelessGatewayResponse {
+        return try await self.client.execute(operation: "DeleteWirelessGateway", path: "/wireless-gateways/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Deletes a wireless gateway task.
@@ -148,9 +212,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "DeleteWirelessGatewayTask", path: "/wireless-gateways/{Id}/tasks", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func deleteWirelessGatewayTask(_ input: DeleteWirelessGatewayTaskRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteWirelessGatewayTaskResponse {
+        return try await self.client.execute(operation: "DeleteWirelessGatewayTask", path: "/wireless-gateways/{Id}/tasks", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.
     public func deleteWirelessGatewayTaskDefinition(_ input: DeleteWirelessGatewayTaskDefinitionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DeleteWirelessGatewayTaskDefinitionResponse> {
         return self.client.execute(operation: "DeleteWirelessGatewayTaskDefinition", path: "/wireless-gateway-task-definitions/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func deleteWirelessGatewayTaskDefinition(_ input: DeleteWirelessGatewayTaskDefinitionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DeleteWirelessGatewayTaskDefinitionResponse {
+        return try await self.client.execute(operation: "DeleteWirelessGatewayTaskDefinition", path: "/wireless-gateway-task-definitions/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Disassociates your AWS account from a partner account. If PartnerAccountId and PartnerType are null, disassociates your AWS account from all partner accounts.
@@ -158,9 +230,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "DisassociateAwsAccountFromPartnerAccount", path: "/partner-accounts/{PartnerAccountId}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func disassociateAwsAccountFromPartnerAccount(_ input: DisassociateAwsAccountFromPartnerAccountRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DisassociateAwsAccountFromPartnerAccountResponse {
+        return try await self.client.execute(operation: "DisassociateAwsAccountFromPartnerAccount", path: "/partner-accounts/{PartnerAccountId}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Disassociates a wireless device from its currently associated thing.
     public func disassociateWirelessDeviceFromThing(_ input: DisassociateWirelessDeviceFromThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DisassociateWirelessDeviceFromThingResponse> {
         return self.client.execute(operation: "DisassociateWirelessDeviceFromThing", path: "/wireless-devices/{Id}/thing", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func disassociateWirelessDeviceFromThing(_ input: DisassociateWirelessDeviceFromThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DisassociateWirelessDeviceFromThingResponse {
+        return try await self.client.execute(operation: "DisassociateWirelessDeviceFromThing", path: "/wireless-devices/{Id}/thing", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Disassociates a wireless gateway from its currently associated certificate.
@@ -168,9 +248,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "DisassociateWirelessGatewayFromCertificate", path: "/wireless-gateways/{Id}/certificate", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func disassociateWirelessGatewayFromCertificate(_ input: DisassociateWirelessGatewayFromCertificateRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DisassociateWirelessGatewayFromCertificateResponse {
+        return try await self.client.execute(operation: "DisassociateWirelessGatewayFromCertificate", path: "/wireless-gateways/{Id}/certificate", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Disassociates a wireless gateway from its currently associated thing.
     public func disassociateWirelessGatewayFromThing(_ input: DisassociateWirelessGatewayFromThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DisassociateWirelessGatewayFromThingResponse> {
         return self.client.execute(operation: "DisassociateWirelessGatewayFromThing", path: "/wireless-gateways/{Id}/thing", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func disassociateWirelessGatewayFromThing(_ input: DisassociateWirelessGatewayFromThingRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DisassociateWirelessGatewayFromThingResponse {
+        return try await self.client.execute(operation: "DisassociateWirelessGatewayFromThing", path: "/wireless-gateways/{Id}/thing", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets information about a destination.
@@ -178,9 +266,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetDestination", path: "/destinations/{Name}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getDestination(_ input: GetDestinationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetDestinationResponse {
+        return try await self.client.execute(operation: "GetDestination", path: "/destinations/{Name}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Gets information about a device profile.
     public func getDeviceProfile(_ input: GetDeviceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetDeviceProfileResponse> {
         return self.client.execute(operation: "GetDeviceProfile", path: "/device-profiles/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getDeviceProfile(_ input: GetDeviceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetDeviceProfileResponse {
+        return try await self.client.execute(operation: "GetDeviceProfile", path: "/device-profiles/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets information about a partner account. If PartnerAccountId and PartnerType are null, returns all partner accounts.
@@ -188,9 +284,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetPartnerAccount", path: "/partner-accounts/{PartnerAccountId}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getPartnerAccount(_ input: GetPartnerAccountRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetPartnerAccountResponse {
+        return try await self.client.execute(operation: "GetPartnerAccount", path: "/partner-accounts/{PartnerAccountId}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Gets the account-specific endpoint for Configuration and Update Server (CUPS) protocol or LoRaWAN Network Server (LNS) connections.
     public func getServiceEndpoint(_ input: GetServiceEndpointRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetServiceEndpointResponse> {
         return self.client.execute(operation: "GetServiceEndpoint", path: "/service-endpoint", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getServiceEndpoint(_ input: GetServiceEndpointRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetServiceEndpointResponse {
+        return try await self.client.execute(operation: "GetServiceEndpoint", path: "/service-endpoint", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets information about a service profile.
@@ -198,9 +302,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetServiceProfile", path: "/service-profiles/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getServiceProfile(_ input: GetServiceProfileRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetServiceProfileResponse {
+        return try await self.client.execute(operation: "GetServiceProfile", path: "/service-profiles/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Gets information about a wireless device.
     public func getWirelessDevice(_ input: GetWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetWirelessDeviceResponse> {
         return self.client.execute(operation: "GetWirelessDevice", path: "/wireless-devices/{Identifier}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getWirelessDevice(_ input: GetWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessDeviceResponse {
+        return try await self.client.execute(operation: "GetWirelessDevice", path: "/wireless-devices/{Identifier}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets operating information about a wireless device.
@@ -208,9 +320,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetWirelessDeviceStatistics", path: "/wireless-devices/{Id}/statistics", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getWirelessDeviceStatistics(_ input: GetWirelessDeviceStatisticsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessDeviceStatisticsResponse {
+        return try await self.client.execute(operation: "GetWirelessDeviceStatistics", path: "/wireless-devices/{Id}/statistics", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Gets information about a wireless gateway.
     public func getWirelessGateway(_ input: GetWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetWirelessGatewayResponse> {
         return self.client.execute(operation: "GetWirelessGateway", path: "/wireless-gateways/{Identifier}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getWirelessGateway(_ input: GetWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessGatewayResponse {
+        return try await self.client.execute(operation: "GetWirelessGateway", path: "/wireless-gateways/{Identifier}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets the ID of the certificate that is currently associated with a wireless gateway.
@@ -218,9 +338,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetWirelessGatewayCertificate", path: "/wireless-gateways/{Id}/certificate", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getWirelessGatewayCertificate(_ input: GetWirelessGatewayCertificateRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessGatewayCertificateResponse {
+        return try await self.client.execute(operation: "GetWirelessGatewayCertificate", path: "/wireless-gateways/{Id}/certificate", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Gets the firmware version and other information about a wireless gateway.
     public func getWirelessGatewayFirmwareInformation(_ input: GetWirelessGatewayFirmwareInformationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetWirelessGatewayFirmwareInformationResponse> {
         return self.client.execute(operation: "GetWirelessGatewayFirmwareInformation", path: "/wireless-gateways/{Id}/firmware-information", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getWirelessGatewayFirmwareInformation(_ input: GetWirelessGatewayFirmwareInformationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessGatewayFirmwareInformationResponse {
+        return try await self.client.execute(operation: "GetWirelessGatewayFirmwareInformation", path: "/wireless-gateways/{Id}/firmware-information", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets operating information about a wireless gateway.
@@ -228,9 +356,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetWirelessGatewayStatistics", path: "/wireless-gateways/{Id}/statistics", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getWirelessGatewayStatistics(_ input: GetWirelessGatewayStatisticsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessGatewayStatisticsResponse {
+        return try await self.client.execute(operation: "GetWirelessGatewayStatistics", path: "/wireless-gateways/{Id}/statistics", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Gets information about a wireless gateway task.
     public func getWirelessGatewayTask(_ input: GetWirelessGatewayTaskRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetWirelessGatewayTaskResponse> {
         return self.client.execute(operation: "GetWirelessGatewayTask", path: "/wireless-gateways/{Id}/tasks", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getWirelessGatewayTask(_ input: GetWirelessGatewayTaskRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessGatewayTaskResponse {
+        return try await self.client.execute(operation: "GetWirelessGatewayTask", path: "/wireless-gateways/{Id}/tasks", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Gets information about a wireless gateway task definition.
@@ -238,9 +374,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "GetWirelessGatewayTaskDefinition", path: "/wireless-gateway-task-definitions/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func getWirelessGatewayTaskDefinition(_ input: GetWirelessGatewayTaskDefinitionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetWirelessGatewayTaskDefinitionResponse {
+        return try await self.client.execute(operation: "GetWirelessGatewayTaskDefinition", path: "/wireless-gateway-task-definitions/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Lists the destinations registered to your AWS account.
     public func listDestinations(_ input: ListDestinationsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListDestinationsResponse> {
         return self.client.execute(operation: "ListDestinations", path: "/destinations", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listDestinations(_ input: ListDestinationsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListDestinationsResponse {
+        return try await self.client.execute(operation: "ListDestinations", path: "/destinations", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Lists the device profiles registered to your AWS account.
@@ -248,9 +392,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "ListDeviceProfiles", path: "/device-profiles", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listDeviceProfiles(_ input: ListDeviceProfilesRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListDeviceProfilesResponse {
+        return try await self.client.execute(operation: "ListDeviceProfiles", path: "/device-profiles", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Lists the partner accounts associated with your AWS account.
     public func listPartnerAccounts(_ input: ListPartnerAccountsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListPartnerAccountsResponse> {
         return self.client.execute(operation: "ListPartnerAccounts", path: "/partner-accounts", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listPartnerAccounts(_ input: ListPartnerAccountsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListPartnerAccountsResponse {
+        return try await self.client.execute(operation: "ListPartnerAccounts", path: "/partner-accounts", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Lists the service profiles registered to your AWS account.
@@ -258,9 +410,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "ListServiceProfiles", path: "/service-profiles", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listServiceProfiles(_ input: ListServiceProfilesRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListServiceProfilesResponse {
+        return try await self.client.execute(operation: "ListServiceProfiles", path: "/service-profiles", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Lists the tags (metadata) you have assigned to the resource.
     public func listTagsForResource(_ input: ListTagsForResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListTagsForResourceResponse> {
         return self.client.execute(operation: "ListTagsForResource", path: "/tags", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listTagsForResource(_ input: ListTagsForResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListTagsForResourceResponse {
+        return try await self.client.execute(operation: "ListTagsForResource", path: "/tags", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Lists the wireless devices registered to your AWS account.
@@ -268,9 +428,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "ListWirelessDevices", path: "/wireless-devices", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listWirelessDevices(_ input: ListWirelessDevicesRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListWirelessDevicesResponse {
+        return try await self.client.execute(operation: "ListWirelessDevices", path: "/wireless-devices", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// List the wireless gateway tasks definitions registered to your AWS account.
     public func listWirelessGatewayTaskDefinitions(_ input: ListWirelessGatewayTaskDefinitionsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListWirelessGatewayTaskDefinitionsResponse> {
         return self.client.execute(operation: "ListWirelessGatewayTaskDefinitions", path: "/wireless-gateway-task-definitions", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listWirelessGatewayTaskDefinitions(_ input: ListWirelessGatewayTaskDefinitionsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListWirelessGatewayTaskDefinitionsResponse {
+        return try await self.client.execute(operation: "ListWirelessGatewayTaskDefinitions", path: "/wireless-gateway-task-definitions", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Lists the wireless gateways registered to your AWS account.
@@ -278,9 +446,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "ListWirelessGateways", path: "/wireless-gateways", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listWirelessGateways(_ input: ListWirelessGatewaysRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListWirelessGatewaysResponse {
+        return try await self.client.execute(operation: "ListWirelessGateways", path: "/wireless-gateways", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Sends a decrypted application data frame to a device.
     public func sendDataToWirelessDevice(_ input: SendDataToWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<SendDataToWirelessDeviceResponse> {
         return self.client.execute(operation: "SendDataToWirelessDevice", path: "/wireless-devices/{Id}/data", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func sendDataToWirelessDevice(_ input: SendDataToWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> SendDataToWirelessDeviceResponse {
+        return try await self.client.execute(operation: "SendDataToWirelessDevice", path: "/wireless-devices/{Id}/data", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Adds a tag to a resource.
@@ -288,9 +464,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "TagResource", path: "/tags", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func tagResource(_ input: TagResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> TagResourceResponse {
+        return try await self.client.execute(operation: "TagResource", path: "/tags", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Simulates a provisioned device by sending an uplink data payload of Hello.
     public func testWirelessDevice(_ input: TestWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<TestWirelessDeviceResponse> {
         return self.client.execute(operation: "TestWirelessDevice", path: "/wireless-devices/{Id}/test", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func testWirelessDevice(_ input: TestWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> TestWirelessDeviceResponse {
+        return try await self.client.execute(operation: "TestWirelessDevice", path: "/wireless-devices/{Id}/test", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Removes one or more tags from a resource.
@@ -298,9 +482,17 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "UntagResource", path: "/tags", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func untagResource(_ input: UntagResourceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UntagResourceResponse {
+        return try await self.client.execute(operation: "UntagResource", path: "/tags", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Updates properties of a destination.
     public func updateDestination(_ input: UpdateDestinationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<UpdateDestinationResponse> {
         return self.client.execute(operation: "UpdateDestination", path: "/destinations/{Name}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func updateDestination(_ input: UpdateDestinationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdateDestinationResponse {
+        return try await self.client.execute(operation: "UpdateDestination", path: "/destinations/{Name}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     /// Updates properties of a partner account.
@@ -308,14 +500,26 @@ public struct IoTWireless: AWSService {
         return self.client.execute(operation: "UpdatePartnerAccount", path: "/partner-accounts/{PartnerAccountId}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func updatePartnerAccount(_ input: UpdatePartnerAccountRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdatePartnerAccountResponse {
+        return try await self.client.execute(operation: "UpdatePartnerAccount", path: "/partner-accounts/{PartnerAccountId}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Updates properties of a wireless device.
     public func updateWirelessDevice(_ input: UpdateWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<UpdateWirelessDeviceResponse> {
         return self.client.execute(operation: "UpdateWirelessDevice", path: "/wireless-devices/{Id}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func updateWirelessDevice(_ input: UpdateWirelessDeviceRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdateWirelessDeviceResponse {
+        return try await self.client.execute(operation: "UpdateWirelessDevice", path: "/wireless-devices/{Id}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     /// Updates properties of a wireless gateway.
     public func updateWirelessGateway(_ input: UpdateWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<UpdateWirelessGatewayResponse> {
         return self.client.execute(operation: "UpdateWirelessGateway", path: "/wireless-gateways/{Id}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func updateWirelessGateway(_ input: UpdateWirelessGatewayRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdateWirelessGatewayResponse {
+        return try await self.client.execute(operation: "UpdateWirelessGateway", path: "/wireless-gateways/{Id}", httpMethod: .PATCH, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 }
 

@@ -67,9 +67,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "AddNotificationChannel", path: "/channels", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func addNotificationChannel(_ input: AddNotificationChannelRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> AddNotificationChannelResponse {
+        return try await self.client.execute(operation: "AddNotificationChannel", path: "/channels", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your AWS account. Use these numbers to gauge the health of operations in your AWS account.
     public func describeAccountHealth(_ input: DescribeAccountHealthRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DescribeAccountHealthResponse> {
         return self.client.execute(operation: "DescribeAccountHealth", path: "/accounts/health", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func describeAccountHealth(_ input: DescribeAccountHealthRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeAccountHealthResponse {
+        return try await self.client.execute(operation: "DescribeAccountHealth", path: "/accounts/health", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights.
@@ -77,9 +85,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "DescribeAccountOverview", path: "/accounts/overview", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func describeAccountOverview(_ input: DescribeAccountOverviewRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeAccountOverviewResponse {
+        return try await self.client.execute(operation: "DescribeAccountOverview", path: "/accounts/overview", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns details about an anomaly that you specify using its ID.
     public func describeAnomaly(_ input: DescribeAnomalyRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DescribeAnomalyResponse> {
         return self.client.execute(operation: "DescribeAnomaly", path: "/anomalies/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func describeAnomaly(_ input: DescribeAnomalyRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeAnomalyResponse {
+        return try await self.client.execute(operation: "DescribeAnomaly", path: "/anomalies/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Returns details about an insight that you specify using its ID.
@@ -87,9 +103,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "DescribeInsight", path: "/insights/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func describeInsight(_ input: DescribeInsightRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeInsightResponse {
+        return try await self.client.execute(operation: "DescribeInsight", path: "/insights/{Id}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in resource collections in your account. You specify the type of AWS resources collection. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the stacks.
     public func describeResourceCollectionHealth(_ input: DescribeResourceCollectionHealthRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<DescribeResourceCollectionHealthResponse> {
         return self.client.execute(operation: "DescribeResourceCollectionHealth", path: "/accounts/health/resource-collection/{ResourceCollectionType}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func describeResourceCollectionHealth(_ input: DescribeResourceCollectionHealthRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeResourceCollectionHealthResponse {
+        return try await self.client.execute(operation: "DescribeResourceCollectionHealth", path: "/accounts/health/resource-collection/{ResourceCollectionType}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Returns the integration status of services that are integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is AWS Systems Manager, which can be used to create an OpsItem for each generated insight.
@@ -97,9 +121,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "DescribeServiceIntegration", path: "/service-integrations", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func describeServiceIntegration(_ input: DescribeServiceIntegrationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> DescribeServiceIntegrationResponse {
+        return try await self.client.execute(operation: "DescribeServiceIntegration", path: "/service-integrations", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the stacks.
     public func getResourceCollection(_ input: GetResourceCollectionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<GetResourceCollectionResponse> {
         return self.client.execute(operation: "GetResourceCollection", path: "/resource-collections/{ResourceCollectionType}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func getResourceCollection(_ input: GetResourceCollectionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> GetResourceCollectionResponse {
+        return try await self.client.execute(operation: "GetResourceCollection", path: "/resource-collections/{ResourceCollectionType}", httpMethod: .GET, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Returns a list of the anomalies that belong to an insight that you specify using its ID.
@@ -107,9 +139,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "ListAnomaliesForInsight", path: "/anomalies/insight/{InsightId}", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listAnomaliesForInsight(_ input: ListAnomaliesForInsightRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListAnomaliesForInsightResponse {
+        return try await self.client.execute(operation: "ListAnomaliesForInsight", path: "/anomalies/insight/{InsightId}", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned.
     public func listEvents(_ input: ListEventsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListEventsResponse> {
         return self.client.execute(operation: "ListEvents", path: "/events", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listEvents(_ input: ListEventsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListEventsResponse {
+        return try await self.client.execute(operation: "ListEvents", path: "/events", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Returns a list of insights in your AWS account. You can specify which insights are returned by their start time and status (ONGOING, CLOSED, or ANY).
@@ -117,9 +157,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "ListInsights", path: "/insights", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listInsights(_ input: ListInsightsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListInsightsResponse {
+        return try await self.client.execute(operation: "ListInsights", path: "/insights", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
     public func listNotificationChannels(_ input: ListNotificationChannelsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<ListNotificationChannelsResponse> {
         return self.client.execute(operation: "ListNotificationChannels", path: "/channels", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func listNotificationChannels(_ input: ListNotificationChannelsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListNotificationChannelsResponse {
+        return try await self.client.execute(operation: "ListNotificationChannels", path: "/channels", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics and a list of related events.
@@ -127,9 +175,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "ListRecommendations", path: "/recommendations", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func listRecommendations(_ input: ListRecommendationsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> ListRecommendationsResponse {
+        return try await self.client.execute(operation: "ListRecommendations", path: "/recommendations", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Collects customer feedback about the specified insight.
     public func putFeedback(_ input: PutFeedbackRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<PutFeedbackResponse> {
         return self.client.execute(operation: "PutFeedback", path: "/feedback", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func putFeedback(_ input: PutFeedbackRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> PutFeedbackResponse {
+        return try await self.client.execute(operation: "PutFeedback", path: "/feedback", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations.
@@ -137,9 +193,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "RemoveNotificationChannel", path: "/channels/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func removeNotificationChannel(_ input: RemoveNotificationChannelRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> RemoveNotificationChannelResponse {
+        return try await self.client.execute(operation: "RemoveNotificationChannel", path: "/channels/{Id}", httpMethod: .DELETE, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Returns a list of insights in your AWS account. You can specify which insights are returned by their start time, one or more statuses (ONGOING, CLOSED, and CLOSED), one or more severities (LOW, MEDIUM, and HIGH), and type (REACTIVE or PROACTIVE).   Use the Filters parameter to specify status and severity search parameters. Use the Type parameter to specify REACTIVE or PROACTIVE in your search.
     public func searchInsights(_ input: SearchInsightsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<SearchInsightsResponse> {
         return self.client.execute(operation: "SearchInsights", path: "/insights/search", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func searchInsights(_ input: SearchInsightsRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> SearchInsightsResponse {
+        return try await self.client.execute(operation: "SearchInsights", path: "/insights/search", httpMethod: .POST, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
     ///  Updates the collection of resources that DevOps Guru analyzes. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the stacks. This method also creates the IAM role required for you to use DevOps Guru.
@@ -147,9 +211,17 @@ public struct DevOpsGuru: AWSService {
         return self.client.execute(operation: "UpdateResourceCollection", path: "/resource-collections", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 
+    public func updateResourceCollection(_ input: UpdateResourceCollectionRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdateResourceCollectionResponse {
+        return try await self.client.execute(operation: "UpdateResourceCollection", path: "/resource-collections", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
     ///  Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is AWS Systems Manager, which can be used to create an OpsItem for each generated insight.
     public func updateServiceIntegration(_ input: UpdateServiceIntegrationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) -> EventLoopFuture<UpdateServiceIntegrationResponse> {
         return self.client.execute(operation: "UpdateServiceIntegration", path: "/service-integrations", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
+    }
+
+    public func updateServiceIntegration(_ input: UpdateServiceIntegrationRequest, logger: Logger = AWSClient.loggingDisabled, on eventLoop: EventLoop? = nil) async throws -> UpdateServiceIntegrationResponse {
+        return try await self.client.execute(operation: "UpdateServiceIntegration", path: "/service-integrations", httpMethod: .PUT, serviceConfig: self.config, input: input, logger: logger, on: eventLoop)
     }
 }
 
