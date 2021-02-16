@@ -139,14 +139,18 @@ class S3Tests: XCTestCase {
 
     /// Runs test: construct bucket with supplied name, runs process and deletes bucket
     func s3Test(bucket name: String, s3: S3 = S3Tests.s3, _ process: @escaping () async throws -> ()) {
-        runDetached {
-            try await Self.createBucket(name: name, s3: s3)
+        runAsyncAndBlock {
             do {
-                try await process()
+                try await Self.createBucket(name: name, s3: s3)
+                do {
+                    try await process()
+                } catch {
+                    XCTFail("\(error)")
+                }
+                try await Self.deleteBucket(name: name, s3: s3)
             } catch {
                 XCTFail("\(error)")
             }
-            try await Self.deleteBucket(name: name, s3: s3)
         }
     }
     // MARK: TESTS
@@ -530,7 +534,7 @@ class S3Tests: XCTestCase {
         // get wrong error with LocalStack
         guard !TestEnvironment.isUsingLocalstack else { return }
 
-        runDetached {
+        runAsyncAndBlock {
             do {
                 _ = try await Self.s3.deleteBucket(.init(bucket: "nosuch-bucket-name3458bjhdfgdf"))
             } catch {
