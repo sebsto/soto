@@ -70,6 +70,27 @@ extension Batch {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeComputeEnvironmentsPaginator(
+        _ input: DescribeComputeEnvironmentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeComputeEnvironmentsRequest, DescribeComputeEnvironmentsResponse> {
+        return .init(
+            input: input,
+            command: describeComputeEnvironments,
+            inputKey: \DescribeComputeEnvironmentsRequest.nextToken,
+            outputKey: \DescribeComputeEnvironmentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes a list of job definitions. You can specify a status (such as ACTIVE) to only return job definitions that match that status.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Batch {
             tokenKey: \DescribeJobDefinitionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeJobDefinitionsPaginator(
+        _ input: DescribeJobDefinitionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeJobDefinitionsRequest, DescribeJobDefinitionsResponse> {
+        return .init(
+            input: input,
+            command: describeJobDefinitions,
+            inputKey: \DescribeJobDefinitionsRequest.nextToken,
+            outputKey: \DescribeJobDefinitionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Batch {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeJobQueuesPaginator(
+        _ input: DescribeJobQueuesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeJobQueuesRequest, DescribeJobQueuesResponse> {
+        return .init(
+            input: input,
+            command: describeJobQueues,
+            inputKey: \DescribeJobQueuesRequest.nextToken,
+            outputKey: \DescribeJobQueuesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of AWS Batch jobs. You must specify only one of the following items:   A job queue ID to return a list of jobs in that job queue   A multi-node parallel job ID to return a list of that job's nodes   An array job ID to return a list of that job's children   You can filter the results by job status with the jobStatus parameter. If you don't specify a status, only RUNNING jobs are returned.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Batch {
             tokenKey: \ListJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobsPaginator(
+        _ input: ListJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobsRequest, ListJobsResponse> {
+        return .init(
+            input: input,
+            command: listJobs,
+            inputKey: \ListJobsRequest.nextToken,
+            outputKey: \ListJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

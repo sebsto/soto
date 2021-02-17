@@ -70,6 +70,27 @@ extension MediaPackage {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listChannelsPaginator(
+        _ input: ListChannelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListChannelsRequest, ListChannelsResponse> {
+        return .init(
+            input: input,
+            command: listChannels,
+            inputKey: \ListChannelsRequest.nextToken,
+            outputKey: \ListChannelsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a collection of HarvestJob records.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension MediaPackage {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listHarvestJobsPaginator(
+        _ input: ListHarvestJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListHarvestJobsRequest, ListHarvestJobsResponse> {
+        return .init(
+            input: input,
+            command: listHarvestJobs,
+            inputKey: \ListHarvestJobsRequest.nextToken,
+            outputKey: \ListHarvestJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a collection of OriginEndpoint records.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension MediaPackage {
             tokenKey: \ListOriginEndpointsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listOriginEndpointsPaginator(
+        _ input: ListOriginEndpointsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListOriginEndpointsRequest, ListOriginEndpointsResponse> {
+        return .init(
+            input: input,
+            command: listOriginEndpoints,
+            inputKey: \ListOriginEndpointsRequest.nextToken,
+            outputKey: \ListOriginEndpointsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -69,6 +69,27 @@ extension MigrationHubConfig {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeHomeRegionControlsPaginator(
+        _ input: DescribeHomeRegionControlsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeHomeRegionControlsRequest, DescribeHomeRegionControlsResult> {
+        return .init(
+            input: input,
+            command: describeHomeRegionControls,
+            inputKey: \DescribeHomeRegionControlsRequest.nextToken,
+            outputKey: \DescribeHomeRegionControlsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension MigrationHubConfig.DescribeHomeRegionControlsRequest: AWSPaginateToken {

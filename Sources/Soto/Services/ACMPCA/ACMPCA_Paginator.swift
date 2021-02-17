@@ -70,6 +70,27 @@ extension ACMPCA {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCertificateAuthoritiesPaginator(
+        _ input: ListCertificateAuthoritiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse> {
+        return .init(
+            input: input,
+            command: listCertificateAuthorities,
+            inputKey: \ListCertificateAuthoritiesRequest.nextToken,
+            outputKey: \ListCertificateAuthoritiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List all permissions on a private CA, if any, granted to the AWS Certificate Manager (ACM) service principal (acm.amazonaws.com).  These permissions allow ACM to issue and renew ACM certificates that reside in the same AWS account as the CA.  Permissions can be granted with the CreatePermission action and revoked with the DeletePermission action.  About Permissions    If the private CA and the certificates it issues reside in the same account, you can use CreatePermission to grant permissions for ACM to carry out automatic certificate renewals.   For automatic certificate renewal to succeed, the ACM service principal needs permissions to create, retrieve, and list certificates.   If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable cross-account issuance and renewals. For more information, see Using a Resource Based Policy with ACM Private CA.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension ACMPCA {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPermissionsPaginator(
+        _ input: ListPermissionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPermissionsRequest, ListPermissionsResponse> {
+        return .init(
+            input: input,
+            command: listPermissions,
+            inputKey: \ListPermissionsRequest.nextToken,
+            outputKey: \ListPermissionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the tags, if any, that are associated with your private CA or one that has been shared with you. Tags are labels that you can use to identify and organize your CAs. Each tag consists of a key and an optional value. Call the TagCertificateAuthority action to add one or more tags to your CA. Call the UntagCertificateAuthority action to remove tags.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension ACMPCA {
             tokenKey: \ListTagsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsPaginator(
+        _ input: ListTagsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsRequest, ListTagsResponse> {
+        return .init(
+            input: input,
+            command: listTags,
+            inputKey: \ListTagsRequest.nextToken,
+            outputKey: \ListTagsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension LexModelBuildingService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBotAliasesPaginator(
+        _ input: GetBotAliasesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBotAliasesRequest, GetBotAliasesResponse> {
+        return .init(
+            input: input,
+            command: getBotAliases,
+            inputKey: \GetBotAliasesRequest.nextToken,
+            outputKey: \GetBotAliasesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of all of the channels associated with the specified bot.  The GetBotChannelAssociations operation requires permissions for the lex:GetBotChannelAssociations action.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension LexModelBuildingService {
             tokenKey: \GetBotChannelAssociationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBotChannelAssociationsPaginator(
+        _ input: GetBotChannelAssociationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBotChannelAssociationsRequest, GetBotChannelAssociationsResponse> {
+        return .init(
+            input: input,
+            command: getBotChannelAssociations,
+            inputKey: \GetBotChannelAssociationsRequest.nextToken,
+            outputKey: \GetBotChannelAssociationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension LexModelBuildingService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBotVersionsPaginator(
+        _ input: GetBotVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBotVersionsRequest, GetBotVersionsResponse> {
+        return .init(
+            input: input,
+            command: getBotVersions,
+            inputKey: \GetBotVersionsRequest.nextToken,
+            outputKey: \GetBotVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns bot information as follows:    If you provide the nameContains field, the response includes information for the $LATEST version of all bots whose name contains the specified string.   If you don't specify the nameContains field, the operation returns information about the $LATEST version of all of your bots.   This operation requires permission for the lex:GetBots action.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension LexModelBuildingService {
             tokenKey: \GetBotsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBotsPaginator(
+        _ input: GetBotsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBotsRequest, GetBotsResponse> {
+        return .init(
+            input: input,
+            command: getBots,
+            inputKey: \GetBotsRequest.nextToken,
+            outputKey: \GetBotsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension LexModelBuildingService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBuiltinIntentsPaginator(
+        _ input: GetBuiltinIntentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBuiltinIntentsRequest, GetBuiltinIntentsResponse> {
+        return .init(
+            input: input,
+            command: getBuiltinIntents,
+            inputKey: \GetBuiltinIntentsRequest.nextToken,
+            outputKey: \GetBuiltinIntentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of built-in slot types that meet the specified criteria. For a list of built-in slot types, see Slot Type Reference in the Alexa Skills Kit. This operation requires permission for the lex:GetBuiltInSlotTypes action.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension LexModelBuildingService {
             tokenKey: \GetBuiltinSlotTypesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBuiltinSlotTypesPaginator(
+        _ input: GetBuiltinSlotTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBuiltinSlotTypesRequest, GetBuiltinSlotTypesResponse> {
+        return .init(
+            input: input,
+            command: getBuiltinSlotTypes,
+            inputKey: \GetBuiltinSlotTypesRequest.nextToken,
+            outputKey: \GetBuiltinSlotTypesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension LexModelBuildingService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getIntentVersionsPaginator(
+        _ input: GetIntentVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetIntentVersionsRequest, GetIntentVersionsResponse> {
+        return .init(
+            input: input,
+            command: getIntentVersions,
+            inputKey: \GetIntentVersionsRequest.nextToken,
+            outputKey: \GetIntentVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns intent information as follows:    If you specify the nameContains field, returns the $LATEST version of all intents that contain the specified string.    If you don't specify the nameContains field, returns information about the $LATEST version of all intents.     The operation requires permission for the lex:GetIntents action.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension LexModelBuildingService {
             tokenKey: \GetIntentsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getIntentsPaginator(
+        _ input: GetIntentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetIntentsRequest, GetIntentsResponse> {
+        return .init(
+            input: input,
+            command: getIntents,
+            inputKey: \GetIntentsRequest.nextToken,
+            outputKey: \GetIntentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension LexModelBuildingService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getSlotTypeVersionsPaginator(
+        _ input: GetSlotTypeVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetSlotTypeVersionsRequest, GetSlotTypeVersionsResponse> {
+        return .init(
+            input: input,
+            command: getSlotTypeVersions,
+            inputKey: \GetSlotTypeVersionsRequest.nextToken,
+            outputKey: \GetSlotTypeVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns slot type information as follows:    If you specify the nameContains field, returns the $LATEST version of all slot types that contain the specified string.    If you don't specify the nameContains field, returns information about the $LATEST version of all slot types.     The operation requires permission for the lex:GetSlotTypes action.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension LexModelBuildingService {
             tokenKey: \GetSlotTypesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getSlotTypesPaginator(
+        _ input: GetSlotTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetSlotTypesRequest, GetSlotTypesResponse> {
+        return .init(
+            input: input,
+            command: getSlotTypes,
+            inputKey: \GetSlotTypesRequest.nextToken,
+            outputKey: \GetSlotTypesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

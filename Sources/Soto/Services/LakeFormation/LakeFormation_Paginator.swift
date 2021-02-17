@@ -70,6 +70,27 @@ extension LakeFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getEffectivePermissionsForPathPaginator(
+        _ input: GetEffectivePermissionsForPathRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetEffectivePermissionsForPathRequest, GetEffectivePermissionsForPathResponse> {
+        return .init(
+            input: input,
+            command: getEffectivePermissionsForPath,
+            inputKey: \GetEffectivePermissionsForPathRequest.nextToken,
+            outputKey: \GetEffectivePermissionsForPathResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER. This operation returns only those permissions that have been explicitly granted. For information about permissions, see Security and Access Control to Metadata and Data.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension LakeFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPermissionsPaginator(
+        _ input: ListPermissionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPermissionsRequest, ListPermissionsResponse> {
+        return .init(
+            input: input,
+            command: listPermissions,
+            inputKey: \ListPermissionsRequest.nextToken,
+            outputKey: \ListPermissionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the resources registered to be managed by the Data Catalog.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension LakeFormation {
             tokenKey: \ListResourcesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResourcesPaginator(
+        _ input: ListResourcesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResourcesRequest, ListResourcesResponse> {
+        return .init(
+            input: input,
+            command: listResources,
+            inputKey: \ListResourcesRequest.nextToken,
+            outputKey: \ListResourcesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

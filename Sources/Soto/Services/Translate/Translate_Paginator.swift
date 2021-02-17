@@ -70,6 +70,27 @@ extension Translate {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listParallelDataPaginator(
+        _ input: ListParallelDataRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListParallelDataRequest, ListParallelDataResponse> {
+        return .init(
+            input: input,
+            command: listParallelData,
+            inputKey: \ListParallelDataRequest.nextToken,
+            outputKey: \ListParallelDataResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides a list of custom terminologies associated with your account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension Translate {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTerminologiesPaginator(
+        _ input: ListTerminologiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTerminologiesRequest, ListTerminologiesResponse> {
+        return .init(
+            input: input,
+            command: listTerminologies,
+            inputKey: \ListTerminologiesRequest.nextToken,
+            outputKey: \ListTerminologiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of the batch translation jobs that you have submitted.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension Translate {
             tokenKey: \ListTextTranslationJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTextTranslationJobsPaginator(
+        _ input: ListTextTranslationJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTextTranslationJobsRequest, ListTextTranslationJobsResponse> {
+        return .init(
+            input: input,
+            command: listTextTranslationJobs,
+            inputKey: \ListTextTranslationJobsRequest.nextToken,
+            outputKey: \ListTextTranslationJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension ConfigService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeRemediationExceptionsPaginator(
+        _ input: DescribeRemediationExceptionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeRemediationExceptionsRequest, DescribeRemediationExceptionsResponse> {
+        return .init(
+            input: input,
+            command: describeRemediationExceptions,
+            inputKey: \DescribeRemediationExceptionsRequest.nextToken,
+            outputKey: \DescribeRemediationExceptionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ConfigService {
             tokenKey: \DescribeRemediationExecutionStatusResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeRemediationExecutionStatusPaginator(
+        _ input: DescribeRemediationExecutionStatusRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeRemediationExecutionStatusRequest, DescribeRemediationExecutionStatusResponse> {
+        return .init(
+            input: input,
+            command: describeRemediationExecutionStatus,
+            inputKey: \DescribeRemediationExecutionStatusRequest.nextToken,
+            outputKey: \DescribeRemediationExecutionStatusResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ConfigService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getResourceConfigHistoryPaginator(
+        _ input: GetResourceConfigHistoryRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResponse> {
+        return .init(
+            input: input,
+            command: getResourceConfigHistory,
+            inputKey: \GetResourceConfigHistoryRequest.nextToken,
+            outputKey: \GetResourceConfigHistoryResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List the stored queries for an AWS account in an AWS Region. The default is 100.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -223,6 +286,27 @@ extension ConfigService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStoredQueriesPaginator(
+        _ input: ListStoredQueriesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStoredQueriesRequest, ListStoredQueriesResponse> {
+        return .init(
+            input: input,
+            command: listStoredQueries,
+            inputKey: \ListStoredQueriesRequest.nextToken,
+            outputKey: \ListStoredQueriesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties. For more information about query components, see the  Query Components  section in the AWS Config Developer Guide.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -271,6 +355,27 @@ extension ConfigService {
             tokenKey: \SelectAggregateResourceConfigResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func selectAggregateResourceConfigPaginator(
+        _ input: SelectAggregateResourceConfigRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<SelectAggregateResourceConfigRequest, SelectAggregateResourceConfigResponse> {
+        return .init(
+            input: input,
+            command: selectAggregateResourceConfig,
+            inputKey: \SelectAggregateResourceConfigRequest.nextToken,
+            outputKey: \SelectAggregateResourceConfigResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

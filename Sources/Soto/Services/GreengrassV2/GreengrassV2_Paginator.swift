@@ -70,6 +70,27 @@ extension GreengrassV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listComponentVersionsPaginator(
+        _ input: ListComponentVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListComponentVersionsRequest, ListComponentVersionsResponse> {
+        return .init(
+            input: input,
+            command: listComponentVersions,
+            inputKey: \ListComponentVersionsRequest.nextToken,
+            outputKey: \ListComponentVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of component summaries. This list includes components that you have permission to view.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension GreengrassV2 {
             tokenKey: \ListComponentsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listComponentsPaginator(
+        _ input: ListComponentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListComponentsRequest, ListComponentsResponse> {
+        return .init(
+            input: input,
+            command: listComponents,
+            inputKey: \ListComponentsRequest.nextToken,
+            outputKey: \ListComponentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension GreengrassV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCoreDevicesPaginator(
+        _ input: ListCoreDevicesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCoreDevicesRequest, ListCoreDevicesResponse> {
+        return .init(
+            input: input,
+            command: listCoreDevices,
+            inputKey: \ListCoreDevicesRequest.nextToken,
+            outputKey: \ListCoreDevicesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of deployments.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension GreengrassV2 {
             tokenKey: \ListDeploymentsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDeploymentsPaginator(
+        _ input: ListDeploymentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDeploymentsRequest, ListDeploymentsResponse> {
+        return .init(
+            input: input,
+            command: listDeployments,
+            inputKey: \ListDeploymentsRequest.nextToken,
+            outputKey: \ListDeploymentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension GreengrassV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEffectiveDeploymentsPaginator(
+        _ input: ListEffectiveDeploymentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEffectiveDeploymentsRequest, ListEffectiveDeploymentsResponse> {
+        return .init(
+            input: input,
+            command: listEffectiveDeployments,
+            inputKey: \ListEffectiveDeploymentsRequest.nextToken,
+            outputKey: \ListEffectiveDeploymentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of the components that a AWS IoT Greengrass core device runs.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension GreengrassV2 {
             tokenKey: \ListInstalledComponentsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInstalledComponentsPaginator(
+        _ input: ListInstalledComponentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInstalledComponentsRequest, ListInstalledComponentsResponse> {
+        return .init(
+            input: input,
+            command: listInstalledComponents,
+            inputKey: \ListInstalledComponentsRequest.nextToken,
+            outputKey: \ListInstalledComponentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

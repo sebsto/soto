@@ -70,6 +70,27 @@ extension AutoScaling {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeAutoScalingGroupsPaginator(
+        _ input: AutoScalingGroupNamesType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<AutoScalingGroupNamesType, AutoScalingGroupsType> {
+        return .init(
+            input: input,
+            command: describeAutoScalingGroups,
+            inputKey: \AutoScalingGroupNamesType.nextToken,
+            outputKey: \AutoScalingGroupsType.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes one or more Auto Scaling instances.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension AutoScaling {
             tokenKey: \AutoScalingInstancesType.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeAutoScalingInstancesPaginator(
+        _ input: DescribeAutoScalingInstancesType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeAutoScalingInstancesType, AutoScalingInstancesType> {
+        return .init(
+            input: input,
+            command: describeAutoScalingInstances,
+            inputKey: \DescribeAutoScalingInstancesType.nextToken,
+            outputKey: \AutoScalingInstancesType.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension AutoScaling {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeLaunchConfigurationsPaginator(
+        _ input: LaunchConfigurationNamesType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<LaunchConfigurationNamesType, LaunchConfigurationsType> {
+        return .init(
+            input: input,
+            command: describeLaunchConfigurations,
+            inputKey: \LaunchConfigurationNamesType.nextToken,
+            outputKey: \LaunchConfigurationsType.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes the notification actions associated with the specified Auto Scaling group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension AutoScaling {
             tokenKey: \DescribeNotificationConfigurationsAnswer.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeNotificationConfigurationsPaginator(
+        _ input: DescribeNotificationConfigurationsType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeNotificationConfigurationsType, DescribeNotificationConfigurationsAnswer> {
+        return .init(
+            input: input,
+            command: describeNotificationConfigurations,
+            inputKey: \DescribeNotificationConfigurationsType.nextToken,
+            outputKey: \DescribeNotificationConfigurationsAnswer.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension AutoScaling {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describePoliciesPaginator(
+        _ input: DescribePoliciesType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribePoliciesType, PoliciesType> {
+        return .init(
+            input: input,
+            command: describePolicies,
+            inputKey: \DescribePoliciesType.nextToken,
+            outputKey: \PoliciesType.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes one or more scaling activities for the specified Auto Scaling group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension AutoScaling {
             tokenKey: \ActivitiesType.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeScalingActivitiesPaginator(
+        _ input: DescribeScalingActivitiesType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeScalingActivitiesType, ActivitiesType> {
+        return .init(
+            input: input,
+            command: describeScalingActivities,
+            inputKey: \DescribeScalingActivitiesType.nextToken,
+            outputKey: \ActivitiesType.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension AutoScaling {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeScheduledActionsPaginator(
+        _ input: DescribeScheduledActionsType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeScheduledActionsType, ScheduledActionsType> {
+        return .init(
+            input: input,
+            command: describeScheduledActions,
+            inputKey: \DescribeScheduledActionsType.nextToken,
+            outputKey: \ScheduledActionsType.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes the specified tags. You can use filters to limit the results. For example, you can query for the tags for a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results. You can also specify multiple filters. The result includes information for a particular tag only if it matches all the filters. If there's no match, no special message is returned. For more information, see Tagging Auto Scaling groups and instances in the Amazon EC2 Auto Scaling User Guide.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension AutoScaling {
             tokenKey: \TagsType.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeTagsPaginator(
+        _ input: DescribeTagsType,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeTagsType, TagsType> {
+        return .init(
+            input: input,
+            command: describeTags,
+            inputKey: \DescribeTagsType.nextToken,
+            outputKey: \TagsType.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

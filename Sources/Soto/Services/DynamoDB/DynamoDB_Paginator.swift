@@ -70,6 +70,27 @@ extension DynamoDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func batchGetItemPaginator(
+        _ input: BatchGetItemInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<BatchGetItemInput, BatchGetItemOutput> {
+        return .init(
+            input: input,
+            command: batchGetItem,
+            inputKey: \BatchGetItemInput.requestItems,
+            outputKey: \BatchGetItemOutput.unprocessedKeys,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension DynamoDB {
             tokenKey: \ListContributorInsightsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listContributorInsightsPaginator(
+        _ input: ListContributorInsightsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListContributorInsightsInput, ListContributorInsightsOutput> {
+        return .init(
+            input: input,
+            command: listContributorInsights,
+            inputKey: \ListContributorInsightsInput.nextToken,
+            outputKey: \ListContributorInsightsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension DynamoDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listExportsPaginator(
+        _ input: ListExportsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListExportsInput, ListExportsOutput> {
+        return .init(
+            input: input,
+            command: listExports,
+            inputKey: \ListExportsInput.nextToken,
+            outputKey: \ListExportsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns an array of table names associated with the current account and endpoint. The output from ListTables is paginated, with each page returning a maximum of 100 table names.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension DynamoDB {
             tokenKey: \ListTablesOutput.lastEvaluatedTableName,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTablesPaginator(
+        _ input: ListTablesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTablesInput, ListTablesOutput> {
+        return .init(
+            input: input,
+            command: listTables,
+            inputKey: \ListTablesInput.exclusiveStartTableName,
+            outputKey: \ListTablesOutput.lastEvaluatedTableName,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension DynamoDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func queryPaginator(
+        _ input: QueryInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<QueryInput, QueryOutput> {
+        return .init(
+            input: input,
+            command: query,
+            inputKey: \QueryInput.exclusiveStartKey,
+            outputKey: \QueryOutput.lastEvaluatedKey,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  The Scan operation returns one or more items and item attributes by accessing every item in a table or a secondary index. To have DynamoDB return fewer items, you can provide a FilterExpression operation. If the total number of scanned items exceeds the maximum dataset size limit of 1 MB, the scan stops and results are returned to the user as a LastEvaluatedKey value to continue the scan in a subsequent operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.  A single Scan operation reads up to the maximum number of items set (if using the Limit parameter) or a maximum of 1 MB of data and then apply any filtering to the results using FilterExpression. If LastEvaluatedKey is present in the response, you need to paginate the result set. For more information, see Paginating the Results in the Amazon DynamoDB Developer Guide.   Scan operations proceed sequentially; however, for faster performance on a large table or secondary index, applications can request a parallel Scan operation by providing the Segment and TotalSegments parameters. For more information, see Parallel Scan in the Amazon DynamoDB Developer Guide.  Scan uses eventually consistent reads when accessing the data in a table; therefore, the result set might not include the changes to data in the table immediately before the operation began. If you need a consistent copy of the data, as of the time that the Scan begins, you can set the ConsistentRead parameter to true.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension DynamoDB {
             tokenKey: \ScanOutput.lastEvaluatedKey,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func scanPaginator(
+        _ input: ScanInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ScanInput, ScanOutput> {
+        return .init(
+            input: input,
+            command: scan,
+            inputKey: \ScanInput.exclusiveStartKey,
+            outputKey: \ScanOutput.lastEvaluatedKey,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

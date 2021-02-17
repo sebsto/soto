@@ -70,6 +70,27 @@ extension StorageGateway {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeTapeArchivesPaginator(
+        _ input: DescribeTapeArchivesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeTapeArchivesInput, DescribeTapeArchivesOutput> {
+        return .init(
+            input: input,
+            command: describeTapeArchives,
+            inputKey: \DescribeTapeArchivesInput.marker,
+            outputKey: \DescribeTapeArchivesOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of virtual tape recovery points that are available for the specified tape gateway. A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway. This operation is only supported in the tape gateway type.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension StorageGateway {
             tokenKey: \DescribeTapeRecoveryPointsOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeTapeRecoveryPointsPaginator(
+        _ input: DescribeTapeRecoveryPointsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeTapeRecoveryPointsInput, DescribeTapeRecoveryPointsOutput> {
+        return .init(
+            input: input,
+            command: describeTapeRecoveryPoints,
+            inputKey: \DescribeTapeRecoveryPointsInput.marker,
+            outputKey: \DescribeTapeRecoveryPointsOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension StorageGateway {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeTapesPaginator(
+        _ input: DescribeTapesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeTapesInput, DescribeTapesOutput> {
+        return .init(
+            input: input,
+            command: describeTapes,
+            inputKey: \DescribeTapesInput.marker,
+            outputKey: \DescribeTapesOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a description of virtual tape library (VTL) devices for the specified tape gateway. In the response, AWS Storage Gateway returns VTL device information. This operation is only supported in the tape gateway type.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension StorageGateway {
             tokenKey: \DescribeVTLDevicesOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeVTLDevicesPaginator(
+        _ input: DescribeVTLDevicesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeVTLDevicesInput, DescribeVTLDevicesOutput> {
+        return .init(
+            input: input,
+            command: describeVTLDevices,
+            inputKey: \DescribeVTLDevicesInput.marker,
+            outputKey: \DescribeVTLDevicesOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension StorageGateway {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listFileSharesPaginator(
+        _ input: ListFileSharesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListFileSharesInput, ListFileSharesOutput> {
+        return .init(
+            input: input,
+            command: listFileShares,
+            inputKey: \ListFileSharesInput.marker,
+            outputKey: \ListFileSharesOutput.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists gateways owned by an AWS account in an AWS Region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN). By default, the operation returns a maximum of 100 gateways. This operation supports pagination that allows you to optionally reduce the number of gateways returned in a response. If you have more gateways than are returned in a response (that is, the response returns only a truncated list of your gateways), the response contains a marker that you can specify in your next request to fetch the next page of gateways.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension StorageGateway {
             tokenKey: \ListGatewaysOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listGatewaysPaginator(
+        _ input: ListGatewaysInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListGatewaysInput, ListGatewaysOutput> {
+        return .init(
+            input: input,
+            command: listGateways,
+            inputKey: \ListGatewaysInput.marker,
+            outputKey: \ListGatewaysOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension StorageGateway {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceInput, ListTagsForResourceOutput> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceInput.marker,
+            outputKey: \ListTagsForResourceOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists custom tape pools. You specify custom tape pools to list by specifying one or more custom tape pool Amazon Resource Names (ARNs). If you don't specify a custom tape pool ARN, the operation lists all custom tape pools. This operation supports pagination. You can optionally specify the Limit parameter in the body to limit the number of tape pools in the response. If the number of tape pools returned in the response is truncated, the response includes a Marker element that you can use in your subsequent request to retrieve the next set of tape pools.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension StorageGateway {
             tokenKey: \ListTapePoolsOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTapePoolsPaginator(
+        _ input: ListTapePoolsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTapePoolsInput, ListTapePoolsOutput> {
+        return .init(
+            input: input,
+            command: listTapePools,
+            inputKey: \ListTapePoolsInput.marker,
+            outputKey: \ListTapePoolsOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension StorageGateway {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTapesPaginator(
+        _ input: ListTapesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTapesInput, ListTapesOutput> {
+        return .init(
+            input: input,
+            command: listTapes,
+            inputKey: \ListTapesInput.marker,
+            outputKey: \ListTapesOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the DescribeStorediSCSIVolumes or the DescribeCachediSCSIVolumes API. The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the Limit field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes. This operation is only supported in the cached volume and stored volume gateway types.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension StorageGateway {
             tokenKey: \ListVolumesOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listVolumesPaginator(
+        _ input: ListVolumesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListVolumesInput, ListVolumesOutput> {
+        return .init(
+            input: input,
+            command: listVolumes,
+            inputKey: \ListVolumesInput.marker,
+            outputKey: \ListVolumesOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

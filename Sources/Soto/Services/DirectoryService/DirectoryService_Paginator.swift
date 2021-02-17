@@ -69,6 +69,27 @@ extension DirectoryService {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDomainControllersPaginator(
+        _ input: DescribeDomainControllersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDomainControllersRequest, DescribeDomainControllersResult> {
+        return .init(
+            input: input,
+            command: describeDomainControllers,
+            inputKey: \DescribeDomainControllersRequest.nextToken,
+            outputKey: \DescribeDomainControllersResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension DirectoryService.DescribeDomainControllersRequest: AWSPaginateToken {

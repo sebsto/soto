@@ -70,6 +70,27 @@ extension ManagedBlockchain {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInvitationsPaginator(
+        _ input: ListInvitationsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInvitationsInput, ListInvitationsOutput> {
+        return .init(
+            input: input,
+            command: listInvitations,
+            inputKey: \ListInvitationsInput.nextToken,
+            outputKey: \ListInvitationsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the members in a network and properties of their configurations. Applies only to Hyperledger Fabric.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ManagedBlockchain {
             tokenKey: \ListMembersOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMembersPaginator(
+        _ input: ListMembersInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMembersInput, ListMembersOutput> {
+        return .init(
+            input: input,
+            command: listMembers,
+            inputKey: \ListMembersInput.nextToken,
+            outputKey: \ListMembersOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ManagedBlockchain {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNetworksPaginator(
+        _ input: ListNetworksInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNetworksInput, ListNetworksOutput> {
+        return .init(
+            input: input,
+            command: listNetworks,
+            inputKey: \ListNetworksInput.nextToken,
+            outputKey: \ListNetworksOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the nodes within a network. Applies to Hyperledger Fabric and Ethereum.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension ManagedBlockchain {
             tokenKey: \ListNodesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNodesPaginator(
+        _ input: ListNodesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNodesInput, ListNodesOutput> {
+        return .init(
+            input: input,
+            command: listNodes,
+            inputKey: \ListNodesInput.nextToken,
+            outputKey: \ListNodesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension ManagedBlockchain {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProposalVotesPaginator(
+        _ input: ListProposalVotesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProposalVotesInput, ListProposalVotesOutput> {
+        return .init(
+            input: input,
+            command: listProposalVotes,
+            inputKey: \ListProposalVotesInput.nextToken,
+            outputKey: \ListProposalVotesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of proposals for the network. Applies only to Hyperledger Fabric.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension ManagedBlockchain {
             tokenKey: \ListProposalsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProposalsPaginator(
+        _ input: ListProposalsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProposalsInput, ListProposalsOutput> {
+        return .init(
+            input: input,
+            command: listProposals,
+            inputKey: \ListProposalsInput.nextToken,
+            outputKey: \ListProposalsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

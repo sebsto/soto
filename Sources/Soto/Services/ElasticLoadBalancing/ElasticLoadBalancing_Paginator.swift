@@ -69,6 +69,27 @@ extension ElasticLoadBalancing {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeLoadBalancersPaginator(
+        _ input: DescribeAccessPointsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeAccessPointsInput, DescribeAccessPointsOutput> {
+        return .init(
+            input: input,
+            command: describeLoadBalancers,
+            inputKey: \DescribeAccessPointsInput.marker,
+            outputKey: \DescribeAccessPointsOutput.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension ElasticLoadBalancing.DescribeAccessPointsInput: AWSPaginateToken {

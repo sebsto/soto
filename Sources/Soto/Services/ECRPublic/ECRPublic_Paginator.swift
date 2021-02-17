@@ -70,6 +70,27 @@ extension ECRPublic {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeImageTagsPaginator(
+        _ input: DescribeImageTagsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeImageTagsRequest, DescribeImageTagsResponse> {
+        return .init(
+            input: input,
+            command: describeImageTags,
+            inputKey: \DescribeImageTagsRequest.nextToken,
+            outputKey: \DescribeImageTagsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns metadata about the images in a repository in a public registry.  Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the docker images command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by DescribeImages.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ECRPublic {
             tokenKey: \DescribeImagesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeImagesPaginator(
+        _ input: DescribeImagesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeImagesRequest, DescribeImagesResponse> {
+        return .init(
+            input: input,
+            command: describeImages,
+            inputKey: \DescribeImagesRequest.nextToken,
+            outputKey: \DescribeImagesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ECRPublic {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeRegistriesPaginator(
+        _ input: DescribeRegistriesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeRegistriesRequest, DescribeRegistriesResponse> {
+        return .init(
+            input: input,
+            command: describeRegistries,
+            inputKey: \DescribeRegistriesRequest.nextToken,
+            outputKey: \DescribeRegistriesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes repositories in a public registry.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension ECRPublic {
             tokenKey: \DescribeRepositoriesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeRepositoriesPaginator(
+        _ input: DescribeRepositoriesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeRepositoriesRequest, DescribeRepositoriesResponse> {
+        return .init(
+            input: input,
+            command: describeRepositories,
+            inputKey: \DescribeRepositoriesRequest.nextToken,
+            outputKey: \DescribeRepositoriesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

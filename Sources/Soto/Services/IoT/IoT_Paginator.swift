@@ -70,6 +70,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getBehaviorModelTrainingSummariesPaginator(
+        _ input: GetBehaviorModelTrainingSummariesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetBehaviorModelTrainingSummariesRequest, GetBehaviorModelTrainingSummariesResponse> {
+        return .init(
+            input: input,
+            command: getBehaviorModelTrainingSummaries,
+            inputKey: \GetBehaviorModelTrainingSummariesRequest.nextToken,
+            outputKey: \GetBehaviorModelTrainingSummariesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the active violations for a given Device Defender security profile.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension IoT {
             tokenKey: \ListActiveViolationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listActiveViolationsPaginator(
+        _ input: ListActiveViolationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListActiveViolationsRequest, ListActiveViolationsResponse> {
+        return .init(
+            input: input,
+            command: listActiveViolations,
+            inputKey: \ListActiveViolationsRequest.nextToken,
+            outputKey: \ListActiveViolationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAttachedPoliciesPaginator(
+        _ input: ListAttachedPoliciesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAttachedPoliciesRequest, ListAttachedPoliciesResponse> {
+        return .init(
+            input: input,
+            command: listAttachedPolicies,
+            inputKey: \ListAttachedPoliciesRequest.marker,
+            outputKey: \ListAttachedPoliciesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 90 days.)
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension IoT {
             tokenKey: \ListAuditFindingsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAuditFindingsPaginator(
+        _ input: ListAuditFindingsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAuditFindingsRequest, ListAuditFindingsResponse> {
+        return .init(
+            input: input,
+            command: listAuditFindings,
+            inputKey: \ListAuditFindingsRequest.nextToken,
+            outputKey: \ListAuditFindingsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAuditMitigationActionsExecutionsPaginator(
+        _ input: ListAuditMitigationActionsExecutionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAuditMitigationActionsExecutionsRequest, ListAuditMitigationActionsExecutionsResponse> {
+        return .init(
+            input: input,
+            command: listAuditMitigationActionsExecutions,
+            inputKey: \ListAuditMitigationActionsExecutionsRequest.nextToken,
+            outputKey: \ListAuditMitigationActionsExecutionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of audit mitigation action tasks that match the specified filters.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension IoT {
             tokenKey: \ListAuditMitigationActionsTasksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAuditMitigationActionsTasksPaginator(
+        _ input: ListAuditMitigationActionsTasksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAuditMitigationActionsTasksRequest, ListAuditMitigationActionsTasksResponse> {
+        return .init(
+            input: input,
+            command: listAuditMitigationActionsTasks,
+            inputKey: \ListAuditMitigationActionsTasksRequest.nextToken,
+            outputKey: \ListAuditMitigationActionsTasksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAuditSuppressionsPaginator(
+        _ input: ListAuditSuppressionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAuditSuppressionsRequest, ListAuditSuppressionsResponse> {
+        return .init(
+            input: input,
+            command: listAuditSuppressions,
+            inputKey: \ListAuditSuppressionsRequest.nextToken,
+            outputKey: \ListAuditSuppressionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the Device Defender audits that have been performed during a given time period.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension IoT {
             tokenKey: \ListAuditTasksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAuditTasksPaginator(
+        _ input: ListAuditTasksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAuditTasksRequest, ListAuditTasksResponse> {
+        return .init(
+            input: input,
+            command: listAuditTasks,
+            inputKey: \ListAuditTasksRequest.nextToken,
+            outputKey: \ListAuditTasksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAuthorizersPaginator(
+        _ input: ListAuthorizersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAuthorizersRequest, ListAuthorizersResponse> {
+        return .init(
+            input: input,
+            command: listAuthorizers,
+            inputKey: \ListAuthorizersRequest.marker,
+            outputKey: \ListAuthorizersResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the billing groups you have created.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension IoT {
             tokenKey: \ListBillingGroupsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBillingGroupsPaginator(
+        _ input: ListBillingGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBillingGroupsRequest, ListBillingGroupsResponse> {
+        return .init(
+            input: input,
+            command: listBillingGroups,
+            inputKey: \ListBillingGroupsRequest.nextToken,
+            outputKey: \ListBillingGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCACertificatesPaginator(
+        _ input: ListCACertificatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCACertificatesRequest, ListCACertificatesResponse> {
+        return .init(
+            input: input,
+            command: listCACertificates,
+            inputKey: \ListCACertificatesRequest.marker,
+            outputKey: \ListCACertificatesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the certificates registered in your AWS account. The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension IoT {
             tokenKey: \ListCertificatesResponse.nextMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCertificatesPaginator(
+        _ input: ListCertificatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCertificatesRequest, ListCertificatesResponse> {
+        return .init(
+            input: input,
+            command: listCertificates,
+            inputKey: \ListCertificatesRequest.marker,
+            outputKey: \ListCertificatesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -682,6 +934,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCertificatesByCAPaginator(
+        _ input: ListCertificatesByCARequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCertificatesByCARequest, ListCertificatesByCAResponse> {
+        return .init(
+            input: input,
+            command: listCertificatesByCA,
+            inputKey: \ListCertificatesByCARequest.marker,
+            outputKey: \ListCertificatesByCAResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Lists your Device Defender detect custom metrics.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -730,6 +1003,27 @@ extension IoT {
             tokenKey: \ListCustomMetricsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCustomMetricsPaginator(
+        _ input: ListCustomMetricsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCustomMetricsRequest, ListCustomMetricsResponse> {
+        return .init(
+            input: input,
+            command: listCustomMetrics,
+            inputKey: \ListCustomMetricsRequest.nextToken,
+            outputKey: \ListCustomMetricsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -784,6 +1078,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDetectMitigationActionsExecutionsPaginator(
+        _ input: ListDetectMitigationActionsExecutionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDetectMitigationActionsExecutionsRequest, ListDetectMitigationActionsExecutionsResponse> {
+        return .init(
+            input: input,
+            command: listDetectMitigationActionsExecutions,
+            inputKey: \ListDetectMitigationActionsExecutionsRequest.nextToken,
+            outputKey: \ListDetectMitigationActionsExecutionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   List of Device Defender ML Detect mitigation actions tasks.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -832,6 +1147,27 @@ extension IoT {
             tokenKey: \ListDetectMitigationActionsTasksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDetectMitigationActionsTasksPaginator(
+        _ input: ListDetectMitigationActionsTasksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDetectMitigationActionsTasksRequest, ListDetectMitigationActionsTasksResponse> {
+        return .init(
+            input: input,
+            command: listDetectMitigationActionsTasks,
+            inputKey: \ListDetectMitigationActionsTasksRequest.nextToken,
+            outputKey: \ListDetectMitigationActionsTasksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -886,6 +1222,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDimensionsPaginator(
+        _ input: ListDimensionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDimensionsRequest, ListDimensionsResponse> {
+        return .init(
+            input: input,
+            command: listDimensions,
+            inputKey: \ListDimensionsRequest.nextToken,
+            outputKey: \ListDimensionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration name.  The domain configuration feature is in public preview and is subject to change.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -934,6 +1291,27 @@ extension IoT {
             tokenKey: \ListDomainConfigurationsResponse.nextMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDomainConfigurationsPaginator(
+        _ input: ListDomainConfigurationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDomainConfigurationsRequest, ListDomainConfigurationsResponse> {
+        return .init(
+            input: input,
+            command: listDomainConfigurations,
+            inputKey: \ListDomainConfigurationsRequest.marker,
+            outputKey: \ListDomainConfigurationsResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -988,6 +1366,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listIndicesPaginator(
+        _ input: ListIndicesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListIndicesRequest, ListIndicesResponse> {
+        return .init(
+            input: input,
+            command: listIndices,
+            inputKey: \ListIndicesRequest.nextToken,
+            outputKey: \ListIndicesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the job executions for a job.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1036,6 +1435,27 @@ extension IoT {
             tokenKey: \ListJobExecutionsForJobResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobExecutionsForJobPaginator(
+        _ input: ListJobExecutionsForJobRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobExecutionsForJobRequest, ListJobExecutionsForJobResponse> {
+        return .init(
+            input: input,
+            command: listJobExecutionsForJob,
+            inputKey: \ListJobExecutionsForJobRequest.nextToken,
+            outputKey: \ListJobExecutionsForJobResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1090,6 +1510,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobExecutionsForThingPaginator(
+        _ input: ListJobExecutionsForThingRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobExecutionsForThingRequest, ListJobExecutionsForThingResponse> {
+        return .init(
+            input: input,
+            command: listJobExecutionsForThing,
+            inputKey: \ListJobExecutionsForThingRequest.nextToken,
+            outputKey: \ListJobExecutionsForThingResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists jobs.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1138,6 +1579,27 @@ extension IoT {
             tokenKey: \ListJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobsPaginator(
+        _ input: ListJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobsRequest, ListJobsResponse> {
+        return .init(
+            input: input,
+            command: listJobs,
+            inputKey: \ListJobsRequest.nextToken,
+            outputKey: \ListJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1192,6 +1654,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMitigationActionsPaginator(
+        _ input: ListMitigationActionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMitigationActionsRequest, ListMitigationActionsResponse> {
+        return .init(
+            input: input,
+            command: listMitigationActions,
+            inputKey: \ListMitigationActionsRequest.nextToken,
+            outputKey: \ListMitigationActionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists OTA updates.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1240,6 +1723,27 @@ extension IoT {
             tokenKey: \ListOTAUpdatesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listOTAUpdatesPaginator(
+        _ input: ListOTAUpdatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListOTAUpdatesRequest, ListOTAUpdatesResponse> {
+        return .init(
+            input: input,
+            command: listOTAUpdates,
+            inputKey: \ListOTAUpdatesRequest.nextToken,
+            outputKey: \ListOTAUpdatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1294,6 +1798,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listOutgoingCertificatesPaginator(
+        _ input: ListOutgoingCertificatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListOutgoingCertificatesRequest, ListOutgoingCertificatesResponse> {
+        return .init(
+            input: input,
+            command: listOutgoingCertificates,
+            inputKey: \ListOutgoingCertificatesRequest.marker,
+            outputKey: \ListOutgoingCertificatesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists your policies.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1342,6 +1867,27 @@ extension IoT {
             tokenKey: \ListPoliciesResponse.nextMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPoliciesPaginator(
+        _ input: ListPoliciesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPoliciesRequest, ListPoliciesResponse> {
+        return .init(
+            input: input,
+            command: listPolicies,
+            inputKey: \ListPoliciesRequest.marker,
+            outputKey: \ListPoliciesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1398,6 +1944,28 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    @available(*, deprecated, message: "ListPolicyPrincipals is deprecated.")
+    public func listPolicyPrincipalsPaginator(
+        _ input: ListPolicyPrincipalsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResponse> {
+        return .init(
+            input: input,
+            command: listPolicyPrincipals,
+            inputKey: \ListPolicyPrincipalsRequest.marker,
+            outputKey: \ListPolicyPrincipalsResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in AmazonCognito Identity format.  Note: This API is deprecated. Please use ListAttachedPolicies instead.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1448,6 +2016,28 @@ extension IoT {
             tokenKey: \ListPrincipalPoliciesResponse.nextMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    @available(*, deprecated, message: "ListPrincipalPolicies is deprecated.")
+    public func listPrincipalPoliciesPaginator(
+        _ input: ListPrincipalPoliciesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPrincipalPoliciesRequest, ListPrincipalPoliciesResponse> {
+        return .init(
+            input: input,
+            command: listPrincipalPolicies,
+            inputKey: \ListPrincipalPoliciesRequest.marker,
+            outputKey: \ListPrincipalPoliciesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1502,6 +2092,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPrincipalThingsPaginator(
+        _ input: ListPrincipalThingsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPrincipalThingsRequest, ListPrincipalThingsResponse> {
+        return .init(
+            input: input,
+            command: listPrincipalThings,
+            inputKey: \ListPrincipalThingsRequest.nextToken,
+            outputKey: \ListPrincipalThingsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  A list of fleet provisioning template versions.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1550,6 +2161,27 @@ extension IoT {
             tokenKey: \ListProvisioningTemplateVersionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProvisioningTemplateVersionsPaginator(
+        _ input: ListProvisioningTemplateVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProvisioningTemplateVersionsRequest, ListProvisioningTemplateVersionsResponse> {
+        return .init(
+            input: input,
+            command: listProvisioningTemplateVersions,
+            inputKey: \ListProvisioningTemplateVersionsRequest.nextToken,
+            outputKey: \ListProvisioningTemplateVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1604,6 +2236,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProvisioningTemplatesPaginator(
+        _ input: ListProvisioningTemplatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResponse> {
+        return .init(
+            input: input,
+            command: listProvisioningTemplates,
+            inputKey: \ListProvisioningTemplatesRequest.nextToken,
+            outputKey: \ListProvisioningTemplatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the role aliases registered in your account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1652,6 +2305,27 @@ extension IoT {
             tokenKey: \ListRoleAliasesResponse.nextMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRoleAliasesPaginator(
+        _ input: ListRoleAliasesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRoleAliasesRequest, ListRoleAliasesResponse> {
+        return .init(
+            input: input,
+            command: listRoleAliases,
+            inputKey: \ListRoleAliasesRequest.marker,
+            outputKey: \ListRoleAliasesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1706,6 +2380,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listScheduledAuditsPaginator(
+        _ input: ListScheduledAuditsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListScheduledAuditsRequest, ListScheduledAuditsResponse> {
+        return .init(
+            input: input,
+            command: listScheduledAudits,
+            inputKey: \ListScheduledAuditsRequest.nextToken,
+            outputKey: \ListScheduledAuditsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the Device Defender security profiles you've created. You can filter security profiles by dimension or custom metric.   dimensionName and metricName cannot be used in the same request.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1754,6 +2449,27 @@ extension IoT {
             tokenKey: \ListSecurityProfilesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSecurityProfilesPaginator(
+        _ input: ListSecurityProfilesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSecurityProfilesRequest, ListSecurityProfilesResponse> {
+        return .init(
+            input: input,
+            command: listSecurityProfiles,
+            inputKey: \ListSecurityProfilesRequest.nextToken,
+            outputKey: \ListSecurityProfilesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1808,6 +2524,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSecurityProfilesForTargetPaginator(
+        _ input: ListSecurityProfilesForTargetRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSecurityProfilesForTargetRequest, ListSecurityProfilesForTargetResponse> {
+        return .init(
+            input: input,
+            command: listSecurityProfilesForTarget,
+            inputKey: \ListSecurityProfilesForTargetRequest.nextToken,
+            outputKey: \ListSecurityProfilesForTargetResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all of the streams in your AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1856,6 +2593,27 @@ extension IoT {
             tokenKey: \ListStreamsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStreamsPaginator(
+        _ input: ListStreamsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStreamsRequest, ListStreamsResponse> {
+        return .init(
+            input: input,
+            command: listStreams,
+            inputKey: \ListStreamsRequest.nextToken,
+            outputKey: \ListStreamsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1910,6 +2668,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceRequest, ListTagsForResourceResponse> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceRequest.nextToken,
+            outputKey: \ListTagsForResourceResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List targets for the specified policy.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1958,6 +2737,27 @@ extension IoT {
             tokenKey: \ListTargetsForPolicyResponse.nextMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTargetsForPolicyPaginator(
+        _ input: ListTargetsForPolicyRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTargetsForPolicyRequest, ListTargetsForPolicyResponse> {
+        return .init(
+            input: input,
+            command: listTargetsForPolicy,
+            inputKey: \ListTargetsForPolicyRequest.marker,
+            outputKey: \ListTargetsForPolicyResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2012,6 +2812,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTargetsForSecurityProfilePaginator(
+        _ input: ListTargetsForSecurityProfileRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTargetsForSecurityProfileRequest, ListTargetsForSecurityProfileResponse> {
+        return .init(
+            input: input,
+            command: listTargetsForSecurityProfile,
+            inputKey: \ListTargetsForSecurityProfileRequest.nextToken,
+            outputKey: \ListTargetsForSecurityProfileResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List the thing groups in your account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2060,6 +2881,27 @@ extension IoT {
             tokenKey: \ListThingGroupsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingGroupsPaginator(
+        _ input: ListThingGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingGroupsRequest, ListThingGroupsResponse> {
+        return .init(
+            input: input,
+            command: listThingGroups,
+            inputKey: \ListThingGroupsRequest.nextToken,
+            outputKey: \ListThingGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2114,6 +2956,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingGroupsForThingPaginator(
+        _ input: ListThingGroupsForThingRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingGroupsForThingRequest, ListThingGroupsForThingResponse> {
+        return .init(
+            input: input,
+            command: listThingGroupsForThing,
+            inputKey: \ListThingGroupsForThingRequest.nextToken,
+            outputKey: \ListThingGroupsForThingResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2162,6 +3025,27 @@ extension IoT {
             tokenKey: \ListThingPrincipalsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingPrincipalsPaginator(
+        _ input: ListThingPrincipalsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingPrincipalsRequest, ListThingPrincipalsResponse> {
+        return .init(
+            input: input,
+            command: listThingPrincipals,
+            inputKey: \ListThingPrincipalsRequest.nextToken,
+            outputKey: \ListThingPrincipalsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2216,6 +3100,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingRegistrationTaskReportsPaginator(
+        _ input: ListThingRegistrationTaskReportsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingRegistrationTaskReportsRequest, ListThingRegistrationTaskReportsResponse> {
+        return .init(
+            input: input,
+            command: listThingRegistrationTaskReports,
+            inputKey: \ListThingRegistrationTaskReportsRequest.nextToken,
+            outputKey: \ListThingRegistrationTaskReportsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List bulk thing provisioning tasks.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2264,6 +3169,27 @@ extension IoT {
             tokenKey: \ListThingRegistrationTasksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingRegistrationTasksPaginator(
+        _ input: ListThingRegistrationTasksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingRegistrationTasksRequest, ListThingRegistrationTasksResponse> {
+        return .init(
+            input: input,
+            command: listThingRegistrationTasks,
+            inputKey: \ListThingRegistrationTasksRequest.nextToken,
+            outputKey: \ListThingRegistrationTasksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2318,6 +3244,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingTypesPaginator(
+        _ input: ListThingTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingTypesRequest, ListThingTypesResponse> {
+        return .init(
+            input: input,
+            command: listThingTypes,
+            inputKey: \ListThingTypesRequest.nextToken,
+            outputKey: \ListThingTypesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists your things. Use the attributeName and attributeValue parameters to filter your things. For example, calling ListThings with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute Color with the value Red.   You will not be charged for calling this API if an Access denied error is returned. You will also not be charged if no attributes or pagination token was provided in request and no pagination token and no results were returned.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2366,6 +3313,27 @@ extension IoT {
             tokenKey: \ListThingsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingsPaginator(
+        _ input: ListThingsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingsRequest, ListThingsResponse> {
+        return .init(
+            input: input,
+            command: listThings,
+            inputKey: \ListThingsRequest.nextToken,
+            outputKey: \ListThingsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2420,6 +3388,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingsInBillingGroupPaginator(
+        _ input: ListThingsInBillingGroupRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingsInBillingGroupRequest, ListThingsInBillingGroupResponse> {
+        return .init(
+            input: input,
+            command: listThingsInBillingGroup,
+            inputKey: \ListThingsInBillingGroupRequest.nextToken,
+            outputKey: \ListThingsInBillingGroupResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the things in the specified group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2468,6 +3457,27 @@ extension IoT {
             tokenKey: \ListThingsInThingGroupResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listThingsInThingGroupPaginator(
+        _ input: ListThingsInThingGroupRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListThingsInThingGroupRequest, ListThingsInThingGroupResponse> {
+        return .init(
+            input: input,
+            command: listThingsInThingGroup,
+            inputKey: \ListThingsInThingGroupRequest.nextToken,
+            outputKey: \ListThingsInThingGroupResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2522,6 +3532,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTopicRuleDestinationsPaginator(
+        _ input: ListTopicRuleDestinationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTopicRuleDestinationsRequest, ListTopicRuleDestinationsResponse> {
+        return .init(
+            input: input,
+            command: listTopicRuleDestinations,
+            inputKey: \ListTopicRuleDestinationsRequest.nextToken,
+            outputKey: \ListTopicRuleDestinationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the rules for the specific topic.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2570,6 +3601,27 @@ extension IoT {
             tokenKey: \ListTopicRulesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTopicRulesPaginator(
+        _ input: ListTopicRulesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTopicRulesRequest, ListTopicRulesResponse> {
+        return .init(
+            input: input,
+            command: listTopicRules,
+            inputKey: \ListTopicRulesRequest.nextToken,
+            outputKey: \ListTopicRulesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -2624,6 +3676,27 @@ extension IoT {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listV2LoggingLevelsPaginator(
+        _ input: ListV2LoggingLevelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListV2LoggingLevelsRequest, ListV2LoggingLevelsResponse> {
+        return .init(
+            input: input,
+            command: listV2LoggingLevels,
+            inputKey: \ListV2LoggingLevelsRequest.nextToken,
+            outputKey: \ListV2LoggingLevelsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior, or thing (device).
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -2672,6 +3745,27 @@ extension IoT {
             tokenKey: \ListViolationEventsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listViolationEventsPaginator(
+        _ input: ListViolationEventsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListViolationEventsRequest, ListViolationEventsResponse> {
+        return .init(
+            input: input,
+            command: listViolationEvents,
+            inputKey: \ListViolationEventsRequest.nextToken,
+            outputKey: \ListViolationEventsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

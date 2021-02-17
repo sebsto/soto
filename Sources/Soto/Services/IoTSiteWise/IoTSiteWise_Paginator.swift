@@ -70,6 +70,27 @@ extension IoTSiteWise {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getAssetPropertyAggregatesPaginator(
+        _ input: GetAssetPropertyAggregatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetAssetPropertyAggregatesRequest, GetAssetPropertyAggregatesResponse> {
+        return .init(
+            input: input,
+            command: getAssetPropertyAggregates,
+            inputKey: \GetAssetPropertyAggregatesRequest.nextToken,
+            outputKey: \GetAssetPropertyAggregatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets the history of an asset property's values. For more information, see Querying historical values in the AWS IoT SiteWise User Guide. To identify an asset property, you must specify one of the following:   The assetId and propertyId of an asset property.   A propertyAlias, which is a data stream alias (for example, /company/windfarm/3/turbine/7/temperature). To define an asset property's alias, see UpdateAssetProperty.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension IoTSiteWise {
             tokenKey: \GetAssetPropertyValueHistoryResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getAssetPropertyValueHistoryPaginator(
+        _ input: GetAssetPropertyValueHistoryRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetAssetPropertyValueHistoryRequest, GetAssetPropertyValueHistoryResponse> {
+        return .init(
+            input: input,
+            command: getAssetPropertyValueHistory,
+            inputKey: \GetAssetPropertyValueHistoryRequest.nextToken,
+            outputKey: \GetAssetPropertyValueHistoryResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension IoTSiteWise {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccessPoliciesPaginator(
+        _ input: ListAccessPoliciesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccessPoliciesRequest, ListAccessPoliciesResponse> {
+        return .init(
+            input: input,
+            command: listAccessPolicies,
+            inputKey: \ListAccessPoliciesRequest.nextToken,
+            outputKey: \ListAccessPoliciesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of summaries of all asset models.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension IoTSiteWise {
             tokenKey: \ListAssetModelsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssetModelsPaginator(
+        _ input: ListAssetModelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssetModelsRequest, ListAssetModelsResponse> {
+        return .init(
+            input: input,
+            command: listAssetModels,
+            inputKey: \ListAssetModelsRequest.nextToken,
+            outputKey: \ListAssetModelsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension IoTSiteWise {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssetRelationshipsPaginator(
+        _ input: ListAssetRelationshipsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssetRelationshipsRequest, ListAssetRelationshipsResponse> {
+        return .init(
+            input: input,
+            command: listAssetRelationships,
+            inputKey: \ListAssetRelationshipsRequest.nextToken,
+            outputKey: \ListAssetRelationshipsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of asset summaries. You can use this operation to do the following:   List assets based on a specific asset model.   List top-level assets.   You can't use this operation to list all assets. To retrieve summaries for all of your assets, use ListAssetModels to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension IoTSiteWise {
             tokenKey: \ListAssetsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssetsPaginator(
+        _ input: ListAssetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssetsRequest, ListAssetsResponse> {
+        return .init(
+            input: input,
+            command: listAssets,
+            inputKey: \ListAssetsRequest.nextToken,
+            outputKey: \ListAssetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension IoTSiteWise {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssociatedAssetsPaginator(
+        _ input: ListAssociatedAssetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssociatedAssetsRequest, ListAssociatedAssetsResponse> {
+        return .init(
+            input: input,
+            command: listAssociatedAssets,
+            inputKey: \ListAssociatedAssetsRequest.nextToken,
+            outputKey: \ListAssociatedAssetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension IoTSiteWise {
             tokenKey: \ListDashboardsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDashboardsPaginator(
+        _ input: ListDashboardsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDashboardsRequest, ListDashboardsResponse> {
+        return .init(
+            input: input,
+            command: listDashboards,
+            inputKey: \ListDashboardsRequest.nextToken,
+            outputKey: \ListDashboardsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension IoTSiteWise {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listGatewaysPaginator(
+        _ input: ListGatewaysRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListGatewaysRequest, ListGatewaysResponse> {
+        return .init(
+            input: input,
+            command: listGateways,
+            inputKey: \ListGatewaysRequest.nextToken,
+            outputKey: \ListGatewaysResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of AWS IoT SiteWise Monitor portals.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension IoTSiteWise {
             tokenKey: \ListPortalsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPortalsPaginator(
+        _ input: ListPortalsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPortalsRequest, ListPortalsResponse> {
+        return .init(
+            input: input,
+            command: listPortals,
+            inputKey: \ListPortalsRequest.nextToken,
+            outputKey: \ListPortalsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension IoTSiteWise {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProjectAssetsPaginator(
+        _ input: ListProjectAssetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProjectAssetsRequest, ListProjectAssetsResponse> {
+        return .init(
+            input: input,
+            command: listProjectAssets,
+            inputKey: \ListProjectAssetsRequest.nextToken,
+            outputKey: \ListProjectAssetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension IoTSiteWise {
             tokenKey: \ListProjectsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProjectsPaginator(
+        _ input: ListProjectsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProjectsRequest, ListProjectsResponse> {
+        return .init(
+            input: input,
+            command: listProjects,
+            inputKey: \ListProjectsRequest.nextToken,
+            outputKey: \ListProjectsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

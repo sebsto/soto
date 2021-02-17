@@ -70,6 +70,27 @@ extension ECR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeImageScanFindingsPaginator(
+        _ input: DescribeImageScanFindingsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeImageScanFindingsRequest, DescribeImageScanFindingsResponse> {
+        return .init(
+            input: input,
+            command: describeImageScanFindings,
+            inputKey: \DescribeImageScanFindingsRequest.nextToken,
+            outputKey: \DescribeImageScanFindingsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns metadata about the images in a repository.  Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the docker images command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by DescribeImages.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ECR {
             tokenKey: \DescribeImagesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeImagesPaginator(
+        _ input: DescribeImagesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeImagesRequest, DescribeImagesResponse> {
+        return .init(
+            input: input,
+            command: describeImages,
+            inputKey: \DescribeImagesRequest.nextToken,
+            outputKey: \DescribeImagesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ECR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeRepositoriesPaginator(
+        _ input: DescribeRepositoriesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeRepositoriesRequest, DescribeRepositoriesResponse> {
+        return .init(
+            input: input,
+            command: describeRepositories,
+            inputKey: \DescribeRepositoriesRequest.nextToken,
+            outputKey: \DescribeRepositoriesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the results of the lifecycle policy preview request for the specified repository.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -223,6 +286,27 @@ extension ECR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getLifecyclePolicyPreviewPaginator(
+        _ input: GetLifecyclePolicyPreviewRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetLifecyclePolicyPreviewRequest, GetLifecyclePolicyPreviewResponse> {
+        return .init(
+            input: input,
+            command: getLifecyclePolicyPreview,
+            inputKey: \GetLifecyclePolicyPreviewRequest.nextToken,
+            outputKey: \GetLifecyclePolicyPreviewResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the image IDs for the specified repository. You can filter images based on whether or not they are tagged by using the tagStatus filter and specifying either TAGGED, UNTAGGED or ANY. For example, you can filter your results to return only UNTAGGED images and then pipe that result to a BatchDeleteImage operation to delete them. Or, you can filter your results to return only TAGGED images to list all of the tags in your repository.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -271,6 +355,27 @@ extension ECR {
             tokenKey: \ListImagesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listImagesPaginator(
+        _ input: ListImagesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListImagesRequest, ListImagesResponse> {
+        return .init(
+            input: input,
+            command: listImages,
+            inputKey: \ListImagesRequest.nextToken,
+            outputKey: \ListImagesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension Pricing {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeServicesPaginator(
+        _ input: DescribeServicesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeServicesRequest, DescribeServicesResponse> {
+        return .init(
+            input: input,
+            command: describeServices,
+            inputKey: \DescribeServicesRequest.nextToken,
+            outputKey: \DescribeServicesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of attribute values. Attibutes are similar to the details in a Price List API offer file. For a list of available attributes, see Offer File Definitions in the AWS Billing and Cost Management User Guide.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension Pricing {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getAttributeValuesPaginator(
+        _ input: GetAttributeValuesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetAttributeValuesRequest, GetAttributeValuesResponse> {
+        return .init(
+            input: input,
+            command: getAttributeValues,
+            inputKey: \GetAttributeValuesRequest.nextToken,
+            outputKey: \GetAttributeValuesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of all products that match the filter criteria.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension Pricing {
             tokenKey: \GetProductsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getProductsPaginator(
+        _ input: GetProductsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetProductsRequest, GetProductsResponse> {
+        return .init(
+            input: input,
+            command: getProducts,
+            inputKey: \GetProductsRequest.nextToken,
+            outputKey: \GetProductsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension EMRContainers {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobRunsPaginator(
+        _ input: ListJobRunsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobRunsRequest, ListJobRunsResponse> {
+        return .init(
+            input: input,
+            command: listJobRuns,
+            inputKey: \ListJobRunsRequest.nextToken,
+            outputKey: \ListJobRunsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension EMRContainers {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listManagedEndpointsPaginator(
+        _ input: ListManagedEndpointsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListManagedEndpointsRequest, ListManagedEndpointsResponse> {
+        return .init(
+            input: input,
+            command: listManagedEndpoints,
+            inputKey: \ListManagedEndpointsRequest.nextToken,
+            outputKey: \ListManagedEndpointsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension EMRContainers {
             tokenKey: \ListVirtualClustersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listVirtualClustersPaginator(
+        _ input: ListVirtualClustersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListVirtualClustersRequest, ListVirtualClustersResponse> {
+        return .init(
+            input: input,
+            command: listVirtualClusters,
+            inputKey: \ListVirtualClustersRequest.nextToken,
+            outputKey: \ListVirtualClustersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

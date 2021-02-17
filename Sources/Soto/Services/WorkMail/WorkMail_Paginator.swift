@@ -70,6 +70,27 @@ extension WorkMail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAliasesPaginator(
+        _ input: ListAliasesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAliasesRequest, ListAliasesResponse> {
+        return .init(
+            input: input,
+            command: listAliases,
+            inputKey: \ListAliasesRequest.nextToken,
+            outputKey: \ListAliasesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns an overview of the members of a group. Users and groups can be members of a group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension WorkMail {
             tokenKey: \ListGroupMembersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listGroupMembersPaginator(
+        _ input: ListGroupMembersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListGroupMembersRequest, ListGroupMembersResponse> {
+        return .init(
+            input: input,
+            command: listGroupMembers,
+            inputKey: \ListGroupMembersRequest.nextToken,
+            outputKey: \ListGroupMembersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension WorkMail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listGroupsPaginator(
+        _ input: ListGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListGroupsRequest, ListGroupsResponse> {
+        return .init(
+            input: input,
+            command: listGroups,
+            inputKey: \ListGroupsRequest.nextToken,
+            outputKey: \ListGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the mailbox export jobs started for the specified organization within the last seven days.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension WorkMail {
             tokenKey: \ListMailboxExportJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMailboxExportJobsPaginator(
+        _ input: ListMailboxExportJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMailboxExportJobsRequest, ListMailboxExportJobsResponse> {
+        return .init(
+            input: input,
+            command: listMailboxExportJobs,
+            inputKey: \ListMailboxExportJobsRequest.nextToken,
+            outputKey: \ListMailboxExportJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension WorkMail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMailboxPermissionsPaginator(
+        _ input: ListMailboxPermissionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMailboxPermissionsRequest, ListMailboxPermissionsResponse> {
+        return .init(
+            input: input,
+            command: listMailboxPermissions,
+            inputKey: \ListMailboxPermissionsRequest.nextToken,
+            outputKey: \ListMailboxPermissionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summaries of the customer's organizations.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension WorkMail {
             tokenKey: \ListOrganizationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listOrganizationsPaginator(
+        _ input: ListOrganizationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListOrganizationsRequest, ListOrganizationsResponse> {
+        return .init(
+            input: input,
+            command: listOrganizations,
+            inputKey: \ListOrganizationsRequest.nextToken,
+            outputKey: \ListOrganizationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension WorkMail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResourceDelegatesPaginator(
+        _ input: ListResourceDelegatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResourceDelegatesRequest, ListResourceDelegatesResponse> {
+        return .init(
+            input: input,
+            command: listResourceDelegates,
+            inputKey: \ListResourceDelegatesRequest.nextToken,
+            outputKey: \ListResourceDelegatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summaries of the organization's resources.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -427,6 +574,27 @@ extension WorkMail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResourcesPaginator(
+        _ input: ListResourcesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResourcesRequest, ListResourcesResponse> {
+        return .init(
+            input: input,
+            command: listResources,
+            inputKey: \ListResourcesRequest.nextToken,
+            outputKey: \ListResourcesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summaries of the organization's users.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -475,6 +643,27 @@ extension WorkMail {
             tokenKey: \ListUsersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listUsersPaginator(
+        _ input: ListUsersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListUsersRequest, ListUsersResponse> {
+        return .init(
+            input: input,
+            command: listUsers,
+            inputKey: \ListUsersRequest.nextToken,
+            outputKey: \ListUsersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

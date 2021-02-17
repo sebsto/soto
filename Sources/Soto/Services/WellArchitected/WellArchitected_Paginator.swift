@@ -70,6 +70,27 @@ extension WellArchitected {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAnswersPaginator(
+        _ input: ListAnswersInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAnswersInput, ListAnswersOutput> {
+        return .init(
+            input: input,
+            command: listAnswers,
+            inputKey: \ListAnswersInput.nextToken,
+            outputKey: \ListAnswersOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List lens review improvements.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension WellArchitected {
             tokenKey: \ListLensReviewImprovementsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listLensReviewImprovementsPaginator(
+        _ input: ListLensReviewImprovementsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListLensReviewImprovementsInput, ListLensReviewImprovementsOutput> {
+        return .init(
+            input: input,
+            command: listLensReviewImprovements,
+            inputKey: \ListLensReviewImprovementsInput.nextToken,
+            outputKey: \ListLensReviewImprovementsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension WellArchitected {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listLensReviewsPaginator(
+        _ input: ListLensReviewsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListLensReviewsInput, ListLensReviewsOutput> {
+        return .init(
+            input: input,
+            command: listLensReviews,
+            inputKey: \ListLensReviewsInput.nextToken,
+            outputKey: \ListLensReviewsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List the available lenses.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension WellArchitected {
             tokenKey: \ListLensesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listLensesPaginator(
+        _ input: ListLensesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListLensesInput, ListLensesOutput> {
+        return .init(
+            input: input,
+            command: listLenses,
+            inputKey: \ListLensesInput.nextToken,
+            outputKey: \ListLensesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension WellArchitected {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMilestonesPaginator(
+        _ input: ListMilestonesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMilestonesInput, ListMilestonesOutput> {
+        return .init(
+            input: input,
+            command: listMilestones,
+            inputKey: \ListMilestonesInput.nextToken,
+            outputKey: \ListMilestonesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List lens notifications.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension WellArchitected {
             tokenKey: \ListNotificationsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNotificationsPaginator(
+        _ input: ListNotificationsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNotificationsInput, ListNotificationsOutput> {
+        return .init(
+            input: input,
+            command: listNotifications,
+            inputKey: \ListNotificationsInput.nextToken,
+            outputKey: \ListNotificationsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension WellArchitected {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listShareInvitationsPaginator(
+        _ input: ListShareInvitationsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListShareInvitationsInput, ListShareInvitationsOutput> {
+        return .init(
+            input: input,
+            command: listShareInvitations,
+            inputKey: \ListShareInvitationsInput.nextToken,
+            outputKey: \ListShareInvitationsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List the workload shares associated with the workload.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -427,6 +574,27 @@ extension WellArchitected {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listWorkloadSharesPaginator(
+        _ input: ListWorkloadSharesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListWorkloadSharesInput, ListWorkloadSharesOutput> {
+        return .init(
+            input: input,
+            command: listWorkloadShares,
+            inputKey: \ListWorkloadSharesInput.nextToken,
+            outputKey: \ListWorkloadSharesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List workloads. Paginated.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -475,6 +643,27 @@ extension WellArchitected {
             tokenKey: \ListWorkloadsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listWorkloadsPaginator(
+        _ input: ListWorkloadsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListWorkloadsInput, ListWorkloadsOutput> {
+        return .init(
+            input: input,
+            command: listWorkloads,
+            inputKey: \ListWorkloadsInput.nextToken,
+            outputKey: \ListWorkloadsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

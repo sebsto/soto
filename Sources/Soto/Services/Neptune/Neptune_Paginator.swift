@@ -70,6 +70,27 @@ extension Neptune {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBClusterEndpointsPaginator(
+        _ input: DescribeDBClusterEndpointsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBClusterEndpointsMessage, DBClusterEndpointMessage> {
+        return .init(
+            input: input,
+            command: describeDBClusterEndpoints,
+            inputKey: \DescribeDBClusterEndpointsMessage.marker,
+            outputKey: \DBClusterEndpointMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the available DB engines.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Neptune {
             tokenKey: \DBEngineVersionMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBEngineVersionsPaginator(
+        _ input: DescribeDBEngineVersionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBEngineVersionsMessage, DBEngineVersionMessage> {
+        return .init(
+            input: input,
+            command: describeDBEngineVersions,
+            inputKey: \DescribeDBEngineVersionsMessage.marker,
+            outputKey: \DBEngineVersionMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Neptune {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBInstancesPaginator(
+        _ input: DescribeDBInstancesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBInstancesMessage, DBInstanceMessage> {
+        return .init(
+            input: input,
+            command: describeDBInstances,
+            inputKey: \DescribeDBInstancesMessage.marker,
+            outputKey: \DBInstanceMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description of the specified DB parameter group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Neptune {
             tokenKey: \DBParameterGroupsMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBParameterGroupsPaginator(
+        _ input: DescribeDBParameterGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBParameterGroupsMessage, DBParameterGroupsMessage> {
+        return .init(
+            input: input,
+            command: describeDBParameterGroups,
+            inputKey: \DescribeDBParameterGroupsMessage.marker,
+            outputKey: \DBParameterGroupsMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Neptune {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBParametersPaginator(
+        _ input: DescribeDBParametersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBParametersMessage, DBParameterGroupDetails> {
+        return .init(
+            input: input,
+            command: describeDBParameters,
+            inputKey: \DescribeDBParametersMessage.marker,
+            outputKey: \DBParameterGroupDetails.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. For an overview of CIDR ranges, go to the Wikipedia Tutorial.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension Neptune {
             tokenKey: \DBSubnetGroupMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBSubnetGroupsPaginator(
+        _ input: DescribeDBSubnetGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBSubnetGroupsMessage, DBSubnetGroupMessage> {
+        return .init(
+            input: input,
+            command: describeDBSubnetGroups,
+            inputKey: \DescribeDBSubnetGroupsMessage.marker,
+            outputKey: \DBSubnetGroupMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension Neptune {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEngineDefaultParametersPaginator(
+        _ input: DescribeEngineDefaultParametersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEngineDefaultParametersMessage, DescribeEngineDefaultParametersResult> {
+        return .init(
+            input: input,
+            command: describeEngineDefaultParameters,
+            inputKey: \DescribeEngineDefaultParametersMessage.marker,
+            outputKey: \DescribeEngineDefaultParametersResult.engineDefaults?.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. If you specify a SubscriptionName, lists the description for that subscription.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension Neptune {
             tokenKey: \EventSubscriptionsMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventSubscriptionsPaginator(
+        _ input: DescribeEventSubscriptionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventSubscriptionsMessage, EventSubscriptionsMessage> {
+        return .init(
+            input: input,
+            command: describeEventSubscriptions,
+            inputKey: \DescribeEventSubscriptionsMessage.marker,
+            outputKey: \EventSubscriptionsMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension Neptune {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsPaginator(
+        _ input: DescribeEventsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsMessage, EventsMessage> {
+        return .init(
+            input: input,
+            command: describeEvents,
+            inputKey: \DescribeEventsMessage.marker,
+            outputKey: \EventsMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of orderable DB instance options for the specified engine.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension Neptune {
             tokenKey: \OrderableDBInstanceOptionsMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeOrderableDBInstanceOptionsPaginator(
+        _ input: DescribeOrderableDBInstanceOptionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeOrderableDBInstanceOptionsMessage, OrderableDBInstanceOptionsMessage> {
+        return .init(
+            input: input,
+            command: describeOrderableDBInstanceOptions,
+            inputKey: \DescribeOrderableDBInstanceOptionsMessage.marker,
+            outputKey: \OrderableDBInstanceOptionsMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

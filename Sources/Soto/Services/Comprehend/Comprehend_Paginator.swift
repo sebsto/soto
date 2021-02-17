@@ -70,6 +70,27 @@ extension Comprehend {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDocumentClassificationJobsPaginator(
+        _ input: ListDocumentClassificationJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDocumentClassificationJobsRequest, ListDocumentClassificationJobsResponse> {
+        return .init(
+            input: input,
+            command: listDocumentClassificationJobs,
+            inputKey: \ListDocumentClassificationJobsRequest.nextToken,
+            outputKey: \ListDocumentClassificationJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of the document classifiers that you have created.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Comprehend {
             tokenKey: \ListDocumentClassifiersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDocumentClassifiersPaginator(
+        _ input: ListDocumentClassifiersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDocumentClassifiersRequest, ListDocumentClassifiersResponse> {
+        return .init(
+            input: input,
+            command: listDocumentClassifiers,
+            inputKey: \ListDocumentClassifiersRequest.nextToken,
+            outputKey: \ListDocumentClassifiersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Comprehend {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDominantLanguageDetectionJobsPaginator(
+        _ input: ListDominantLanguageDetectionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDominantLanguageDetectionJobsRequest, ListDominantLanguageDetectionJobsResponse> {
+        return .init(
+            input: input,
+            command: listDominantLanguageDetectionJobs,
+            inputKey: \ListDominantLanguageDetectionJobsRequest.nextToken,
+            outputKey: \ListDominantLanguageDetectionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of the entity detection jobs that you have submitted.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Comprehend {
             tokenKey: \ListEntitiesDetectionJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEntitiesDetectionJobsPaginator(
+        _ input: ListEntitiesDetectionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEntitiesDetectionJobsRequest, ListEntitiesDetectionJobsResponse> {
+        return .init(
+            input: input,
+            command: listEntitiesDetectionJobs,
+            inputKey: \ListEntitiesDetectionJobsRequest.nextToken,
+            outputKey: \ListEntitiesDetectionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Comprehend {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEntityRecognizersPaginator(
+        _ input: ListEntityRecognizersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEntityRecognizersRequest, ListEntityRecognizersResponse> {
+        return .init(
+            input: input,
+            command: listEntityRecognizers,
+            inputKey: \ListEntityRecognizersRequest.nextToken,
+            outputKey: \ListEntityRecognizersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of the events detection jobs that you have submitted.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension Comprehend {
             tokenKey: \ListEventsDetectionJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEventsDetectionJobsPaginator(
+        _ input: ListEventsDetectionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEventsDetectionJobsRequest, ListEventsDetectionJobsResponse> {
+        return .init(
+            input: input,
+            command: listEventsDetectionJobs,
+            inputKey: \ListEventsDetectionJobsRequest.nextToken,
+            outputKey: \ListEventsDetectionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension Comprehend {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listKeyPhrasesDetectionJobsPaginator(
+        _ input: ListKeyPhrasesDetectionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListKeyPhrasesDetectionJobsRequest, ListKeyPhrasesDetectionJobsResponse> {
+        return .init(
+            input: input,
+            command: listKeyPhrasesDetectionJobs,
+            inputKey: \ListKeyPhrasesDetectionJobsRequest.nextToken,
+            outputKey: \ListKeyPhrasesDetectionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of sentiment detection jobs that you have submitted.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -427,6 +574,27 @@ extension Comprehend {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSentimentDetectionJobsPaginator(
+        _ input: ListSentimentDetectionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSentimentDetectionJobsRequest, ListSentimentDetectionJobsResponse> {
+        return .init(
+            input: input,
+            command: listSentimentDetectionJobs,
+            inputKey: \ListSentimentDetectionJobsRequest.nextToken,
+            outputKey: \ListSentimentDetectionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of the topic detection jobs that you have submitted.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -475,6 +643,27 @@ extension Comprehend {
             tokenKey: \ListTopicsDetectionJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTopicsDetectionJobsPaginator(
+        _ input: ListTopicsDetectionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTopicsDetectionJobsRequest, ListTopicsDetectionJobsResponse> {
+        return .init(
+            input: input,
+            command: listTopicsDetectionJobs,
+            inputKey: \ListTopicsDetectionJobsRequest.nextToken,
+            outputKey: \ListTopicsDetectionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

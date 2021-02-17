@@ -70,6 +70,27 @@ extension CodeBuild {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCodeCoveragesPaginator(
+        _ input: DescribeCodeCoveragesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCodeCoveragesInput, DescribeCodeCoveragesOutput> {
+        return .init(
+            input: input,
+            command: describeCodeCoverages,
+            inputKey: \DescribeCodeCoveragesInput.nextToken,
+            outputKey: \DescribeCodeCoveragesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of details about test cases for a report.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension CodeBuild {
             tokenKey: \DescribeTestCasesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeTestCasesPaginator(
+        _ input: DescribeTestCasesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeTestCasesInput, DescribeTestCasesOutput> {
+        return .init(
+            input: input,
+            command: describeTestCases,
+            inputKey: \DescribeTestCasesInput.nextToken,
+            outputKey: \DescribeTestCasesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension CodeBuild {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBuildBatchesPaginator(
+        _ input: ListBuildBatchesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBuildBatchesInput, ListBuildBatchesOutput> {
+        return .init(
+            input: input,
+            command: listBuildBatches,
+            inputKey: \ListBuildBatchesInput.nextToken,
+            outputKey: \ListBuildBatchesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the identifiers of the build batches for a specific project.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension CodeBuild {
             tokenKey: \ListBuildBatchesForProjectOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBuildBatchesForProjectPaginator(
+        _ input: ListBuildBatchesForProjectInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBuildBatchesForProjectInput, ListBuildBatchesForProjectOutput> {
+        return .init(
+            input: input,
+            command: listBuildBatchesForProject,
+            inputKey: \ListBuildBatchesForProjectInput.nextToken,
+            outputKey: \ListBuildBatchesForProjectOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension CodeBuild {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBuildsPaginator(
+        _ input: ListBuildsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBuildsInput, ListBuildsOutput> {
+        return .init(
+            input: input,
+            command: listBuilds,
+            inputKey: \ListBuildsInput.nextToken,
+            outputKey: \ListBuildsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of build IDs for the specified build project, with each build ID representing a single build.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension CodeBuild {
             tokenKey: \ListBuildsForProjectOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBuildsForProjectPaginator(
+        _ input: ListBuildsForProjectInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBuildsForProjectInput, ListBuildsForProjectOutput> {
+        return .init(
+            input: input,
+            command: listBuildsForProject,
+            inputKey: \ListBuildsForProjectInput.nextToken,
+            outputKey: \ListBuildsForProjectOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension CodeBuild {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProjectsPaginator(
+        _ input: ListProjectsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProjectsInput, ListProjectsOutput> {
+        return .init(
+            input: input,
+            command: listProjects,
+            inputKey: \ListProjectsInput.nextToken,
+            outputKey: \ListProjectsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Gets a list ARNs for the report groups in the current AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension CodeBuild {
             tokenKey: \ListReportGroupsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listReportGroupsPaginator(
+        _ input: ListReportGroupsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListReportGroupsInput, ListReportGroupsOutput> {
+        return .init(
+            input: input,
+            command: listReportGroups,
+            inputKey: \ListReportGroupsInput.nextToken,
+            outputKey: \ListReportGroupsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension CodeBuild {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listReportsPaginator(
+        _ input: ListReportsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListReportsInput, ListReportsOutput> {
+        return .init(
+            input: input,
+            command: listReports,
+            inputKey: \ListReportsInput.nextToken,
+            outputKey: \ListReportsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of ARNs for the reports that belong to a ReportGroup.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension CodeBuild {
             tokenKey: \ListReportsForReportGroupOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listReportsForReportGroupPaginator(
+        _ input: ListReportsForReportGroupInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListReportsForReportGroupInput, ListReportsForReportGroupOutput> {
+        return .init(
+            input: input,
+            command: listReportsForReportGroup,
+            inputKey: \ListReportsForReportGroupInput.nextToken,
+            outputKey: \ListReportsForReportGroupOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension CodeBuild {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSharedProjectsPaginator(
+        _ input: ListSharedProjectsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSharedProjectsInput, ListSharedProjectsOutput> {
+        return .init(
+            input: input,
+            command: listSharedProjects,
+            inputKey: \ListSharedProjectsInput.nextToken,
+            outputKey: \ListSharedProjectsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Gets a list of report groups that are shared with other AWS accounts or users.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension CodeBuild {
             tokenKey: \ListSharedReportGroupsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSharedReportGroupsPaginator(
+        _ input: ListSharedReportGroupsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSharedReportGroupsInput, ListSharedReportGroupsOutput> {
+        return .init(
+            input: input,
+            command: listSharedReportGroups,
+            inputKey: \ListSharedReportGroupsInput.nextToken,
+            outputKey: \ListSharedReportGroupsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

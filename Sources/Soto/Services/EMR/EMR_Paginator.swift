@@ -70,6 +70,27 @@ extension EMR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBootstrapActionsPaginator(
+        _ input: ListBootstrapActionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBootstrapActionsInput, ListBootstrapActionsOutput> {
+        return .init(
+            input: input,
+            command: listBootstrapActions,
+            inputKey: \ListBootstrapActionsInput.marker,
+            outputKey: \ListBootstrapActionsOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension EMR {
             tokenKey: \ListClustersOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listClustersPaginator(
+        _ input: ListClustersInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListClustersInput, ListClustersOutput> {
+        return .init(
+            input: input,
+            command: listClusters,
+            inputKey: \ListClustersInput.marker,
+            outputKey: \ListClustersOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension EMR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInstanceFleetsPaginator(
+        _ input: ListInstanceFleetsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInstanceFleetsInput, ListInstanceFleetsOutput> {
+        return .init(
+            input: input,
+            command: listInstanceFleets,
+            inputKey: \ListInstanceFleetsInput.marker,
+            outputKey: \ListInstanceFleetsOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides all available details about the instance groups in a cluster.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension EMR {
             tokenKey: \ListInstanceGroupsOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInstanceGroupsPaginator(
+        _ input: ListInstanceGroupsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInstanceGroupsInput, ListInstanceGroupsOutput> {
+        return .init(
+            input: input,
+            command: listInstanceGroups,
+            inputKey: \ListInstanceGroupsInput.marker,
+            outputKey: \ListInstanceGroupsOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension EMR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInstancesPaginator(
+        _ input: ListInstancesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInstancesInput, ListInstancesOutput> {
+        return .init(
+            input: input,
+            command: listInstances,
+            inputKey: \ListInstancesInput.marker,
+            outputKey: \ListInstancesOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple ListNotebookExecution calls.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension EMR {
             tokenKey: \ListNotebookExecutionsOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNotebookExecutionsPaginator(
+        _ input: ListNotebookExecutionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNotebookExecutionsInput, ListNotebookExecutionsOutput> {
+        return .init(
+            input: input,
+            command: listNotebookExecutions,
+            inputKey: \ListNotebookExecutionsInput.marker,
+            outputKey: \ListNotebookExecutionsOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension EMR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSecurityConfigurationsPaginator(
+        _ input: ListSecurityConfigurationsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSecurityConfigurationsInput, ListSecurityConfigurationsOutput> {
+        return .init(
+            input: input,
+            command: listSecurityConfigurations,
+            inputKey: \ListSecurityConfigurationsInput.marker,
+            outputKey: \ListSecurityConfigurationsOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides a list of steps for the cluster in reverse order unless you specify stepIds with the request of filter by StepStates. You can specify a maximum of ten stepIDs.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension EMR {
             tokenKey: \ListStepsOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStepsPaginator(
+        _ input: ListStepsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStepsInput, ListStepsOutput> {
+        return .init(
+            input: input,
+            command: listSteps,
+            inputKey: \ListStepsInput.marker,
+            outputKey: \ListStepsOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension EMR {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStudioSessionMappingsPaginator(
+        _ input: ListStudioSessionMappingsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStudioSessionMappingsInput, ListStudioSessionMappingsOutput> {
+        return .init(
+            input: input,
+            command: listStudioSessionMappings,
+            inputKey: \ListStudioSessionMappingsInput.marker,
+            outputKey: \ListStudioSessionMappingsOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.  Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID, Studio Access URL, and creation time for each Studio.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension EMR {
             tokenKey: \ListStudiosOutput.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStudiosPaginator(
+        _ input: ListStudiosInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStudiosInput, ListStudiosOutput> {
+        return .init(
+            input: input,
+            command: listStudios,
+            inputKey: \ListStudiosInput.marker,
+            outputKey: \ListStudiosOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

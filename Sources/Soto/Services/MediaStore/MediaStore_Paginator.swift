@@ -69,6 +69,27 @@ extension MediaStore {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listContainersPaginator(
+        _ input: ListContainersInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListContainersInput, ListContainersOutput> {
+        return .init(
+            input: input,
+            command: listContainers,
+            inputKey: \ListContainersInput.nextToken,
+            outputKey: \ListContainersOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension MediaStore.ListContainersInput: AWSPaginateToken {

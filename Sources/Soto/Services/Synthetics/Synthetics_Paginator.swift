@@ -70,6 +70,27 @@ extension Synthetics {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCanariesPaginator(
+        _ input: DescribeCanariesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCanariesRequest, DescribeCanariesResponse> {
+        return .init(
+            input: input,
+            command: describeCanaries,
+            inputKey: \DescribeCanariesRequest.nextToken,
+            outputKey: \DescribeCanariesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Use this operation to see information from the most recent run of each canary that you have created.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Synthetics {
             tokenKey: \DescribeCanariesLastRunResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCanariesLastRunPaginator(
+        _ input: DescribeCanariesLastRunRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCanariesLastRunRequest, DescribeCanariesLastRunResponse> {
+        return .init(
+            input: input,
+            command: describeCanariesLastRun,
+            inputKey: \DescribeCanariesLastRunRequest.nextToken,
+            outputKey: \DescribeCanariesLastRunResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Synthetics {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeRuntimeVersionsPaginator(
+        _ input: DescribeRuntimeVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeRuntimeVersionsRequest, DescribeRuntimeVersionsResponse> {
+        return .init(
+            input: input,
+            command: describeRuntimeVersions,
+            inputKey: \DescribeRuntimeVersionsRequest.nextToken,
+            outputKey: \DescribeRuntimeVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list of runs for a specified canary.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Synthetics {
             tokenKey: \GetCanaryRunsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCanaryRunsPaginator(
+        _ input: GetCanaryRunsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCanaryRunsRequest, GetCanaryRunsResponse> {
+        return .init(
+            input: input,
+            command: getCanaryRuns,
+            inputKey: \GetCanaryRunsRequest.nextToken,
+            outputKey: \GetCanaryRunsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension DataSync {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAgentsPaginator(
+        _ input: ListAgentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAgentsRequest, ListAgentsResponse> {
+        return .init(
+            input: input,
+            command: listAgents,
+            inputKey: \ListAgentsRequest.nextToken,
+            outputKey: \ListAgentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of source and destination locations. If you have more locations than are returned in a response (that is, the response returns only a truncated list of your agents), the response contains a token that you can specify in your next request to fetch the next page of locations.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension DataSync {
             tokenKey: \ListLocationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listLocationsPaginator(
+        _ input: ListLocationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListLocationsRequest, ListLocationsResponse> {
+        return .init(
+            input: input,
+            command: listLocations,
+            inputKey: \ListLocationsRequest.nextToken,
+            outputKey: \ListLocationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension DataSync {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceRequest, ListTagsForResourceResponse> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceRequest.nextToken,
+            outputKey: \ListTagsForResourceResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of executed tasks.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -223,6 +286,27 @@ extension DataSync {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTaskExecutionsPaginator(
+        _ input: ListTaskExecutionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTaskExecutionsRequest, ListTaskExecutionsResponse> {
+        return .init(
+            input: input,
+            command: listTaskExecutions,
+            inputKey: \ListTaskExecutionsRequest.nextToken,
+            outputKey: \ListTaskExecutionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of all the tasks.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -271,6 +355,27 @@ extension DataSync {
             tokenKey: \ListTasksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTasksPaginator(
+        _ input: ListTasksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTasksRequest, ListTasksResponse> {
+        return .init(
+            input: input,
+            command: listTasks,
+            inputKey: \ListTasksRequest.nextToken,
+            outputKey: \ListTasksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -69,6 +69,27 @@ extension ACM {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCertificatesPaginator(
+        _ input: ListCertificatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCertificatesRequest, ListCertificatesResponse> {
+        return .init(
+            input: input,
+            command: listCertificates,
+            inputKey: \ListCertificatesRequest.nextToken,
+            outputKey: \ListCertificatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension ACM.ListCertificatesRequest: AWSPaginateToken {

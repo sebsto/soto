@@ -70,6 +70,27 @@ extension CostExplorer {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getSavingsPlansCoveragePaginator(
+        _ input: GetSavingsPlansCoverageRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetSavingsPlansCoverageRequest, GetSavingsPlansCoverageResponse> {
+        return .init(
+            input: input,
+            command: getSavingsPlansCoverage,
+            inputKey: \GetSavingsPlansCoverageRequest.nextToken,
+            outputKey: \GetSavingsPlansCoverageResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to GetSavingsPlanUtilization, but you have the option to make multiple calls to GetSavingsPlanUtilizationDetails by providing individual dates. You can use GetDimensionValues in SAVINGS_PLANS to determine the possible dimension values.   GetSavingsPlanUtilizationDetails internally groups data by SavingsPlansArn.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension CostExplorer {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getSavingsPlansUtilizationDetailsPaginator(
+        _ input: GetSavingsPlansUtilizationDetailsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetSavingsPlansUtilizationDetailsRequest, GetSavingsPlansUtilizationDetailsResponse> {
+        return .init(
+            input: input,
+            command: getSavingsPlansUtilizationDetails,
+            inputKey: \GetSavingsPlansUtilizationDetailsRequest.nextToken,
+            outputKey: \GetSavingsPlansUtilizationDetailsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns the name, ARN, NumberOfRules and effective dates of all Cost Categories defined in the account. You have the option to use EffectiveOn to return a list of Cost Categories that were active on a specific date. If there is no EffectiveOn specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, EffectiveEnd is omitted in the response. ListCostCategoryDefinitions supports pagination. The request can have a MaxResults range up to 100.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension CostExplorer {
             tokenKey: \ListCostCategoryDefinitionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCostCategoryDefinitionsPaginator(
+        _ input: ListCostCategoryDefinitionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCostCategoryDefinitionsRequest, ListCostCategoryDefinitionsResponse> {
+        return .init(
+            input: input,
+            command: listCostCategoryDefinitions,
+            inputKey: \ListCostCategoryDefinitionsRequest.nextToken,
+            outputKey: \ListCostCategoryDefinitionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

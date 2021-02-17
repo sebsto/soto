@@ -70,6 +70,27 @@ extension AppStream {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeImagePermissionsPaginator(
+        _ input: DescribeImagePermissionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeImagePermissionsRequest, DescribeImagePermissionsResult> {
+        return .init(
+            input: input,
+            command: describeImagePermissions,
+            inputKey: \DescribeImagePermissionsRequest.nextToken,
+            outputKey: \DescribeImagePermissionsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension AppStream {
             tokenKey: \DescribeImagesResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeImagesPaginator(
+        _ input: DescribeImagesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeImagesRequest, DescribeImagesResult> {
+        return .init(
+            input: input,
+            command: describeImages,
+            inputKey: \DescribeImagesRequest.nextToken,
+            outputKey: \DescribeImagesResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension DevOpsGuru {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeResourceCollectionHealthPaginator(
+        _ input: DescribeResourceCollectionHealthRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeResourceCollectionHealthRequest, DescribeResourceCollectionHealthResponse> {
+        return .init(
+            input: input,
+            command: describeResourceCollectionHealth,
+            inputKey: \DescribeResourceCollectionHealthRequest.nextToken,
+            outputKey: \DescribeResourceCollectionHealthResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the stacks.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension DevOpsGuru {
             tokenKey: \GetResourceCollectionResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getResourceCollectionPaginator(
+        _ input: GetResourceCollectionRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetResourceCollectionRequest, GetResourceCollectionResponse> {
+        return .init(
+            input: input,
+            command: getResourceCollection,
+            inputKey: \GetResourceCollectionRequest.nextToken,
+            outputKey: \GetResourceCollectionResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension DevOpsGuru {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAnomaliesForInsightPaginator(
+        _ input: ListAnomaliesForInsightRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAnomaliesForInsightRequest, ListAnomaliesForInsightResponse> {
+        return .init(
+            input: input,
+            command: listAnomaliesForInsight,
+            inputKey: \ListAnomaliesForInsightRequest.nextToken,
+            outputKey: \ListAnomaliesForInsightResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension DevOpsGuru {
             tokenKey: \ListEventsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEventsPaginator(
+        _ input: ListEventsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEventsRequest, ListEventsResponse> {
+        return .init(
+            input: input,
+            command: listEvents,
+            inputKey: \ListEventsRequest.nextToken,
+            outputKey: \ListEventsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension DevOpsGuru {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInsightsPaginator(
+        _ input: ListInsightsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInsightsRequest, ListInsightsResponse> {
+        return .init(
+            input: input,
+            command: listInsights,
+            inputKey: \ListInsightsRequest.nextToken,
+            outputKey: \ListInsightsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension DevOpsGuru {
             tokenKey: \ListNotificationChannelsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNotificationChannelsPaginator(
+        _ input: ListNotificationChannelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNotificationChannelsRequest, ListNotificationChannelsResponse> {
+        return .init(
+            input: input,
+            command: listNotificationChannels,
+            inputKey: \ListNotificationChannelsRequest.nextToken,
+            outputKey: \ListNotificationChannelsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension DevOpsGuru {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRecommendationsPaginator(
+        _ input: ListRecommendationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRecommendationsRequest, ListRecommendationsResponse> {
+        return .init(
+            input: input,
+            command: listRecommendations,
+            inputKey: \ListRecommendationsRequest.nextToken,
+            outputKey: \ListRecommendationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of insights in your AWS account. You can specify which insights are returned by their start time, one or more statuses (ONGOING, CLOSED, and CLOSED), one or more severities (LOW, MEDIUM, and HIGH), and type (REACTIVE or PROACTIVE).   Use the Filters parameter to specify status and severity search parameters. Use the Type parameter to specify REACTIVE or PROACTIVE in your search.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension DevOpsGuru {
             tokenKey: \SearchInsightsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func searchInsightsPaginator(
+        _ input: SearchInsightsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<SearchInsightsRequest, SearchInsightsResponse> {
+        return .init(
+            input: input,
+            command: searchInsights,
+            inputKey: \SearchInsightsRequest.nextToken,
+            outputKey: \SearchInsightsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

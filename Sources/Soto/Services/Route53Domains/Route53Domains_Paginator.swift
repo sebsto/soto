@@ -70,6 +70,27 @@ extension Route53Domains {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDomainsPaginator(
+        _ input: ListDomainsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDomainsRequest, ListDomainsResponse> {
+        return .init(
+            input: input,
+            command: listDomains,
+            inputKey: \ListDomainsRequest.marker,
+            outputKey: \ListDomainsResponse.nextPageMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about all of the operations that return an operation ID and that have ever been performed on domains that were registered by the current account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Route53Domains {
             tokenKey: \ListOperationsResponse.nextPageMarker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listOperationsPaginator(
+        _ input: ListOperationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListOperationsRequest, ListOperationsResponse> {
+        return .init(
+            input: input,
+            command: listOperations,
+            inputKey: \ListOperationsRequest.marker,
+            outputKey: \ListOperationsResponse.nextPageMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

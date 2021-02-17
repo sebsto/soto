@@ -141,7 +141,8 @@ extension AWSService {
 
     struct PaginatorContext {
         let operation: OperationContext
-        let output: String
+        let inputKey: String
+        let outputKey: String
         let moreResults: String?
         let initParams: [String]
         let paginatorProtocol: String
@@ -418,6 +419,11 @@ extension AWSService {
             let paginatorProtocol = "AWSPaginateToken"
             let tokenType = inputTokenMember.shape.swiftTypeNameWithServiceNamePrefix(self.api.serviceName)
 
+            // process input tokens
+            let processedInputTokens = inputTokens.map { (token) -> String in
+                return self.toKeyPath(token: token, type: inputStructure)
+            }
+
             // process output tokens
             let processedOutputTokens = outputTokens.map { (token) -> String in
                 return self.toKeyPath(token: token, type: outputStructure)
@@ -433,7 +439,8 @@ extension AWSService {
             paginatorContexts.append(
                 PaginatorContext(
                     operation: self.generateOperationContext(operation, name: paginator.key, streaming: false),
-                    output: processedOutputTokens[0],
+                    inputKey: processedInputTokens[0],
+                    outputKey: processedOutputTokens[0],
                     moreResults: moreResultsKey,
                     initParams: initParamsArray,
                     paginatorProtocol: paginatorProtocol,

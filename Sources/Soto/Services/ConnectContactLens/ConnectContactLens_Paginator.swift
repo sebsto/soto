@@ -69,6 +69,27 @@ extension ConnectContactLens {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRealtimeContactAnalysisSegmentsPaginator(
+        _ input: ListRealtimeContactAnalysisSegmentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRealtimeContactAnalysisSegmentsRequest, ListRealtimeContactAnalysisSegmentsResponse> {
+        return .init(
+            input: input,
+            command: listRealtimeContactAnalysisSegments,
+            inputKey: \ListRealtimeContactAnalysisSegmentsRequest.nextToken,
+            outputKey: \ListRealtimeContactAnalysisSegmentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension ConnectContactLens.ListRealtimeContactAnalysisSegmentsRequest: AWSPaginateToken {

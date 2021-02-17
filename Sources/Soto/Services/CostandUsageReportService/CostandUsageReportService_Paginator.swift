@@ -69,6 +69,27 @@ extension CostandUsageReportService {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReportDefinitionsPaginator(
+        _ input: DescribeReportDefinitionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReportDefinitionsRequest, DescribeReportDefinitionsResponse> {
+        return .init(
+            input: input,
+            command: describeReportDefinitions,
+            inputKey: \DescribeReportDefinitionsRequest.nextToken,
+            outputKey: \DescribeReportDefinitionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension CostandUsageReportService.DescribeReportDefinitionsRequest: AWSPaginateToken {

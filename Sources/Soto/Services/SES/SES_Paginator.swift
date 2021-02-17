@@ -70,6 +70,27 @@ extension SES {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCustomVerificationEmailTemplatesPaginator(
+        _ input: ListCustomVerificationEmailTemplatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResponse> {
+        return .init(
+            input: input,
+            command: listCustomVerificationEmailTemplates,
+            inputKey: \ListCustomVerificationEmailTemplatesRequest.nextToken,
+            outputKey: \ListCustomVerificationEmailTemplatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list containing all of the identities (email addresses and domains) for your AWS account in the current AWS Region, regardless of verification status. You can execute this operation no more than once per second.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SES {
             tokenKey: \ListIdentitiesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listIdentitiesPaginator(
+        _ input: ListIdentitiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListIdentitiesRequest, ListIdentitiesResponse> {
+        return .init(
+            input: input,
+            command: listIdentities,
+            inputKey: \ListIdentitiesRequest.nextToken,
+            outputKey: \ListIdentitiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

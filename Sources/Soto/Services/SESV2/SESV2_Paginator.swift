@@ -70,6 +70,27 @@ extension SESV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDedicatedIpsPaginator(
+        _ input: GetDedicatedIpsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDedicatedIpsRequest, GetDedicatedIpsResponse> {
+        return .init(
+            input: input,
+            command: getDedicatedIps,
+            inputKey: \GetDedicatedIpsRequest.nextToken,
+            outputKey: \GetDedicatedIpsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List all of the configuration sets associated with your account in the current region.  Configuration sets are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SESV2 {
             tokenKey: \ListConfigurationSetsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listConfigurationSetsPaginator(
+        _ input: ListConfigurationSetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListConfigurationSetsRequest, ListConfigurationSetsResponse> {
+        return .init(
+            input: input,
+            command: listConfigurationSets,
+            inputKey: \ListConfigurationSetsRequest.nextToken,
+            outputKey: \ListConfigurationSetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension SESV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listContactListsPaginator(
+        _ input: ListContactListsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListContactListsRequest, ListContactListsResponse> {
+        return .init(
+            input: input,
+            command: listContactLists,
+            inputKey: \ListContactListsRequest.nextToken,
+            outputKey: \ListContactListsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the contacts present in a specific contact list.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension SESV2 {
             tokenKey: \ListContactsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listContactsPaginator(
+        _ input: ListContactsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListContactsRequest, ListContactsResponse> {
+        return .init(
+            input: input,
+            command: listContacts,
+            inputKey: \ListContactsRequest.nextToken,
+            outputKey: \ListContactsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension SESV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCustomVerificationEmailTemplatesPaginator(
+        _ input: ListCustomVerificationEmailTemplatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResponse> {
+        return .init(
+            input: input,
+            command: listCustomVerificationEmailTemplates,
+            inputKey: \ListCustomVerificationEmailTemplatesRequest.nextToken,
+            outputKey: \ListCustomVerificationEmailTemplatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List all of the dedicated IP pools that exist in your AWS account in the current Region.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension SESV2 {
             tokenKey: \ListDedicatedIpPoolsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDedicatedIpPoolsPaginator(
+        _ input: ListDedicatedIpPoolsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDedicatedIpPoolsRequest, ListDedicatedIpPoolsResponse> {
+        return .init(
+            input: input,
+            command: listDedicatedIpPools,
+            inputKey: \ListDedicatedIpPoolsRequest.nextToken,
+            outputKey: \ListDedicatedIpPoolsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension SESV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDeliverabilityTestReportsPaginator(
+        _ input: ListDeliverabilityTestReportsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResponse> {
+        return .init(
+            input: input,
+            command: listDeliverabilityTestReports,
+            inputKey: \ListDeliverabilityTestReportsRequest.nextToken,
+            outputKey: \ListDeliverabilityTestReportsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension SESV2 {
             tokenKey: \ListDomainDeliverabilityCampaignsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDomainDeliverabilityCampaignsPaginator(
+        _ input: ListDomainDeliverabilityCampaignsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDomainDeliverabilityCampaignsRequest, ListDomainDeliverabilityCampaignsResponse> {
+        return .init(
+            input: input,
+            command: listDomainDeliverabilityCampaigns,
+            inputKey: \ListDomainDeliverabilityCampaignsRequest.nextToken,
+            outputKey: \ListDomainDeliverabilityCampaignsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension SESV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEmailIdentitiesPaginator(
+        _ input: ListEmailIdentitiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEmailIdentitiesRequest, ListEmailIdentitiesResponse> {
+        return .init(
+            input: input,
+            command: listEmailIdentities,
+            inputKey: \ListEmailIdentitiesRequest.nextToken,
+            outputKey: \ListEmailIdentitiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the email templates present in your Amazon SES account in the current AWS Region. You can execute this operation no more than once per second.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension SESV2 {
             tokenKey: \ListEmailTemplatesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEmailTemplatesPaginator(
+        _ input: ListEmailTemplatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEmailTemplatesRequest, ListEmailTemplatesResponse> {
+        return .init(
+            input: input,
+            command: listEmailTemplates,
+            inputKey: \ListEmailTemplatesRequest.nextToken,
+            outputKey: \ListEmailTemplatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension SESV2 {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listImportJobsPaginator(
+        _ input: ListImportJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListImportJobsRequest, ListImportJobsResponse> {
+        return .init(
+            input: input,
+            command: listImportJobs,
+            inputKey: \ListImportJobsRequest.nextToken,
+            outputKey: \ListImportJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list of email addresses that are on the suppression list for your account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension SESV2 {
             tokenKey: \ListSuppressedDestinationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSuppressedDestinationsPaginator(
+        _ input: ListSuppressedDestinationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSuppressedDestinationsRequest, ListSuppressedDestinationsResponse> {
+        return .init(
+            input: input,
+            command: listSuppressedDestinations,
+            inputKey: \ListSuppressedDestinationsRequest.nextToken,
+            outputKey: \ListSuppressedDestinationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

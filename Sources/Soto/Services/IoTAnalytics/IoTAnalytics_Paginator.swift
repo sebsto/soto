@@ -70,6 +70,27 @@ extension IoTAnalytics {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listChannelsPaginator(
+        _ input: ListChannelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListChannelsRequest, ListChannelsResponse> {
+        return .init(
+            input: input,
+            command: listChannels,
+            inputKey: \ListChannelsRequest.nextToken,
+            outputKey: \ListChannelsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists information about data set contents that have been created.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension IoTAnalytics {
             tokenKey: \ListDatasetContentsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDatasetContentsPaginator(
+        _ input: ListDatasetContentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDatasetContentsRequest, ListDatasetContentsResponse> {
+        return .init(
+            input: input,
+            command: listDatasetContents,
+            inputKey: \ListDatasetContentsRequest.nextToken,
+            outputKey: \ListDatasetContentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension IoTAnalytics {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDatasetsPaginator(
+        _ input: ListDatasetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDatasetsRequest, ListDatasetsResponse> {
+        return .init(
+            input: input,
+            command: listDatasets,
+            inputKey: \ListDatasetsRequest.nextToken,
+            outputKey: \ListDatasetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list of data stores.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -223,6 +286,27 @@ extension IoTAnalytics {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDatastoresPaginator(
+        _ input: ListDatastoresRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDatastoresRequest, ListDatastoresResponse> {
+        return .init(
+            input: input,
+            command: listDatastores,
+            inputKey: \ListDatastoresRequest.nextToken,
+            outputKey: \ListDatastoresResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list of pipelines.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -271,6 +355,27 @@ extension IoTAnalytics {
             tokenKey: \ListPipelinesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPipelinesPaginator(
+        _ input: ListPipelinesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPipelinesRequest, ListPipelinesResponse> {
+        return .init(
+            input: input,
+            command: listPipelines,
+            inputKey: \ListPipelinesRequest.nextToken,
+            outputKey: \ListPipelinesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

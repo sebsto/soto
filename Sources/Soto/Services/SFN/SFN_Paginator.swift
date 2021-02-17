@@ -70,6 +70,27 @@ extension SFN {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getExecutionHistoryPaginator(
+        _ input: GetExecutionHistoryInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetExecutionHistoryInput, GetExecutionHistoryOutput> {
+        return .init(
+            input: input,
+            command: getExecutionHistory,
+            inputKey: \GetExecutionHistoryInput.nextToken,
+            outputKey: \GetExecutionHistoryOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the existing activities. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.  This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SFN {
             tokenKey: \ListActivitiesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listActivitiesPaginator(
+        _ input: ListActivitiesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListActivitiesInput, ListActivitiesOutput> {
+        return .init(
+            input: input,
+            command: listActivities,
+            inputKey: \ListActivitiesInput.nextToken,
+            outputKey: \ListActivitiesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension SFN {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listExecutionsPaginator(
+        _ input: ListExecutionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListExecutionsInput, ListExecutionsOutput> {
+        return .init(
+            input: input,
+            command: listExecutions,
+            inputKey: \ListExecutionsInput.nextToken,
+            outputKey: \ListExecutionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the existing state machines. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.  This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension SFN {
             tokenKey: \ListStateMachinesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStateMachinesPaginator(
+        _ input: ListStateMachinesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStateMachinesInput, ListStateMachinesOutput> {
+        return .init(
+            input: input,
+            command: listStateMachines,
+            inputKey: \ListStateMachinesInput.nextToken,
+            outputKey: \ListStateMachinesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

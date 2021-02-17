@@ -70,6 +70,27 @@ extension FraudDetector {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeModelVersionsPaginator(
+        _ input: DescribeModelVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeModelVersionsRequest, DescribeModelVersionsResult> {
+        return .init(
+            input: input,
+            command: describeModelVersions,
+            inputKey: \DescribeModelVersionsRequest.nextToken,
+            outputKey: \DescribeModelVersionsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets all detectors or a single detector if a detectorId is specified. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetDetectorsResponse as part of your request. A null pagination token fetches the records from the beginning.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension FraudDetector {
             tokenKey: \GetDetectorsResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDetectorsPaginator(
+        _ input: GetDetectorsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDetectorsRequest, GetDetectorsResult> {
+        return .init(
+            input: input,
+            command: getDetectors,
+            inputKey: \GetDetectorsRequest.nextToken,
+            outputKey: \GetDetectorsResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension FraudDetector {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getEntityTypesPaginator(
+        _ input: GetEntityTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetEntityTypesRequest, GetEntityTypesResult> {
+        return .init(
+            input: input,
+            command: getEntityTypes,
+            inputKey: \GetEntityTypesRequest.nextToken,
+            outputKey: \GetEntityTypesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetEventTypesResponse as part of your request. A null pagination token fetches the records from the beginning.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension FraudDetector {
             tokenKey: \GetEventTypesResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getEventTypesPaginator(
+        _ input: GetEventTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetEventTypesRequest, GetEventTypesResult> {
+        return .init(
+            input: input,
+            command: getEventTypes,
+            inputKey: \GetEventTypesRequest.nextToken,
+            outputKey: \GetEventTypesResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension FraudDetector {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getExternalModelsPaginator(
+        _ input: GetExternalModelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetExternalModelsRequest, GetExternalModelsResult> {
+        return .init(
+            input: input,
+            command: getExternalModels,
+            inputKey: \GetExternalModelsRequest.nextToken,
+            outputKey: \GetExternalModelsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value must be between 10 and 50. To get the next page results, provide the pagination token from the GetGetLabelsResponse as part of your request. A null pagination token fetches the records from the beginning.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension FraudDetector {
             tokenKey: \GetLabelsResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getLabelsPaginator(
+        _ input: GetLabelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetLabelsRequest, GetLabelsResult> {
+        return .init(
+            input: input,
+            command: getLabels,
+            inputKey: \GetLabelsRequest.nextToken,
+            outputKey: \GetLabelsResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension FraudDetector {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getModelsPaginator(
+        _ input: GetModelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetModelsRequest, GetModelsResult> {
+        return .init(
+            input: input,
+            command: getModels,
+            inputKey: \GetModelsRequest.nextToken,
+            outputKey: \GetModelsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets one or more outcomes. This is a paginated API. If you provide a null maxResults, this actions retrieves a maximum of 100 records per page. If you provide a maxResults, the value must be between 50 and 100. To get the next page results, provide the pagination token from the GetOutcomesResult as part of your request. A null pagination token fetches the records from the beginning.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension FraudDetector {
             tokenKey: \GetOutcomesResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getOutcomesPaginator(
+        _ input: GetOutcomesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetOutcomesRequest, GetOutcomesResult> {
+        return .init(
+            input: input,
+            command: getOutcomes,
+            inputKey: \GetOutcomesRequest.nextToken,
+            outputKey: \GetOutcomesResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension FraudDetector {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getRulesPaginator(
+        _ input: GetRulesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetRulesRequest, GetRulesResult> {
+        return .init(
+            input: input,
+            command: getRules,
+            inputKey: \GetRulesRequest.nextToken,
+            outputKey: \GetRulesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets all of the variables or the specific variable. This is a paginated API. Providing null maxSizePerPage results in retrieving maximum of 100 records per page. If you provide maxSizePerPage the value must be between 50 and 100. To get the next page result, a provide a pagination token from GetVariablesResult as part of your request. Null pagination token fetches the records from the beginning.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -529,6 +718,27 @@ extension FraudDetector {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getVariablesPaginator(
+        _ input: GetVariablesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetVariablesRequest, GetVariablesResult> {
+        return .init(
+            input: input,
+            command: getVariables,
+            inputKey: \GetVariablesRequest.nextToken,
+            outputKey: \GetVariablesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -577,6 +787,27 @@ extension FraudDetector {
             tokenKey: \ListTagsForResourceResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceRequest, ListTagsForResourceResult> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceRequest.nextToken,
+            outputKey: \ListTagsForResourceResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

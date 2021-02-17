@@ -70,6 +70,27 @@ extension CodeGuruProfiler {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getFindingsReportAccountSummaryPaginator(
+        _ input: GetFindingsReportAccountSummaryRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetFindingsReportAccountSummaryRequest, GetFindingsReportAccountSummaryResponse> {
+        return .init(
+            input: input,
+            command: getFindingsReportAccountSummary,
+            inputKey: \GetFindingsReportAccountSummaryRequest.nextToken,
+            outputKey: \GetFindingsReportAccountSummaryResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List the available reports for a given profiling group and time range.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension CodeGuruProfiler {
             tokenKey: \ListFindingsReportsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listFindingsReportsPaginator(
+        _ input: ListFindingsReportsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListFindingsReportsRequest, ListFindingsReportsResponse> {
+        return .init(
+            input: input,
+            command: listFindingsReports,
+            inputKey: \ListFindingsReportsRequest.nextToken,
+            outputKey: \ListFindingsReportsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension CodeGuruProfiler {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProfileTimesPaginator(
+        _ input: ListProfileTimesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProfileTimesRequest, ListProfileTimesResponse> {
+        return .init(
+            input: input,
+            command: listProfileTimes,
+            inputKey: \ListProfileTimesRequest.nextToken,
+            outputKey: \ListProfileTimesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of profiling groups. The profiling groups are returned as  ProfilingGroupDescription  objects.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension CodeGuruProfiler {
             tokenKey: \ListProfilingGroupsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProfilingGroupsPaginator(
+        _ input: ListProfilingGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProfilingGroupsRequest, ListProfilingGroupsResponse> {
+        return .init(
+            input: input,
+            command: listProfilingGroups,
+            inputKey: \ListProfilingGroupsRequest.nextToken,
+            outputKey: \ListProfilingGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

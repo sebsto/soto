@@ -71,6 +71,27 @@ extension ImportExport {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobsPaginator(
+        _ input: ListJobsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobsInput, ListJobsOutput> {
+        return .init(
+            input: input,
+            command: listJobs,
+            inputKey: \ListJobsInput.marker,
+            outputKey: \ListJobsOutput.jobs?.last?.jobId,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension ImportExport.ListJobsInput: AWSPaginateToken {

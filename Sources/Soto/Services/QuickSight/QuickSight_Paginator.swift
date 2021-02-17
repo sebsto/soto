@@ -70,6 +70,27 @@ extension QuickSight {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAnalysesPaginator(
+        _ input: ListAnalysesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAnalysesRequest, ListAnalysesResponse> {
+        return .init(
+            input: input,
+            command: listAnalyses,
+            inputKey: \ListAnalysesRequest.nextToken,
+            outputKey: \ListAnalysesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the versions of the dashboards in the QuickSight subscription.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension QuickSight {
             tokenKey: \ListDashboardVersionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDashboardVersionsPaginator(
+        _ input: ListDashboardVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDashboardVersionsRequest, ListDashboardVersionsResponse> {
+        return .init(
+            input: input,
+            command: listDashboardVersions,
+            inputKey: \ListDashboardVersionsRequest.nextToken,
+            outputKey: \ListDashboardVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension QuickSight {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDashboardsPaginator(
+        _ input: ListDashboardsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDashboardsRequest, ListDashboardsResponse> {
+        return .init(
+            input: input,
+            command: listDashboards,
+            inputKey: \ListDashboardsRequest.nextToken,
+            outputKey: \ListDashboardsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all of the datasets belonging to the current AWS account in an AWS Region. The permissions resource is arn:aws:quicksight:region:aws-account-id:dataset/*.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension QuickSight {
             tokenKey: \ListDataSetsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDataSetsPaginator(
+        _ input: ListDataSetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDataSetsRequest, ListDataSetsResponse> {
+        return .init(
+            input: input,
+            command: listDataSets,
+            inputKey: \ListDataSetsRequest.nextToken,
+            outputKey: \ListDataSetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension QuickSight {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDataSourcesPaginator(
+        _ input: ListDataSourcesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDataSourcesRequest, ListDataSourcesResponse> {
+        return .init(
+            input: input,
+            command: listDataSources,
+            inputKey: \ListDataSourcesRequest.nextToken,
+            outputKey: \ListDataSourcesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the history of SPICE ingestions for a dataset.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension QuickSight {
             tokenKey: \ListIngestionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listIngestionsPaginator(
+        _ input: ListIngestionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListIngestionsRequest, ListIngestionsResponse> {
+        return .init(
+            input: input,
+            command: listIngestions,
+            inputKey: \ListIngestionsRequest.nextToken,
+            outputKey: \ListIngestionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension QuickSight {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNamespacesPaginator(
+        _ input: ListNamespacesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNamespacesRequest, ListNamespacesResponse> {
+        return .init(
+            input: input,
+            command: listNamespaces,
+            inputKey: \ListNamespacesRequest.nextToken,
+            outputKey: \ListNamespacesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the aliases of a template.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension QuickSight {
             tokenKey: \ListTemplateAliasesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTemplateAliasesPaginator(
+        _ input: ListTemplateAliasesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTemplateAliasesRequest, ListTemplateAliasesResponse> {
+        return .init(
+            input: input,
+            command: listTemplateAliases,
+            inputKey: \ListTemplateAliasesRequest.nextToken,
+            outputKey: \ListTemplateAliasesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension QuickSight {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTemplateVersionsPaginator(
+        _ input: ListTemplateVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTemplateVersionsRequest, ListTemplateVersionsResponse> {
+        return .init(
+            input: input,
+            command: listTemplateVersions,
+            inputKey: \ListTemplateVersionsRequest.nextToken,
+            outputKey: \ListTemplateVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the templates in the current Amazon QuickSight account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension QuickSight {
             tokenKey: \ListTemplatesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTemplatesPaginator(
+        _ input: ListTemplatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTemplatesRequest, ListTemplatesResponse> {
+        return .init(
+            input: input,
+            command: listTemplates,
+            inputKey: \ListTemplatesRequest.nextToken,
+            outputKey: \ListTemplatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension QuickSight {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func searchAnalysesPaginator(
+        _ input: SearchAnalysesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<SearchAnalysesRequest, SearchAnalysesResponse> {
+        return .init(
+            input: input,
+            command: searchAnalyses,
+            inputKey: \SearchAnalysesRequest.nextToken,
+            outputKey: \SearchAnalysesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Searches for dashboards that belong to a user.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension QuickSight {
             tokenKey: \SearchDashboardsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func searchDashboardsPaginator(
+        _ input: SearchDashboardsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<SearchDashboardsRequest, SearchDashboardsResponse> {
+        return .init(
+            input: input,
+            command: searchDashboards,
+            inputKey: \SearchDashboardsRequest.nextToken,
+            outputKey: \SearchDashboardsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

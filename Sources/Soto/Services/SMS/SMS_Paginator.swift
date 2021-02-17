@@ -70,6 +70,27 @@ extension SMS {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getConnectorsPaginator(
+        _ input: GetConnectorsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetConnectorsRequest, GetConnectorsResponse> {
+        return .init(
+            input: input,
+            command: getConnectors,
+            inputKey: \GetConnectorsRequest.nextToken,
+            outputKey: \GetConnectorsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes the specified replication job or all of your replication jobs.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SMS {
             tokenKey: \GetReplicationJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getReplicationJobsPaginator(
+        _ input: GetReplicationJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetReplicationJobsRequest, GetReplicationJobsResponse> {
+        return .init(
+            input: input,
+            command: getReplicationJobs,
+            inputKey: \GetReplicationJobsRequest.nextToken,
+            outputKey: \GetReplicationJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension SMS {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getReplicationRunsPaginator(
+        _ input: GetReplicationRunsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetReplicationRunsRequest, GetReplicationRunsResponse> {
+        return .init(
+            input: input,
+            command: getReplicationRuns,
+            inputKey: \GetReplicationRunsRequest.nextToken,
+            outputKey: \GetReplicationRunsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Describes the servers in your server catalog. Before you can describe your servers, you must import them using ImportServerCatalog.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension SMS {
             tokenKey: \GetServersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getServersPaginator(
+        _ input: GetServersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetServersRequest, GetServersResponse> {
+        return .init(
+            input: input,
+            command: getServers,
+            inputKey: \GetServersRequest.nextToken,
+            outputKey: \GetServersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

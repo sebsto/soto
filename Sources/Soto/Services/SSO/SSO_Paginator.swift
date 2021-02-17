@@ -70,6 +70,27 @@ extension SSO {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccountRolesPaginator(
+        _ input: ListAccountRolesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccountRolesRequest, ListAccountRolesResponse> {
+        return .init(
+            input: input,
+            command: listAccountRoles,
+            inputKey: \ListAccountRolesRequest.nextToken,
+            outputKey: \ListAccountRolesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see Assign User Access in the AWS SSO User Guide. This operation returns a paginated response.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SSO {
             tokenKey: \ListAccountsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccountsPaginator(
+        _ input: ListAccountsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccountsRequest, ListAccountsResponse> {
+        return .init(
+            input: input,
+            command: listAccounts,
+            inputKey: \ListAccountsRequest.nextToken,
+            outputKey: \ListAccountsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

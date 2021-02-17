@@ -69,6 +69,27 @@ extension KinesisVideoArchivedMedia {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listFragmentsPaginator(
+        _ input: ListFragmentsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListFragmentsInput, ListFragmentsOutput> {
+        return .init(
+            input: input,
+            command: listFragments,
+            inputKey: \ListFragmentsInput.nextToken,
+            outputKey: \ListFragmentsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension KinesisVideoArchivedMedia.ListFragmentsInput: AWSPaginateToken {

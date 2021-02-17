@@ -70,6 +70,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeMergeConflictsPaginator(
+        _ input: DescribeMergeConflictsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeMergeConflictsInput, DescribeMergeConflictsOutput> {
+        return .init(
+            input: input,
+            command: describeMergeConflicts,
+            inputKey: \DescribeMergeConflictsInput.nextToken,
+            outputKey: \DescribeMergeConflictsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about one or more pull request events.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension CodeCommit {
             tokenKey: \DescribePullRequestEventsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describePullRequestEventsPaginator(
+        _ input: DescribePullRequestEventsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribePullRequestEventsInput, DescribePullRequestEventsOutput> {
+        return .init(
+            input: input,
+            command: describePullRequestEvents,
+            inputKey: \DescribePullRequestEventsInput.nextToken,
+            outputKey: \DescribePullRequestEventsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCommentReactionsPaginator(
+        _ input: GetCommentReactionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCommentReactionsInput, GetCommentReactionsOutput> {
+        return .init(
+            input: input,
+            command: getCommentReactions,
+            inputKey: \GetCommentReactionsInput.nextToken,
+            outputKey: \GetCommentReactionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about comments made on the comparison between two commits.  Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension CodeCommit {
             tokenKey: \GetCommentsForComparedCommitOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCommentsForComparedCommitPaginator(
+        _ input: GetCommentsForComparedCommitInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCommentsForComparedCommitInput, GetCommentsForComparedCommitOutput> {
+        return .init(
+            input: input,
+            command: getCommentsForComparedCommit,
+            inputKey: \GetCommentsForComparedCommitInput.nextToken,
+            outputKey: \GetCommentsForComparedCommitOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCommentsForPullRequestPaginator(
+        _ input: GetCommentsForPullRequestInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCommentsForPullRequestInput, GetCommentsForPullRequestOutput> {
+        return .init(
+            input: input,
+            command: getCommentsForPullRequest,
+            inputKey: \GetCommentsForPullRequestInput.nextToken,
+            outputKey: \GetCommentsForPullRequestOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be limited to a specified path.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension CodeCommit {
             tokenKey: \GetDifferencesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDifferencesPaginator(
+        _ input: GetDifferencesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDifferencesInput, GetDifferencesOutput> {
+        return .init(
+            input: input,
+            command: getDifferences,
+            inputKey: \GetDifferencesInput.nextToken,
+            outputKey: \GetDifferencesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getMergeConflictsPaginator(
+        _ input: GetMergeConflictsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetMergeConflictsInput, GetMergeConflictsOutput> {
+        return .init(
+            input: input,
+            command: getMergeConflicts,
+            inputKey: \GetMergeConflictsInput.nextToken,
+            outputKey: \GetMergeConflictsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not specified, the AWS Region where you are signed in is used.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension CodeCommit {
             tokenKey: \ListApprovalRuleTemplatesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listApprovalRuleTemplatesPaginator(
+        _ input: ListApprovalRuleTemplatesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListApprovalRuleTemplatesInput, ListApprovalRuleTemplatesOutput> {
+        return .init(
+            input: input,
+            command: listApprovalRuleTemplates,
+            inputKey: \ListApprovalRuleTemplatesInput.nextToken,
+            outputKey: \ListApprovalRuleTemplatesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssociatedApprovalRuleTemplatesForRepositoryPaginator(
+        _ input: ListAssociatedApprovalRuleTemplatesForRepositoryInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssociatedApprovalRuleTemplatesForRepositoryInput, ListAssociatedApprovalRuleTemplatesForRepositoryOutput> {
+        return .init(
+            input: input,
+            command: listAssociatedApprovalRuleTemplatesForRepository,
+            inputKey: \ListAssociatedApprovalRuleTemplatesForRepositoryInput.nextToken,
+            outputKey: \ListAssociatedApprovalRuleTemplatesForRepositoryOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about one or more branches in a repository.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension CodeCommit {
             tokenKey: \ListBranchesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBranchesPaginator(
+        _ input: ListBranchesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBranchesInput, ListBranchesOutput> {
+        return .init(
+            input: input,
+            command: listBranches,
+            inputKey: \ListBranchesInput.nextToken,
+            outputKey: \ListBranchesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPullRequestsPaginator(
+        _ input: ListPullRequestsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPullRequestsInput, ListPullRequestsOutput> {
+        return .init(
+            input: input,
+            command: listPullRequests,
+            inputKey: \ListPullRequestsInput.nextToken,
+            outputKey: \ListPullRequestsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about one or more repositories.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -631,6 +862,27 @@ extension CodeCommit {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRepositoriesPaginator(
+        _ input: ListRepositoriesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRepositoriesInput, ListRepositoriesOutput> {
+        return .init(
+            input: input,
+            command: listRepositories,
+            inputKey: \ListRepositoriesInput.nextToken,
+            outputKey: \ListRepositoriesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all repositories associated with the specified approval rule template.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -679,6 +931,27 @@ extension CodeCommit {
             tokenKey: \ListRepositoriesForApprovalRuleTemplateOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRepositoriesForApprovalRuleTemplatePaginator(
+        _ input: ListRepositoriesForApprovalRuleTemplateInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRepositoriesForApprovalRuleTemplateInput, ListRepositoriesForApprovalRuleTemplateOutput> {
+        return .init(
+            input: input,
+            command: listRepositoriesForApprovalRuleTemplate,
+            inputKey: \ListRepositoriesForApprovalRuleTemplateInput.nextToken,
+            outputKey: \ListRepositoriesForApprovalRuleTemplateOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

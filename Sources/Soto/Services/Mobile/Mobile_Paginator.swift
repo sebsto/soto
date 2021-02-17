@@ -70,6 +70,27 @@ extension Mobile {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBundlesPaginator(
+        _ input: ListBundlesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBundlesRequest, ListBundlesResult> {
+        return .init(
+            input: input,
+            command: listBundles,
+            inputKey: \ListBundlesRequest.nextToken,
+            outputKey: \ListBundlesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Lists projects in AWS Mobile Hub.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Mobile {
             tokenKey: \ListProjectsResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProjectsPaginator(
+        _ input: ListProjectsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProjectsRequest, ListProjectsResult> {
+        return .init(
+            input: input,
+            command: listProjects,
+            inputKey: \ListProjectsRequest.nextToken,
+            outputKey: \ListProjectsResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

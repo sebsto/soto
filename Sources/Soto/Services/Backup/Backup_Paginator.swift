@@ -70,6 +70,27 @@ extension Backup {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBackupJobsPaginator(
+        _ input: ListBackupJobsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBackupJobsInput, ListBackupJobsOutput> {
+        return .init(
+            input: input,
+            command: listBackupJobs,
+            inputKey: \ListBackupJobsInput.nextToken,
+            outputKey: \ListBackupJobsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns metadata of your saved backup plan templates, including the template ID, name, and the creation and deletion dates.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Backup {
             tokenKey: \ListBackupPlanTemplatesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBackupPlanTemplatesPaginator(
+        _ input: ListBackupPlanTemplatesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBackupPlanTemplatesInput, ListBackupPlanTemplatesOutput> {
+        return .init(
+            input: input,
+            command: listBackupPlanTemplates,
+            inputKey: \ListBackupPlanTemplatesInput.nextToken,
+            outputKey: \ListBackupPlanTemplatesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Backup {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBackupPlanVersionsPaginator(
+        _ input: ListBackupPlanVersionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBackupPlanVersionsInput, ListBackupPlanVersionsOutput> {
+        return .init(
+            input: input,
+            command: listBackupPlanVersions,
+            inputKey: \ListBackupPlanVersionsInput.nextToken,
+            outputKey: \ListBackupPlanVersionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of existing backup plans for an authenticated account. The list is populated only if the advanced option is set for the backup plan. The list contains information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and creator request IDs.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Backup {
             tokenKey: \ListBackupPlansOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBackupPlansPaginator(
+        _ input: ListBackupPlansInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBackupPlansInput, ListBackupPlansOutput> {
+        return .init(
+            input: input,
+            command: listBackupPlans,
+            inputKey: \ListBackupPlansInput.nextToken,
+            outputKey: \ListBackupPlansOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Backup {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBackupSelectionsPaginator(
+        _ input: ListBackupSelectionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBackupSelectionsInput, ListBackupSelectionsOutput> {
+        return .init(
+            input: input,
+            command: listBackupSelections,
+            inputKey: \ListBackupSelectionsInput.nextToken,
+            outputKey: \ListBackupSelectionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of recovery point storage containers along with information about them.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension Backup {
             tokenKey: \ListBackupVaultsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBackupVaultsPaginator(
+        _ input: ListBackupVaultsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBackupVaultsInput, ListBackupVaultsOutput> {
+        return .init(
+            input: input,
+            command: listBackupVaults,
+            inputKey: \ListBackupVaultsInput.nextToken,
+            outputKey: \ListBackupVaultsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension Backup {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCopyJobsPaginator(
+        _ input: ListCopyJobsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCopyJobsInput, ListCopyJobsOutput> {
+        return .init(
+            input: input,
+            command: listCopyJobs,
+            inputKey: \ListCopyJobsInput.nextToken,
+            outputKey: \ListCopyJobsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns an array of resources successfully backed up by AWS Backup, including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension Backup {
             tokenKey: \ListProtectedResourcesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProtectedResourcesPaginator(
+        _ input: ListProtectedResourcesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProtectedResourcesInput, ListProtectedResourcesOutput> {
+        return .init(
+            input: input,
+            command: listProtectedResources,
+            inputKey: \ListProtectedResourcesInput.nextToken,
+            outputKey: \ListProtectedResourcesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension Backup {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRecoveryPointsByBackupVaultPaginator(
+        _ input: ListRecoveryPointsByBackupVaultInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRecoveryPointsByBackupVaultInput, ListRecoveryPointsByBackupVaultOutput> {
+        return .init(
+            input: input,
+            command: listRecoveryPointsByBackupVault,
+            inputKey: \ListRecoveryPointsByBackupVaultInput.nextToken,
+            outputKey: \ListRecoveryPointsByBackupVaultOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns detailed information about recovery points of the type specified by a resource Amazon Resource Name (ARN).
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension Backup {
             tokenKey: \ListRecoveryPointsByResourceOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRecoveryPointsByResourcePaginator(
+        _ input: ListRecoveryPointsByResourceInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRecoveryPointsByResourceInput, ListRecoveryPointsByResourceOutput> {
+        return .init(
+            input: input,
+            command: listRecoveryPointsByResource,
+            inputKey: \ListRecoveryPointsByResourceInput.nextToken,
+            outputKey: \ListRecoveryPointsByResourceOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension Backup {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRestoreJobsPaginator(
+        _ input: ListRestoreJobsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRestoreJobsInput, ListRestoreJobsOutput> {
+        return .init(
+            input: input,
+            command: listRestoreJobs,
+            inputKey: \ListRestoreJobsInput.nextToken,
+            outputKey: \ListRestoreJobsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.   ListTags are currently only supported with Amazon EFS backups.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension Backup {
             tokenKey: \ListTagsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsPaginator(
+        _ input: ListTagsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsInput, ListTagsOutput> {
+        return .init(
+            input: input,
+            command: listTags,
+            inputKey: \ListTagsInput.nextToken,
+            outputKey: \ListTagsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

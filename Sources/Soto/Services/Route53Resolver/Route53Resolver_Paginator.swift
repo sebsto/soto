@@ -70,6 +70,27 @@ extension Route53Resolver {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverDnssecConfigsPaginator(
+        _ input: ListResolverDnssecConfigsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverDnssecConfigsRequest, ListResolverDnssecConfigsResponse> {
+        return .init(
+            input: input,
+            command: listResolverDnssecConfigs,
+            inputKey: \ListResolverDnssecConfigsRequest.nextToken,
+            outputKey: \ListResolverDnssecConfigsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets the IP addresses for a specified Resolver endpoint.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Route53Resolver {
             tokenKey: \ListResolverEndpointIpAddressesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverEndpointIpAddressesPaginator(
+        _ input: ListResolverEndpointIpAddressesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverEndpointIpAddressesRequest, ListResolverEndpointIpAddressesResponse> {
+        return .init(
+            input: input,
+            command: listResolverEndpointIpAddresses,
+            inputKey: \ListResolverEndpointIpAddressesRequest.nextToken,
+            outputKey: \ListResolverEndpointIpAddressesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Route53Resolver {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverEndpointsPaginator(
+        _ input: ListResolverEndpointsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverEndpointsRequest, ListResolverEndpointsResponse> {
+        return .init(
+            input: input,
+            command: listResolverEndpoints,
+            inputKey: \ListResolverEndpointsRequest.nextToken,
+            outputKey: \ListResolverEndpointsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists information about associations between Amazon VPCs and query logging configurations.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Route53Resolver {
             tokenKey: \ListResolverQueryLogConfigAssociationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverQueryLogConfigAssociationsPaginator(
+        _ input: ListResolverQueryLogConfigAssociationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverQueryLogConfigAssociationsRequest, ListResolverQueryLogConfigAssociationsResponse> {
+        return .init(
+            input: input,
+            command: listResolverQueryLogConfigAssociations,
+            inputKey: \ListResolverQueryLogConfigAssociationsRequest.nextToken,
+            outputKey: \ListResolverQueryLogConfigAssociationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Route53Resolver {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverQueryLogConfigsPaginator(
+        _ input: ListResolverQueryLogConfigsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResponse> {
+        return .init(
+            input: input,
+            command: listResolverQueryLogConfigs,
+            inputKey: \ListResolverQueryLogConfigsRequest.nextToken,
+            outputKey: \ListResolverQueryLogConfigsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the associations that were created between Resolver rules and VPCs using the current AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension Route53Resolver {
             tokenKey: \ListResolverRuleAssociationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverRuleAssociationsPaginator(
+        _ input: ListResolverRuleAssociationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverRuleAssociationsRequest, ListResolverRuleAssociationsResponse> {
+        return .init(
+            input: input,
+            command: listResolverRuleAssociations,
+            inputKey: \ListResolverRuleAssociationsRequest.nextToken,
+            outputKey: \ListResolverRuleAssociationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension Route53Resolver {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResolverRulesPaginator(
+        _ input: ListResolverRulesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResolverRulesRequest, ListResolverRulesResponse> {
+        return .init(
+            input: input,
+            command: listResolverRules,
+            inputKey: \ListResolverRulesRequest.nextToken,
+            outputKey: \ListResolverRulesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the tags that you associated with the specified resource.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension Route53Resolver {
             tokenKey: \ListTagsForResourceResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceRequest, ListTagsForResourceResponse> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceRequest.nextToken,
+            outputKey: \ListTagsForResourceResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

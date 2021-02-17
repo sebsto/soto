@@ -70,6 +70,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeAccountLimitsPaginator(
+        _ input: DescribeAccountLimitsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeAccountLimitsInput, DescribeAccountLimitsOutput> {
+        return .init(
+            input: input,
+            command: describeAccountLimits,
+            inputKey: \DescribeAccountLimitsInput.nextToken,
+            outputKey: \DescribeAccountLimitsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns all stack related events for a specified stack in reverse chronological order. For more information about a stack's event history, go to Stacks in the AWS CloudFormation User Guide.  You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension CloudFormation {
             tokenKey: \DescribeStackEventsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeStackEventsPaginator(
+        _ input: DescribeStackEventsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeStackEventsInput, DescribeStackEventsOutput> {
+        return .init(
+            input: input,
+            command: describeStackEvents,
+            inputKey: \DescribeStackEventsInput.nextToken,
+            outputKey: \DescribeStackEventsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeStackResourceDriftsPaginator(
+        _ input: DescribeStackResourceDriftsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeStackResourceDriftsInput, DescribeStackResourceDriftsOutput> {
+        return .init(
+            input: input,
+            command: describeStackResourceDrifts,
+            inputKey: \DescribeStackResourceDriftsInput.nextToken,
+            outputKey: \DescribeStackResourceDriftsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.  If the stack does not exist, an AmazonCloudFormationException is returned.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension CloudFormation {
             tokenKey: \DescribeStacksOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeStacksPaginator(
+        _ input: DescribeStacksInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeStacksInput, DescribeStacksOutput> {
+        return .init(
+            input: input,
+            command: describeStacks,
+            inputKey: \DescribeStacksInput.nextToken,
+            outputKey: \DescribeStacksOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listChangeSetsPaginator(
+        _ input: ListChangeSetsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListChangeSetsInput, ListChangeSetsOutput> {
+        return .init(
+            input: input,
+            command: listChangeSets,
+            inputKey: \ListChangeSetsInput.nextToken,
+            outputKey: \ListChangeSetsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all exported output values in the account and Region in which you call this action. Use this action to see the exported output values that you can import into other stacks. To import values, use the  Fn::ImportValue  function.  For more information, see  AWS CloudFormation Export Stack Output Values.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension CloudFormation {
             tokenKey: \ListExportsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listExportsPaginator(
+        _ input: ListExportsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListExportsInput, ListExportsOutput> {
+        return .init(
+            input: input,
+            command: listExports,
+            inputKey: \ListExportsInput.nextToken,
+            outputKey: \ListExportsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listImportsPaginator(
+        _ input: ListImportsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListImportsInput, ListImportsOutput> {
+        return .init(
+            input: input,
+            command: listImports,
+            inputKey: \ListImportsInput.nextToken,
+            outputKey: \ListImportsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summary information about stack instances that are associated with the specified stack set. You can filter for stack instances that are associated with a specific AWS account name or Region, or that have a specific status.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension CloudFormation {
             tokenKey: \ListStackInstancesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStackInstancesPaginator(
+        _ input: ListStackInstancesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStackInstancesInput, ListStackInstancesOutput> {
+        return .init(
+            input: input,
+            command: listStackInstances,
+            inputKey: \ListStackInstancesInput.nextToken,
+            outputKey: \ListStackInstancesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStackResourcesPaginator(
+        _ input: ListStackResourcesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStackResourcesInput, ListStackResourcesOutput> {
+        return .init(
+            input: input,
+            command: listStackResources,
+            inputKey: \ListStackResourcesInput.nextToken,
+            outputKey: \ListStackResourcesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summary information about the results of a stack set operation.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension CloudFormation {
             tokenKey: \ListStackSetOperationResultsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStackSetOperationResultsPaginator(
+        _ input: ListStackSetOperationResultsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStackSetOperationResultsInput, ListStackSetOperationResultsOutput> {
+        return .init(
+            input: input,
+            command: listStackSetOperationResults,
+            inputKey: \ListStackSetOperationResultsInput.nextToken,
+            outputKey: \ListStackSetOperationResultsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStackSetOperationsPaginator(
+        _ input: ListStackSetOperationsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStackSetOperationsInput, ListStackSetOperationsOutput> {
+        return .init(
+            input: input,
+            command: listStackSetOperations,
+            inputKey: \ListStackSetOperationsInput.nextToken,
+            outputKey: \ListStackSetOperationsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summary information about stack sets that are associated with the user.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension CloudFormation {
             tokenKey: \ListStackSetsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStackSetsPaginator(
+        _ input: ListStackSetsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStackSetsInput, ListStackSetsOutput> {
+        return .init(
+            input: input,
+            command: listStackSets,
+            inputKey: \ListStackSetsInput.nextToken,
+            outputKey: \ListStackSetsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -682,6 +934,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStacksPaginator(
+        _ input: ListStacksInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStacksInput, ListStacksOutput> {
+        return .init(
+            input: input,
+            command: listStacks,
+            inputKey: \ListStacksInput.nextToken,
+            outputKey: \ListStacksOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of registration tokens for the specified type(s).
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -730,6 +1003,27 @@ extension CloudFormation {
             tokenKey: \ListTypeRegistrationsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTypeRegistrationsPaginator(
+        _ input: ListTypeRegistrationsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTypeRegistrationsInput, ListTypeRegistrationsOutput> {
+        return .init(
+            input: input,
+            command: listTypeRegistrations,
+            inputKey: \ListTypeRegistrationsInput.nextToken,
+            outputKey: \ListTypeRegistrationsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -784,6 +1078,27 @@ extension CloudFormation {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTypeVersionsPaginator(
+        _ input: ListTypeVersionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTypeVersionsInput, ListTypeVersionsOutput> {
+        return .init(
+            input: input,
+            command: listTypeVersions,
+            inputKey: \ListTypeVersionsInput.nextToken,
+            outputKey: \ListTypeVersionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns summary information about types that have been registered with CloudFormation.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -832,6 +1147,27 @@ extension CloudFormation {
             tokenKey: \ListTypesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTypesPaginator(
+        _ input: ListTypesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTypesInput, ListTypesOutput> {
+        return .init(
+            input: input,
+            command: listTypes,
+            inputKey: \ListTypesInput.nextToken,
+            outputKey: \ListTypesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

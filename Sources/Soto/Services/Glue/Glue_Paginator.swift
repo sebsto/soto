@@ -70,6 +70,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getClassifiersPaginator(
+        _ input: GetClassifiersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetClassifiersRequest, GetClassifiersResponse> {
+        return .init(
+            input: input,
+            command: getClassifiers,
+            inputKey: \GetClassifiersRequest.nextToken,
+            outputKey: \GetClassifiersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list of connection definitions from the Data Catalog.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Glue {
             tokenKey: \GetConnectionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getConnectionsPaginator(
+        _ input: GetConnectionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetConnectionsRequest, GetConnectionsResponse> {
+        return .init(
+            input: input,
+            command: getConnections,
+            inputKey: \GetConnectionsRequest.nextToken,
+            outputKey: \GetConnectionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCrawlerMetricsPaginator(
+        _ input: GetCrawlerMetricsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCrawlerMetricsRequest, GetCrawlerMetricsResponse> {
+        return .init(
+            input: input,
+            command: getCrawlerMetrics,
+            inputKey: \GetCrawlerMetricsRequest.nextToken,
+            outputKey: \GetCrawlerMetricsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves metadata for all crawlers defined in the customer account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Glue {
             tokenKey: \GetCrawlersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCrawlersPaginator(
+        _ input: GetCrawlersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCrawlersRequest, GetCrawlersResponse> {
+        return .init(
+            input: input,
+            command: getCrawlers,
+            inputKey: \GetCrawlersRequest.nextToken,
+            outputKey: \GetCrawlersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDatabasesPaginator(
+        _ input: GetDatabasesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDatabasesRequest, GetDatabasesResponse> {
+        return .init(
+            input: input,
+            command: getDatabases,
+            inputKey: \GetDatabasesRequest.nextToken,
+            outputKey: \GetDatabasesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves all the development endpoints in this AWS account.  When you create a development endpoint in a virtual private cloud (VPC), AWS Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, AWS Glue returns only a public IP address.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension Glue {
             tokenKey: \GetDevEndpointsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDevEndpointsPaginator(
+        _ input: GetDevEndpointsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDevEndpointsRequest, GetDevEndpointsResponse> {
+        return .init(
+            input: input,
+            command: getDevEndpoints,
+            inputKey: \GetDevEndpointsRequest.nextToken,
+            outputKey: \GetDevEndpointsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getJobRunsPaginator(
+        _ input: GetJobRunsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetJobRunsRequest, GetJobRunsResponse> {
+        return .init(
+            input: input,
+            command: getJobRuns,
+            inputKey: \GetJobRunsRequest.nextToken,
+            outputKey: \GetJobRunsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves all current job definitions.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension Glue {
             tokenKey: \GetJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getJobsPaginator(
+        _ input: GetJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetJobsRequest, GetJobsResponse> {
+        return .init(
+            input: input,
+            command: getJobs,
+            inputKey: \GetJobsRequest.nextToken,
+            outputKey: \GetJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getMLTaskRunsPaginator(
+        _ input: GetMLTaskRunsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetMLTaskRunsRequest, GetMLTaskRunsResponse> {
+        return .init(
+            input: input,
+            command: getMLTaskRuns,
+            inputKey: \GetMLTaskRunsRequest.nextToken,
+            outputKey: \GetMLTaskRunsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a sortable, filterable list of existing AWS Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by AWS Glue, and you can retrieve their metadata by calling GetMLTransforms.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension Glue {
             tokenKey: \GetMLTransformsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getMLTransformsPaginator(
+        _ input: GetMLTransformsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetMLTransformsRequest, GetMLTransformsResponse> {
+        return .init(
+            input: input,
+            command: getMLTransforms,
+            inputKey: \GetMLTransformsRequest.nextToken,
+            outputKey: \GetMLTransformsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getPartitionIndexesPaginator(
+        _ input: GetPartitionIndexesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetPartitionIndexesRequest, GetPartitionIndexesResponse> {
+        return .init(
+            input: input,
+            command: getPartitionIndexes,
+            inputKey: \GetPartitionIndexesRequest.nextToken,
+            outputKey: \GetPartitionIndexesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves information about the partitions in a table.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension Glue {
             tokenKey: \GetPartitionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getPartitionsPaginator(
+        _ input: GetPartitionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetPartitionsRequest, GetPartitionsResponse> {
+        return .init(
+            input: input,
+            command: getPartitions,
+            inputKey: \GetPartitionsRequest.nextToken,
+            outputKey: \GetPartitionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -682,6 +934,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getResourcePoliciesPaginator(
+        _ input: GetResourcePoliciesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetResourcePoliciesRequest, GetResourcePoliciesResponse> {
+        return .init(
+            input: input,
+            command: getResourcePolicies,
+            inputKey: \GetResourcePoliciesRequest.nextToken,
+            outputKey: \GetResourcePoliciesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves a list of all security configurations.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -730,6 +1003,27 @@ extension Glue {
             tokenKey: \GetSecurityConfigurationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getSecurityConfigurationsPaginator(
+        _ input: GetSecurityConfigurationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetSecurityConfigurationsRequest, GetSecurityConfigurationsResponse> {
+        return .init(
+            input: input,
+            command: getSecurityConfigurations,
+            inputKey: \GetSecurityConfigurationsRequest.nextToken,
+            outputKey: \GetSecurityConfigurationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -784,6 +1078,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getTableVersionsPaginator(
+        _ input: GetTableVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetTableVersionsRequest, GetTableVersionsResponse> {
+        return .init(
+            input: input,
+            command: getTableVersions,
+            inputKey: \GetTableVersionsRequest.nextToken,
+            outputKey: \GetTableVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the definitions of some or all of the tables in a given Database.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -832,6 +1147,27 @@ extension Glue {
             tokenKey: \GetTablesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getTablesPaginator(
+        _ input: GetTablesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetTablesRequest, GetTablesResponse> {
+        return .init(
+            input: input,
+            command: getTables,
+            inputKey: \GetTablesRequest.nextToken,
+            outputKey: \GetTablesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -886,6 +1222,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getTriggersPaginator(
+        _ input: GetTriggersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetTriggersRequest, GetTriggersResponse> {
+        return .init(
+            input: input,
+            command: getTriggers,
+            inputKey: \GetTriggersRequest.nextToken,
+            outputKey: \GetTriggersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves multiple function definitions from the Data Catalog.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -934,6 +1291,27 @@ extension Glue {
             tokenKey: \GetUserDefinedFunctionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getUserDefinedFunctionsPaginator(
+        _ input: GetUserDefinedFunctionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetUserDefinedFunctionsRequest, GetUserDefinedFunctionsResponse> {
+        return .init(
+            input: input,
+            command: getUserDefinedFunctions,
+            inputKey: \GetUserDefinedFunctionsRequest.nextToken,
+            outputKey: \GetUserDefinedFunctionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -988,6 +1366,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getWorkflowRunsPaginator(
+        _ input: GetWorkflowRunsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetWorkflowRunsRequest, GetWorkflowRunsResponse> {
+        return .init(
+            input: input,
+            command: getWorkflowRuns,
+            inputKey: \GetWorkflowRunsRequest.nextToken,
+            outputKey: \GetWorkflowRunsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the names of all crawler resources in this AWS account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names. This operation takes the optional Tags field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1036,6 +1435,27 @@ extension Glue {
             tokenKey: \ListCrawlersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listCrawlersPaginator(
+        _ input: ListCrawlersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListCrawlersRequest, ListCrawlersResponse> {
+        return .init(
+            input: input,
+            command: listCrawlers,
+            inputKey: \ListCrawlersRequest.nextToken,
+            outputKey: \ListCrawlersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1090,6 +1510,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDevEndpointsPaginator(
+        _ input: ListDevEndpointsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDevEndpointsRequest, ListDevEndpointsResponse> {
+        return .init(
+            input: input,
+            command: listDevEndpoints,
+            inputKey: \ListDevEndpointsRequest.nextToken,
+            outputKey: \ListDevEndpointsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the names of all job resources in this AWS account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names. This operation takes the optional Tags field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1138,6 +1579,27 @@ extension Glue {
             tokenKey: \ListJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listJobsPaginator(
+        _ input: ListJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListJobsRequest, ListJobsResponse> {
+        return .init(
+            input: input,
+            command: listJobs,
+            inputKey: \ListJobsRequest.nextToken,
+            outputKey: \ListJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1192,6 +1654,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMLTransformsPaginator(
+        _ input: ListMLTransformsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMLTransformsRequest, ListMLTransformsResponse> {
+        return .init(
+            input: input,
+            command: listMLTransforms,
+            inputKey: \ListMLTransformsRequest.nextToken,
+            outputKey: \ListMLTransformsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of registries that you have created, with minimal registry information. Registries in the Deleting status will not be included in the results. Empty results will be returned if there are no registries available.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1240,6 +1723,27 @@ extension Glue {
             tokenKey: \ListRegistriesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRegistriesPaginator(
+        _ input: ListRegistriesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRegistriesInput, ListRegistriesResponse> {
+        return .init(
+            input: input,
+            command: listRegistries,
+            inputKey: \ListRegistriesInput.nextToken,
+            outputKey: \ListRegistriesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1294,6 +1798,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSchemaVersionsPaginator(
+        _ input: ListSchemaVersionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSchemaVersionsInput, ListSchemaVersionsResponse> {
+        return .init(
+            input: input,
+            command: listSchemaVersions,
+            inputKey: \ListSchemaVersionsInput.nextToken,
+            outputKey: \ListSchemaVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available. When the RegistryId is not provided, all the schemas across registries will be part of the API response.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1342,6 +1867,27 @@ extension Glue {
             tokenKey: \ListSchemasResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSchemasPaginator(
+        _ input: ListSchemasInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSchemasInput, ListSchemasResponse> {
+        return .init(
+            input: input,
+            command: listSchemas,
+            inputKey: \ListSchemasInput.nextToken,
+            outputKey: \ListSchemasResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -1396,6 +1942,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTriggersPaginator(
+        _ input: ListTriggersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTriggersRequest, ListTriggersResponse> {
+        return .init(
+            input: input,
+            command: listTriggers,
+            inputKey: \ListTriggersRequest.nextToken,
+            outputKey: \ListTriggersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists names of workflows created in the account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1447,6 +2014,27 @@ extension Glue {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listWorkflowsPaginator(
+        _ input: ListWorkflowsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListWorkflowsRequest, ListWorkflowsResponse> {
+        return .init(
+            input: input,
+            command: listWorkflows,
+            inputKey: \ListWorkflowsRequest.nextToken,
+            outputKey: \ListWorkflowsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions.  You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -1495,6 +2083,27 @@ extension Glue {
             tokenKey: \SearchTablesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func searchTablesPaginator(
+        _ input: SearchTablesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<SearchTablesRequest, SearchTablesResponse> {
+        return .init(
+            input: input,
+            command: searchTables,
+            inputKey: \SearchTablesRequest.nextToken,
+            outputKey: \SearchTablesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

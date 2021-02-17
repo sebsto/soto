@@ -70,6 +70,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCacheClustersPaginator(
+        _ input: DescribeCacheClustersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCacheClustersMessage, CacheClusterMessage> {
+        return .init(
+            input: input,
+            command: describeCacheClusters,
+            inputKey: \DescribeCacheClustersMessage.marker,
+            outputKey: \CacheClusterMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the available cache engines and their versions.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ElastiCache {
             tokenKey: \CacheEngineVersionMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCacheEngineVersionsPaginator(
+        _ input: DescribeCacheEngineVersionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCacheEngineVersionsMessage, CacheEngineVersionMessage> {
+        return .init(
+            input: input,
+            command: describeCacheEngineVersions,
+            inputKey: \DescribeCacheEngineVersionsMessage.marker,
+            outputKey: \CacheEngineVersionMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCacheParameterGroupsPaginator(
+        _ input: DescribeCacheParameterGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCacheParameterGroupsMessage, CacheParameterGroupsMessage> {
+        return .init(
+            input: input,
+            command: describeCacheParameterGroups,
+            inputKey: \DescribeCacheParameterGroupsMessage.marker,
+            outputKey: \CacheParameterGroupsMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns the detailed parameter list for a particular cache parameter group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension ElastiCache {
             tokenKey: \CacheParameterGroupDetails.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCacheParametersPaginator(
+        _ input: DescribeCacheParametersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCacheParametersMessage, CacheParameterGroupDetails> {
+        return .init(
+            input: input,
+            command: describeCacheParameters,
+            inputKey: \DescribeCacheParametersMessage.marker,
+            outputKey: \CacheParameterGroupDetails.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCacheSecurityGroupsPaginator(
+        _ input: DescribeCacheSecurityGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCacheSecurityGroupsMessage, CacheSecurityGroupMessage> {
+        return .init(
+            input: input,
+            command: describeCacheSecurityGroups,
+            inputKey: \DescribeCacheSecurityGroupsMessage.marker,
+            outputKey: \CacheSecurityGroupMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of cache subnet group descriptions. If a subnet group name is specified, the list contains only the description of that group. This is applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters now launch in VPC by default.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension ElastiCache {
             tokenKey: \CacheSubnetGroupMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCacheSubnetGroupsPaginator(
+        _ input: DescribeCacheSubnetGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCacheSubnetGroupsMessage, CacheSubnetGroupMessage> {
+        return .init(
+            input: input,
+            command: describeCacheSubnetGroups,
+            inputKey: \DescribeCacheSubnetGroupsMessage.marker,
+            outputKey: \CacheSubnetGroupMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEngineDefaultParametersPaginator(
+        _ input: DescribeEngineDefaultParametersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEngineDefaultParametersMessage, DescribeEngineDefaultParametersResult> {
+        return .init(
+            input: input,
+            command: describeEngineDefaultParameters,
+            inputKey: \DescribeEngineDefaultParametersMessage.marker,
+            outputKey: \DescribeEngineDefaultParametersResult.engineDefaults?.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns events related to clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cluster, cache security group, or cache parameter group by providing the name as a parameter. By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension ElastiCache {
             tokenKey: \EventsMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsPaginator(
+        _ input: DescribeEventsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsMessage, EventsMessage> {
+        return .init(
+            input: input,
+            command: describeEvents,
+            inputKey: \DescribeEventsMessage.marker,
+            outputKey: \EventsMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeGlobalReplicationGroupsPaginator(
+        _ input: DescribeGlobalReplicationGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeGlobalReplicationGroupsMessage, DescribeGlobalReplicationGroupsResult> {
+        return .init(
+            input: input,
+            command: describeGlobalReplicationGroups,
+            inputKey: \DescribeGlobalReplicationGroupsMessage.marker,
+            outputKey: \DescribeGlobalReplicationGroupsResult.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about a particular replication group. If no identifier is specified, DescribeReplicationGroups returns information about all replication groups.  This operation is valid for Redis only.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension ElastiCache {
             tokenKey: \ReplicationGroupMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationGroupsPaginator(
+        _ input: DescribeReplicationGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationGroupsMessage, ReplicationGroupMessage> {
+        return .init(
+            input: input,
+            command: describeReplicationGroups,
+            inputKey: \DescribeReplicationGroupsMessage.marker,
+            outputKey: \ReplicationGroupMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReservedCacheNodesPaginator(
+        _ input: DescribeReservedCacheNodesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReservedCacheNodesMessage, ReservedCacheNodeMessage> {
+        return .init(
+            input: input,
+            command: describeReservedCacheNodes,
+            inputKey: \DescribeReservedCacheNodesMessage.marker,
+            outputKey: \ReservedCacheNodeMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists available reserved cache node offerings.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension ElastiCache {
             tokenKey: \ReservedCacheNodesOfferingMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReservedCacheNodesOfferingsPaginator(
+        _ input: DescribeReservedCacheNodesOfferingsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReservedCacheNodesOfferingsMessage, ReservedCacheNodesOfferingMessage> {
+        return .init(
+            input: input,
+            command: describeReservedCacheNodesOfferings,
+            inputKey: \DescribeReservedCacheNodesOfferingsMessage.marker,
+            outputKey: \ReservedCacheNodesOfferingMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -682,6 +934,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeServiceUpdatesPaginator(
+        _ input: DescribeServiceUpdatesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeServiceUpdatesMessage, ServiceUpdatesMessage> {
+        return .init(
+            input: input,
+            command: describeServiceUpdates,
+            inputKey: \DescribeServiceUpdatesMessage.marker,
+            outputKey: \ServiceUpdatesMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about cluster or replication group snapshots. By default, DescribeSnapshots lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.  This operation is valid for Redis only.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -730,6 +1003,27 @@ extension ElastiCache {
             tokenKey: \DescribeSnapshotsListMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeSnapshotsPaginator(
+        _ input: DescribeSnapshotsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeSnapshotsMessage, DescribeSnapshotsListMessage> {
+        return .init(
+            input: input,
+            command: describeSnapshots,
+            inputKey: \DescribeSnapshotsMessage.marker,
+            outputKey: \DescribeSnapshotsListMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -784,6 +1078,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeUpdateActionsPaginator(
+        _ input: DescribeUpdateActionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeUpdateActionsMessage, UpdateActionsMessage> {
+        return .init(
+            input: input,
+            command: describeUpdateActions,
+            inputKey: \DescribeUpdateActionsMessage.marker,
+            outputKey: \UpdateActionsMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of user groups.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -835,6 +1150,27 @@ extension ElastiCache {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeUserGroupsPaginator(
+        _ input: DescribeUserGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeUserGroupsMessage, DescribeUserGroupsResult> {
+        return .init(
+            input: input,
+            command: describeUserGroups,
+            inputKey: \DescribeUserGroupsMessage.marker,
+            outputKey: \DescribeUserGroupsResult.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of users.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -883,6 +1219,27 @@ extension ElastiCache {
             tokenKey: \DescribeUsersResult.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeUsersPaginator(
+        _ input: DescribeUsersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeUsersMessage, DescribeUsersResult> {
+        return .init(
+            input: input,
+            command: describeUsers,
+            inputKey: \DescribeUsersMessage.marker,
+            outputKey: \DescribeUsersResult.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

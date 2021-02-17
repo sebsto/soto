@@ -70,6 +70,27 @@ extension Athena {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getQueryResultsPaginator(
+        _ input: GetQueryResultsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetQueryResultsInput, GetQueryResultsOutput> {
+        return .init(
+            input: input,
+            command: getQueryResults,
+            inputKey: \GetQueryResultsInput.nextToken,
+            outputKey: \GetQueryResultsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the data catalogs in the current AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Athena {
             tokenKey: \ListDataCatalogsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDataCatalogsPaginator(
+        _ input: ListDataCatalogsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDataCatalogsInput, ListDataCatalogsOutput> {
+        return .init(
+            input: input,
+            command: listDataCatalogs,
+            inputKey: \ListDataCatalogsInput.nextToken,
+            outputKey: \ListDataCatalogsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Athena {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDatabasesPaginator(
+        _ input: ListDatabasesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDatabasesInput, ListDatabasesOutput> {
+        return .init(
+            input: input,
+            command: listDatabases,
+            inputKey: \ListDatabasesInput.nextToken,
+            outputKey: \ListDatabasesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup. For code samples using the AWS SDK for Java, see Examples and Code Samples in the Amazon Athena User Guide.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Athena {
             tokenKey: \ListNamedQueriesOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNamedQueriesPaginator(
+        _ input: ListNamedQueriesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNamedQueriesInput, ListNamedQueriesOutput> {
+        return .init(
+            input: input,
+            command: listNamedQueries,
+            inputKey: \ListNamedQueriesInput.nextToken,
+            outputKey: \ListNamedQueriesOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Athena {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listQueryExecutionsPaginator(
+        _ input: ListQueryExecutionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListQueryExecutionsInput, ListQueryExecutionsOutput> {
+        return .init(
+            input: input,
+            command: listQueryExecutions,
+            inputKey: \ListQueryExecutionsInput.nextToken,
+            outputKey: \ListQueryExecutionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the metadata for the tables in the specified data catalog database.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension Athena {
             tokenKey: \ListTableMetadataOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTableMetadataPaginator(
+        _ input: ListTableMetadataInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTableMetadataInput, ListTableMetadataOutput> {
+        return .init(
+            input: input,
+            command: listTableMetadata,
+            inputKey: \ListTableMetadataInput.nextToken,
+            outputKey: \ListTableMetadataOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension Athena {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceInput, ListTagsForResourceOutput> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceInput.nextToken,
+            outputKey: \ListTagsForResourceOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists available workgroups for the account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension Athena {
             tokenKey: \ListWorkGroupsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listWorkGroupsPaginator(
+        _ input: ListWorkGroupsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListWorkGroupsInput, ListWorkGroupsOutput> {
+        return .init(
+            input: input,
+            command: listWorkGroups,
+            inputKey: \ListWorkGroupsInput.nextToken,
+            outputKey: \ListWorkGroupsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -69,6 +69,27 @@ extension ConnectParticipant {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getTranscriptPaginator(
+        _ input: GetTranscriptRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetTranscriptRequest, GetTranscriptResponse> {
+        return .init(
+            input: input,
+            command: getTranscript,
+            inputKey: \GetTranscriptRequest.nextToken,
+            outputKey: \GetTranscriptResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension ConnectParticipant.GetTranscriptRequest: AWSPaginateToken {

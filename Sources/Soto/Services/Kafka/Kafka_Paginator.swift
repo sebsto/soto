@@ -70,6 +70,27 @@ extension Kafka {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listClusterOperationsPaginator(
+        _ input: ListClusterOperationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListClusterOperationsRequest, ListClusterOperationsResponse> {
+        return .init(
+            input: input,
+            command: listClusterOperations,
+            inputKey: \ListClusterOperationsRequest.nextToken,
+            outputKey: \ListClusterOperationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of all the MSK clusters in the current Region.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Kafka {
             tokenKey: \ListClustersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listClustersPaginator(
+        _ input: ListClustersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListClustersRequest, ListClustersResponse> {
+        return .init(
+            input: input,
+            command: listClusters,
+            inputKey: \ListClustersRequest.nextToken,
+            outputKey: \ListClustersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Kafka {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listConfigurationRevisionsPaginator(
+        _ input: ListConfigurationRevisionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListConfigurationRevisionsRequest, ListConfigurationRevisionsResponse> {
+        return .init(
+            input: input,
+            command: listConfigurationRevisions,
+            inputKey: \ListConfigurationRevisionsRequest.nextToken,
+            outputKey: \ListConfigurationRevisionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of all the MSK configurations in this Region.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Kafka {
             tokenKey: \ListConfigurationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listConfigurationsPaginator(
+        _ input: ListConfigurationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListConfigurationsRequest, ListConfigurationsResponse> {
+        return .init(
+            input: input,
+            command: listConfigurations,
+            inputKey: \ListConfigurationsRequest.nextToken,
+            outputKey: \ListConfigurationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Kafka {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listKafkaVersionsPaginator(
+        _ input: ListKafkaVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListKafkaVersionsRequest, ListKafkaVersionsResponse> {
+        return .init(
+            input: input,
+            command: listKafkaVersions,
+            inputKey: \ListKafkaVersionsRequest.nextToken,
+            outputKey: \ListKafkaVersionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the broker nodes in the cluster.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -325,6 +430,27 @@ extension Kafka {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNodesPaginator(
+        _ input: ListNodesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNodesRequest, ListNodesResponse> {
+        return .init(
+            input: input,
+            command: listNodes,
+            inputKey: \ListNodesRequest.nextToken,
+            outputKey: \ListNodesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -373,6 +499,27 @@ extension Kafka {
             tokenKey: \ListScramSecretsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listScramSecretsPaginator(
+        _ input: ListScramSecretsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListScramSecretsRequest, ListScramSecretsResponse> {
+        return .init(
+            input: input,
+            command: listScramSecrets,
+            inputKey: \ListScramSecretsRequest.nextToken,
+            outputKey: \ListScramSecretsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension SecretsManager {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSecretVersionIdsPaginator(
+        _ input: ListSecretVersionIdsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSecretVersionIdsRequest, ListSecretVersionIdsResponse> {
+        return .init(
+            input: input,
+            command: listSecretVersionIds,
+            inputKey: \ListSecretVersionIdsRequest.nextToken,
+            outputKey: \ListSecretVersionIdsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all of the secrets that are stored by Secrets Manager in the AWS account. To list the versions currently stored for a specific secret, use ListSecretVersionIds. The encrypted fields SecretString and SecretBinary are not included in the output. To get that information, call the GetSecretValue operation.  Always check the NextToken response parameter when calling any of the List* operations. These operations can occasionally return an empty or shorter than expected list of results even when there more results become available. When this happens, the NextToken response parameter contains a value to pass to the next call to the same API to request the next part of the list.   Minimum permissions  To run this command, you must have the following permissions:   secretsmanager:ListSecrets    Related operations    To list the versions attached to a secret, use ListSecretVersionIds.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SecretsManager {
             tokenKey: \ListSecretsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSecretsPaginator(
+        _ input: ListSecretsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSecretsRequest, ListSecretsResponse> {
+        return .init(
+            input: input,
+            command: listSecrets,
+            inputKey: \ListSecretsRequest.nextToken,
+            outputKey: \ListSecretsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

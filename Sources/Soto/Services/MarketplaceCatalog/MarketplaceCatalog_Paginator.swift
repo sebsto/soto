@@ -70,6 +70,27 @@ extension MarketplaceCatalog {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listChangeSetsPaginator(
+        _ input: ListChangeSetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListChangeSetsRequest, ListChangeSetsResponse> {
+        return .init(
+            input: input,
+            command: listChangeSets,
+            inputKey: \ListChangeSetsRequest.nextToken,
+            outputKey: \ListChangeSetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides the list of entities of a given type.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension MarketplaceCatalog {
             tokenKey: \ListEntitiesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEntitiesPaginator(
+        _ input: ListEntitiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEntitiesRequest, ListEntitiesResponse> {
+        return .init(
+            input: input,
+            command: listEntities,
+            inputKey: \ListEntitiesRequest.nextToken,
+            outputKey: \ListEntitiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

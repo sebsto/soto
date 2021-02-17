@@ -70,6 +70,27 @@ extension ServiceQuotas {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAWSDefaultServiceQuotasPaginator(
+        _ input: ListAWSDefaultServiceQuotasRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAWSDefaultServiceQuotasRequest, ListAWSDefaultServiceQuotasResponse> {
+        return .init(
+            input: input,
+            command: listAWSDefaultServiceQuotas,
+            inputKey: \ListAWSDefaultServiceQuotasRequest.nextToken,
+            outputKey: \ListAWSDefaultServiceQuotasResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the quota increase requests for the specified service.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ServiceQuotas {
             tokenKey: \ListRequestedServiceQuotaChangeHistoryResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRequestedServiceQuotaChangeHistoryPaginator(
+        _ input: ListRequestedServiceQuotaChangeHistoryRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRequestedServiceQuotaChangeHistoryRequest, ListRequestedServiceQuotaChangeHistoryResponse> {
+        return .init(
+            input: input,
+            command: listRequestedServiceQuotaChangeHistory,
+            inputKey: \ListRequestedServiceQuotaChangeHistoryRequest.nextToken,
+            outputKey: \ListRequestedServiceQuotaChangeHistoryResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ServiceQuotas {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRequestedServiceQuotaChangeHistoryByQuotaPaginator(
+        _ input: ListRequestedServiceQuotaChangeHistoryByQuotaRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRequestedServiceQuotaChangeHistoryByQuotaRequest, ListRequestedServiceQuotaChangeHistoryByQuotaResponse> {
+        return .init(
+            input: input,
+            command: listRequestedServiceQuotaChangeHistoryByQuota,
+            inputKey: \ListRequestedServiceQuotaChangeHistoryByQuotaRequest.nextToken,
+            outputKey: \ListRequestedServiceQuotaChangeHistoryByQuotaResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the quota increase requests in the specified quota request template.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension ServiceQuotas {
             tokenKey: \ListServiceQuotaIncreaseRequestsInTemplateResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listServiceQuotaIncreaseRequestsInTemplatePaginator(
+        _ input: ListServiceQuotaIncreaseRequestsInTemplateRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListServiceQuotaIncreaseRequestsInTemplateRequest, ListServiceQuotaIncreaseRequestsInTemplateResponse> {
+        return .init(
+            input: input,
+            command: listServiceQuotaIncreaseRequestsInTemplate,
+            inputKey: \ListServiceQuotaIncreaseRequestsInTemplateRequest.nextToken,
+            outputKey: \ListServiceQuotaIncreaseRequestsInTemplateResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension ServiceQuotas {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listServiceQuotasPaginator(
+        _ input: ListServiceQuotasRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListServiceQuotasRequest, ListServiceQuotasResponse> {
+        return .init(
+            input: input,
+            command: listServiceQuotas,
+            inputKey: \ListServiceQuotasRequest.nextToken,
+            outputKey: \ListServiceQuotasResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the names and codes for the services integrated with Service Quotas.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension ServiceQuotas {
             tokenKey: \ListServicesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listServicesPaginator(
+        _ input: ListServicesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListServicesRequest, ListServicesResponse> {
+        return .init(
+            input: input,
+            command: listServices,
+            inputKey: \ListServicesRequest.nextToken,
+            outputKey: \ListServicesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

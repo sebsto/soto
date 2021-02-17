@@ -70,6 +70,27 @@ extension AppRegistry {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listApplicationsPaginator(
+        _ input: ListApplicationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListApplicationsRequest, ListApplicationsResponse> {
+        return .init(
+            input: input,
+            command: listApplications,
+            inputKey: \ListApplicationsRequest.nextToken,
+            outputKey: \ListApplicationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all attribute groups that are associated with specified application. Results are paginated.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension AppRegistry {
             tokenKey: \ListAssociatedAttributeGroupsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssociatedAttributeGroupsPaginator(
+        _ input: ListAssociatedAttributeGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssociatedAttributeGroupsRequest, ListAssociatedAttributeGroupsResponse> {
+        return .init(
+            input: input,
+            command: listAssociatedAttributeGroups,
+            inputKey: \ListAssociatedAttributeGroupsRequest.nextToken,
+            outputKey: \ListAssociatedAttributeGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension AppRegistry {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAssociatedResourcesPaginator(
+        _ input: ListAssociatedResourcesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAssociatedResourcesRequest, ListAssociatedResourcesResponse> {
+        return .init(
+            input: input,
+            command: listAssociatedResources,
+            inputKey: \ListAssociatedResourcesRequest.nextToken,
+            outputKey: \ListAssociatedResourcesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all attribute groups which you have access to. Results are paginated.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension AppRegistry {
             tokenKey: \ListAttributeGroupsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAttributeGroupsPaginator(
+        _ input: ListAttributeGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAttributeGroupsRequest, ListAttributeGroupsResponse> {
+        return .init(
+            input: input,
+            command: listAttributeGroups,
+            inputKey: \ListAttributeGroupsRequest.nextToken,
+            outputKey: \ListAttributeGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

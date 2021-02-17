@@ -70,6 +70,27 @@ extension PinpointEmail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDedicatedIpsPaginator(
+        _ input: GetDedicatedIpsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDedicatedIpsRequest, GetDedicatedIpsResponse> {
+        return .init(
+            input: input,
+            command: getDedicatedIps,
+            inputKey: \GetDedicatedIpsRequest.nextToken,
+            outputKey: \GetDedicatedIpsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  List all of the configuration sets associated with your Amazon Pinpoint account in the current region. In Amazon Pinpoint, configuration sets are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension PinpointEmail {
             tokenKey: \ListConfigurationSetsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listConfigurationSetsPaginator(
+        _ input: ListConfigurationSetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListConfigurationSetsRequest, ListConfigurationSetsResponse> {
+        return .init(
+            input: input,
+            command: listConfigurationSets,
+            inputKey: \ListConfigurationSetsRequest.nextToken,
+            outputKey: \ListConfigurationSetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension PinpointEmail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDedicatedIpPoolsPaginator(
+        _ input: ListDedicatedIpPoolsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDedicatedIpPoolsRequest, ListDedicatedIpPoolsResponse> {
+        return .init(
+            input: input,
+            command: listDedicatedIpPools,
+            inputKey: \ListDedicatedIpPoolsRequest.nextToken,
+            outputKey: \ListDedicatedIpPoolsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For predictive inbox placement tests that are complete, you can use the GetDeliverabilityTestReport operation to view the results.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension PinpointEmail {
             tokenKey: \ListDeliverabilityTestReportsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDeliverabilityTestReportsPaginator(
+        _ input: ListDeliverabilityTestReportsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResponse> {
+        return .init(
+            input: input,
+            command: listDeliverabilityTestReports,
+            inputKey: \ListDeliverabilityTestReportsRequest.nextToken,
+            outputKey: \ListDeliverabilityTestReportsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension PinpointEmail {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDomainDeliverabilityCampaignsPaginator(
+        _ input: ListDomainDeliverabilityCampaignsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDomainDeliverabilityCampaignsRequest, ListDomainDeliverabilityCampaignsResponse> {
+        return .init(
+            input: input,
+            command: listDomainDeliverabilityCampaigns,
+            inputKey: \ListDomainDeliverabilityCampaignsRequest.nextToken,
+            outputKey: \ListDomainDeliverabilityCampaignsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of all of the email identities that are associated with your Amazon Pinpoint account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension PinpointEmail {
             tokenKey: \ListEmailIdentitiesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEmailIdentitiesPaginator(
+        _ input: ListEmailIdentitiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEmailIdentitiesRequest, ListEmailIdentitiesResponse> {
+        return .init(
+            input: input,
+            command: listEmailIdentities,
+            inputKey: \ListEmailIdentitiesRequest.nextToken,
+            outputKey: \ListEmailIdentitiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

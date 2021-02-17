@@ -70,6 +70,27 @@ extension CodeStarNotifications {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listEventTypesPaginator(
+        _ input: ListEventTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListEventTypesRequest, ListEventTypesResult> {
+        return .init(
+            input: input,
+            command: listEventTypes,
+            inputKey: \ListEventTypesRequest.nextToken,
+            outputKey: \ListEventTypesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the notification rules for an AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -121,6 +142,27 @@ extension CodeStarNotifications {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listNotificationRulesPaginator(
+        _ input: ListNotificationRulesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListNotificationRulesRequest, ListNotificationRulesResult> {
+        return .init(
+            input: input,
+            command: listNotificationRules,
+            inputKey: \ListNotificationRulesRequest.nextToken,
+            outputKey: \ListNotificationRulesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the notification rule targets for an AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -169,6 +211,27 @@ extension CodeStarNotifications {
             tokenKey: \ListTargetsResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTargetsPaginator(
+        _ input: ListTargetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTargetsRequest, ListTargetsResult> {
+        return .init(
+            input: input,
+            command: listTargets,
+            inputKey: \ListTargetsRequest.nextToken,
+            outputKey: \ListTargetsResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

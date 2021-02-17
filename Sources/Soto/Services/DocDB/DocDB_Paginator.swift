@@ -70,6 +70,27 @@ extension DocDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCertificatesPaginator(
+        _ input: DescribeCertificatesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCertificatesMessage, CertificateMessage> {
+        return .init(
+            input: input,
+            command: describeCertificates,
+            inputKey: \DescribeCertificatesMessage.marker,
+            outputKey: \CertificateMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of DBClusterParameterGroup descriptions. If a DBClusterParameterGroupName parameter is specified, the list contains only the description of the specified cluster parameter group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension DocDB {
             tokenKey: \DBClusterParameterGroupsMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBClusterParameterGroupsPaginator(
+        _ input: DescribeDBClusterParameterGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBClusterParameterGroupsMessage, DBClusterParameterGroupsMessage> {
+        return .init(
+            input: input,
+            command: describeDBClusterParameterGroups,
+            inputKey: \DescribeDBClusterParameterGroupsMessage.marker,
+            outputKey: \DBClusterParameterGroupsMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension DocDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBClusterParametersPaginator(
+        _ input: DescribeDBClusterParametersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBClusterParametersMessage, DBClusterParameterGroupDetails> {
+        return .init(
+            input: input,
+            command: describeDBClusterParameters,
+            inputKey: \DescribeDBClusterParametersMessage.marker,
+            outputKey: \DBClusterParameterGroupDetails.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about cluster snapshots. This API operation supports pagination.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension DocDB {
             tokenKey: \DBClusterSnapshotMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBClusterSnapshotsPaginator(
+        _ input: DescribeDBClusterSnapshotsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBClusterSnapshotsMessage, DBClusterSnapshotMessage> {
+        return .init(
+            input: input,
+            command: describeDBClusterSnapshots,
+            inputKey: \DescribeDBClusterSnapshotsMessage.marker,
+            outputKey: \DBClusterSnapshotMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension DocDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBClustersPaginator(
+        _ input: DescribeDBClustersMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBClustersMessage, DBClusterMessage> {
+        return .init(
+            input: input,
+            command: describeDBClusters,
+            inputKey: \DescribeDBClustersMessage.marker,
+            outputKey: \DBClusterMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of the available engines.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension DocDB {
             tokenKey: \DBEngineVersionMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBEngineVersionsPaginator(
+        _ input: DescribeDBEngineVersionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBEngineVersionsMessage, DBEngineVersionMessage> {
+        return .init(
+            input: input,
+            command: describeDBEngineVersions,
+            inputKey: \DescribeDBEngineVersionsMessage.marker,
+            outputKey: \DBEngineVersionMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension DocDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBInstancesPaginator(
+        _ input: DescribeDBInstancesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBInstancesMessage, DBInstanceMessage> {
+        return .init(
+            input: input,
+            command: describeDBInstances,
+            inputKey: \DescribeDBInstancesMessage.marker,
+            outputKey: \DBInstanceMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension DocDB {
             tokenKey: \DBSubnetGroupMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeDBSubnetGroupsPaginator(
+        _ input: DescribeDBSubnetGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeDBSubnetGroupsMessage, DBSubnetGroupMessage> {
+        return .init(
+            input: input,
+            command: describeDBSubnetGroups,
+            inputKey: \DescribeDBSubnetGroupsMessage.marker,
+            outputKey: \DBSubnetGroupMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension DocDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsPaginator(
+        _ input: DescribeEventsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsMessage, EventsMessage> {
+        return .init(
+            input: input,
+            command: describeEvents,
+            inputKey: \DescribeEventsMessage.marker,
+            outputKey: \EventsMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of orderable instance options for the specified engine.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -529,6 +718,27 @@ extension DocDB {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeOrderableDBInstanceOptionsPaginator(
+        _ input: DescribeOrderableDBInstanceOptionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeOrderableDBInstanceOptionsMessage, OrderableDBInstanceOptionsMessage> {
+        return .init(
+            input: input,
+            command: describeOrderableDBInstanceOptions,
+            inputKey: \DescribeOrderableDBInstanceOptionsMessage.marker,
+            outputKey: \OrderableDBInstanceOptionsMessage.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of resources (for example, instances) that have at least one pending maintenance action.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -577,6 +787,27 @@ extension DocDB {
             tokenKey: \PendingMaintenanceActionsMessage.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describePendingMaintenanceActionsPaginator(
+        _ input: DescribePendingMaintenanceActionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribePendingMaintenanceActionsMessage, PendingMaintenanceActionsMessage> {
+        return .init(
+            input: input,
+            command: describePendingMaintenanceActions,
+            inputKey: \DescribePendingMaintenanceActionsMessage.marker,
+            outputKey: \PendingMaintenanceActionsMessage.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension EBS {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listChangedBlocksPaginator(
+        _ input: ListChangedBlocksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListChangedBlocksRequest, ListChangedBlocksResponse> {
+        return .init(
+            input: input,
+            command: listChangedBlocks,
+            inputKey: \ListChangedBlocksRequest.nextToken,
+            outputKey: \ListChangedBlocksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the blocks in an Amazon Elastic Block Store snapshot.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension EBS {
             tokenKey: \ListSnapshotBlocksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSnapshotBlocksPaginator(
+        _ input: ListSnapshotBlocksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSnapshotBlocksRequest, ListSnapshotBlocksResponse> {
+        return .init(
+            input: input,
+            command: listSnapshotBlocks,
+            inputKey: \ListSnapshotBlocksRequest.nextToken,
+            outputKey: \ListSnapshotBlocksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeApplicableIndividualAssessmentsPaginator(
+        _ input: DescribeApplicableIndividualAssessmentsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeApplicableIndividualAssessmentsMessage, DescribeApplicableIndividualAssessmentsResponse> {
+        return .init(
+            input: input,
+            command: describeApplicableIndividualAssessments,
+            inputKey: \DescribeApplicableIndividualAssessmentsMessage.marker,
+            outputKey: \DescribeApplicableIndividualAssessmentsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Provides a description of the certificate.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeCertificatesResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeCertificatesPaginator(
+        _ input: DescribeCertificatesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeCertificatesMessage, DescribeCertificatesResponse> {
+        return .init(
+            input: input,
+            command: describeCertificates,
+            inputKey: \DescribeCertificatesMessage.marker,
+            outputKey: \DescribeCertificatesResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeConnectionsPaginator(
+        _ input: DescribeConnectionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeConnectionsMessage, DescribeConnectionsResponse> {
+        return .init(
+            input: input,
+            command: describeConnections,
+            inputKey: \DescribeConnectionsMessage.marker,
+            outputKey: \DescribeConnectionsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the type of endpoints available.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeEndpointTypesResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEndpointTypesPaginator(
+        _ input: DescribeEndpointTypesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEndpointTypesMessage, DescribeEndpointTypesResponse> {
+        return .init(
+            input: input,
+            command: describeEndpointTypes,
+            inputKey: \DescribeEndpointTypesMessage.marker,
+            outputKey: \DescribeEndpointTypesResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEndpointsPaginator(
+        _ input: DescribeEndpointsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEndpointsMessage, DescribeEndpointsResponse> {
+        return .init(
+            input: input,
+            command: describeEndpoints,
+            inputKey: \DescribeEndpointsMessage.marker,
+            outputKey: \DescribeEndpointsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the event subscriptions for a customer account. The description of a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.  If you specify SubscriptionName, this action lists the description for that subscription.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeEventSubscriptionsResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventSubscriptionsPaginator(
+        _ input: DescribeEventSubscriptionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventSubscriptionsMessage, DescribeEventSubscriptionsResponse> {
+        return .init(
+            input: input,
+            command: describeEventSubscriptions,
+            inputKey: \DescribeEventSubscriptionsMessage.marker,
+            outputKey: \DescribeEventSubscriptionsResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsPaginator(
+        _ input: DescribeEventsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsMessage, DescribeEventsResponse> {
+        return .init(
+            input: input,
+            command: describeEvents,
+            inputKey: \DescribeEventsMessage.marker,
+            outputKey: \DescribeEventsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the replication instance types that can be created in the specified region.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeOrderableReplicationInstancesResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeOrderableReplicationInstancesPaginator(
+        _ input: DescribeOrderableReplicationInstancesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeOrderableReplicationInstancesMessage, DescribeOrderableReplicationInstancesResponse> {
+        return .init(
+            input: input,
+            command: describeOrderableReplicationInstances,
+            inputKey: \DescribeOrderableReplicationInstancesMessage.marker,
+            outputKey: \DescribeOrderableReplicationInstancesResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describePendingMaintenanceActionsPaginator(
+        _ input: DescribePendingMaintenanceActionsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribePendingMaintenanceActionsMessage, DescribePendingMaintenanceActionsResponse> {
+        return .init(
+            input: input,
+            command: describePendingMaintenanceActions,
+            inputKey: \DescribePendingMaintenanceActionsMessage.marker,
+            outputKey: \DescribePendingMaintenanceActionsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the task logs for the specified task.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeReplicationInstanceTaskLogsResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationInstanceTaskLogsPaginator(
+        _ input: DescribeReplicationInstanceTaskLogsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationInstanceTaskLogsMessage, DescribeReplicationInstanceTaskLogsResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationInstanceTaskLogs,
+            inputKey: \DescribeReplicationInstanceTaskLogsMessage.marker,
+            outputKey: \DescribeReplicationInstanceTaskLogsResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -580,6 +790,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationInstancesPaginator(
+        _ input: DescribeReplicationInstancesMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationInstancesMessage, DescribeReplicationInstancesResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationInstances,
+            inputKey: \DescribeReplicationInstancesMessage.marker,
+            outputKey: \DescribeReplicationInstancesResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about the replication subnet groups.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -628,6 +859,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeReplicationSubnetGroupsResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationSubnetGroupsPaginator(
+        _ input: DescribeReplicationSubnetGroupsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationSubnetGroupsMessage, DescribeReplicationSubnetGroupsResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationSubnetGroups,
+            inputKey: \DescribeReplicationSubnetGroupsMessage.marker,
+            outputKey: \DescribeReplicationSubnetGroupsResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -682,6 +934,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationTaskAssessmentResultsPaginator(
+        _ input: DescribeReplicationTaskAssessmentResultsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationTaskAssessmentResultsMessage, DescribeReplicationTaskAssessmentResultsResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationTaskAssessmentResults,
+            inputKey: \DescribeReplicationTaskAssessmentResultsMessage.marker,
+            outputKey: \DescribeReplicationTaskAssessmentResultsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a paginated list of premigration assessment runs based on filter settings. These filter settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment run status values.  This operation doesn't return information about individual assessments. For this information, see the DescribeReplicationTaskIndividualAssessments operation.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -730,6 +1003,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeReplicationTaskAssessmentRunsResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationTaskAssessmentRunsPaginator(
+        _ input: DescribeReplicationTaskAssessmentRunsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationTaskAssessmentRunsMessage, DescribeReplicationTaskAssessmentRunsResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationTaskAssessmentRuns,
+            inputKey: \DescribeReplicationTaskAssessmentRunsMessage.marker,
+            outputKey: \DescribeReplicationTaskAssessmentRunsResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -784,6 +1078,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationTaskIndividualAssessmentsPaginator(
+        _ input: DescribeReplicationTaskIndividualAssessmentsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationTaskIndividualAssessmentsMessage, DescribeReplicationTaskIndividualAssessmentsResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationTaskIndividualAssessments,
+            inputKey: \DescribeReplicationTaskIndividualAssessmentsMessage.marker,
+            outputKey: \DescribeReplicationTaskIndividualAssessmentsResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about replication tasks for your account in the current region.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -832,6 +1147,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeReplicationTasksResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeReplicationTasksPaginator(
+        _ input: DescribeReplicationTasksMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeReplicationTasksMessage, DescribeReplicationTasksResponse> {
+        return .init(
+            input: input,
+            command: describeReplicationTasks,
+            inputKey: \DescribeReplicationTasksMessage.marker,
+            outputKey: \DescribeReplicationTasksResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -886,6 +1222,27 @@ extension DatabaseMigrationService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeSchemasPaginator(
+        _ input: DescribeSchemasMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeSchemasMessage, DescribeSchemasResponse> {
+        return .init(
+            input: input,
+            command: describeSchemas,
+            inputKey: \DescribeSchemasMessage.marker,
+            outputKey: \DescribeSchemasResponse.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted. Note that the "last updated" column the DMS console only indicates the time that AWS DMS last updated the table statistics record for a table. It does not indicate the time of the last update to the table.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -934,6 +1291,27 @@ extension DatabaseMigrationService {
             tokenKey: \DescribeTableStatisticsResponse.marker,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeTableStatisticsPaginator(
+        _ input: DescribeTableStatisticsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeTableStatisticsMessage, DescribeTableStatisticsResponse> {
+        return .init(
+            input: input,
+            command: describeTableStatistics,
+            inputKey: \DescribeTableStatisticsMessage.marker,
+            outputKey: \DescribeTableStatisticsResponse.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

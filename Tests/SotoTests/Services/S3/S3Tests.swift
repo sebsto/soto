@@ -317,7 +317,6 @@ class S3Tests: XCTestCase {
 
     func testListPaginator() {
         let name = TestEnvironment.generateResourceName()
-        var list: [S3.Object] = []
         s3Test(bucket: name) {
             try await Task.withGroup(resultType: Void.self) { group in
                 for index in (1...16) {
@@ -328,18 +327,12 @@ class S3Tests: XCTestCase {
                     }
                 }
             }
-            _ = try await Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5)) { result, eventLoop in
-                list.append(contentsOf: result.contents ?? [])
-                return eventLoop.makeSucceededFuture(true)
-            }.get()
-            let list2 = try await Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5), []) { list, result, eventLoop in
-                return eventLoop.makeSucceededFuture((true, list + (result.contents ?? [])))
-            }.get()
-            let list3 = try await Self.s3.listObjectsV2(.init(bucket: name)).contents
-            XCTAssertEqual(list.count, list3?.count)
-            for i in 0..<list.count {
-                XCTAssertEqual(list[i].key, list3?[i].key)
-                XCTAssertEqual(list2[i].key, list3?[i].key)
+            let list = try await Self.s3.listObjectsV2(.init(bucket: name)).contents
+            let paginator = Self.s3.listObjectsV2Paginator(.init(bucket: name, maxKeys: 5))
+            let list2 = try await paginator.reduce([], { $0 + ($1.contents ?? [])})
+            XCTAssertEqual(list?.count, list2.count)
+            for i in 0..<list2.count {
+                XCTAssertEqual(list2[i].key, list?[i].key)
             }
         }
     }

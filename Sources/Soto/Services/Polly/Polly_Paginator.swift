@@ -69,6 +69,27 @@ extension Polly {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listSpeechSynthesisTasksPaginator(
+        _ input: ListSpeechSynthesisTasksInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListSpeechSynthesisTasksInput, ListSpeechSynthesisTasksOutput> {
+        return .init(
+            input: input,
+            command: listSpeechSynthesisTasks,
+            inputKey: \ListSpeechSynthesisTasksInput.nextToken,
+            outputKey: \ListSpeechSynthesisTasksOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension Polly.ListSpeechSynthesisTasksInput: AWSPaginateToken {

@@ -70,6 +70,27 @@ extension IoT1ClickProjects {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPlacementsPaginator(
+        _ input: ListPlacementsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPlacementsRequest, ListPlacementsResponse> {
+        return .init(
+            input: input,
+            command: listPlacements,
+            inputKey: \ListPlacementsRequest.nextToken,
+            outputKey: \ListPlacementsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the AWS IoT 1-Click project(s) associated with your AWS account and region.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension IoT1ClickProjects {
             tokenKey: \ListProjectsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProjectsPaginator(
+        _ input: ListProjectsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProjectsRequest, ListProjectsResponse> {
+        return .init(
+            input: input,
+            command: listProjects,
+            inputKey: \ListProjectsRequest.nextToken,
+            outputKey: \ListProjectsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

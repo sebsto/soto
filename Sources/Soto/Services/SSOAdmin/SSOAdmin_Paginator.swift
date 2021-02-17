@@ -70,6 +70,27 @@ extension SSOAdmin {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccountAssignmentCreationStatusPaginator(
+        _ input: ListAccountAssignmentCreationStatusRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse> {
+        return .init(
+            input: input,
+            command: listAccountAssignmentCreationStatus,
+            inputKey: \ListAccountAssignmentCreationStatusRequest.nextToken,
+            outputKey: \ListAccountAssignmentCreationStatusResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the status of the AWS account assignment deletion requests for a specified SSO instance.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension SSOAdmin {
             tokenKey: \ListAccountAssignmentDeletionStatusResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccountAssignmentDeletionStatusPaginator(
+        _ input: ListAccountAssignmentDeletionStatusRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse> {
+        return .init(
+            input: input,
+            command: listAccountAssignmentDeletionStatus,
+            inputKey: \ListAccountAssignmentDeletionStatusRequest.nextToken,
+            outputKey: \ListAccountAssignmentDeletionStatusResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension SSOAdmin {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccountAssignmentsPaginator(
+        _ input: ListAccountAssignmentsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse> {
+        return .init(
+            input: input,
+            command: listAccountAssignments,
+            inputKey: \ListAccountAssignmentsRequest.nextToken,
+            outputKey: \ListAccountAssignmentsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists all the AWS accounts where the specified permission set is provisioned.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension SSOAdmin {
             tokenKey: \ListAccountsForProvisionedPermissionSetResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAccountsForProvisionedPermissionSetPaginator(
+        _ input: ListAccountsForProvisionedPermissionSetRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse> {
+        return .init(
+            input: input,
+            command: listAccountsForProvisionedPermissionSet,
+            inputKey: \ListAccountsForProvisionedPermissionSetRequest.nextToken,
+            outputKey: \ListAccountsForProvisionedPermissionSetResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension SSOAdmin {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listInstancesPaginator(
+        _ input: ListInstancesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListInstancesRequest, ListInstancesResponse> {
+        return .init(
+            input: input,
+            command: listInstances,
+            inputKey: \ListInstancesRequest.nextToken,
+            outputKey: \ListInstancesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the IAM managed policy that is attached to a specified permission set.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension SSOAdmin {
             tokenKey: \ListManagedPoliciesInPermissionSetResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listManagedPoliciesInPermissionSetPaginator(
+        _ input: ListManagedPoliciesInPermissionSetRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse> {
+        return .init(
+            input: input,
+            command: listManagedPoliciesInPermissionSet,
+            inputKey: \ListManagedPoliciesInPermissionSetRequest.nextToken,
+            outputKey: \ListManagedPoliciesInPermissionSetResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension SSOAdmin {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPermissionSetProvisioningStatusPaginator(
+        _ input: ListPermissionSetProvisioningStatusRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse> {
+        return .init(
+            input: input,
+            command: listPermissionSetProvisioningStatus,
+            inputKey: \ListPermissionSetProvisioningStatusRequest.nextToken,
+            outputKey: \ListPermissionSetProvisioningStatusResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the PermissionSets in an SSO instance.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -424,6 +571,27 @@ extension SSOAdmin {
             tokenKey: \ListPermissionSetsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPermissionSetsPaginator(
+        _ input: ListPermissionSetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPermissionSetsRequest, ListPermissionSetsResponse> {
+        return .init(
+            input: input,
+            command: listPermissionSets,
+            inputKey: \ListPermissionSetsRequest.nextToken,
+            outputKey: \ListPermissionSetsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -478,6 +646,27 @@ extension SSOAdmin {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPermissionSetsProvisionedToAccountPaginator(
+        _ input: ListPermissionSetsProvisionedToAccountRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse> {
+        return .init(
+            input: input,
+            command: listPermissionSetsProvisionedToAccount,
+            inputKey: \ListPermissionSetsProvisionedToAccountRequest.nextToken,
+            outputKey: \ListPermissionSetsProvisionedToAccountResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the tags that are attached to a specified resource.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -526,6 +715,27 @@ extension SSOAdmin {
             tokenKey: \ListTagsForResourceResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTagsForResourcePaginator(
+        _ input: ListTagsForResourceRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTagsForResourceRequest, ListTagsForResourceResponse> {
+        return .init(
+            input: input,
+            command: listTagsForResource,
+            inputKey: \ListTagsForResourceRequest.nextToken,
+            outputKey: \ListTagsForResourceResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

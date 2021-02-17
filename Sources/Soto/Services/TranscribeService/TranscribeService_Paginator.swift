@@ -70,6 +70,27 @@ extension TranscribeService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listLanguageModelsPaginator(
+        _ input: ListLanguageModelsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListLanguageModelsRequest, ListLanguageModelsResponse> {
+        return .init(
+            input: input,
+            command: listLanguageModels,
+            inputKey: \ListLanguageModelsRequest.nextToken,
+            outputKey: \ListLanguageModelsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists medical transcription jobs with a specified status or substring that matches their names.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension TranscribeService {
             tokenKey: \ListMedicalTranscriptionJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMedicalTranscriptionJobsPaginator(
+        _ input: ListMedicalTranscriptionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMedicalTranscriptionJobsRequest, ListMedicalTranscriptionJobsResponse> {
+        return .init(
+            input: input,
+            command: listMedicalTranscriptionJobs,
+            inputKey: \ListMedicalTranscriptionJobsRequest.nextToken,
+            outputKey: \ListMedicalTranscriptionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension TranscribeService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listMedicalVocabulariesPaginator(
+        _ input: ListMedicalVocabulariesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListMedicalVocabulariesRequest, ListMedicalVocabulariesResponse> {
+        return .init(
+            input: input,
+            command: listMedicalVocabularies,
+            inputKey: \ListMedicalVocabulariesRequest.nextToken,
+            outputKey: \ListMedicalVocabulariesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists transcription jobs with the specified status.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension TranscribeService {
             tokenKey: \ListTranscriptionJobsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listTranscriptionJobsPaginator(
+        _ input: ListTranscriptionJobsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListTranscriptionJobsRequest, ListTranscriptionJobsResponse> {
+        return .init(
+            input: input,
+            command: listTranscriptionJobs,
+            inputKey: \ListTranscriptionJobsRequest.nextToken,
+            outputKey: \ListTranscriptionJobsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension TranscribeService {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listVocabulariesPaginator(
+        _ input: ListVocabulariesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListVocabulariesRequest, ListVocabulariesResponse> {
+        return .init(
+            input: input,
+            command: listVocabularies,
+            inputKey: \ListVocabulariesRequest.nextToken,
+            outputKey: \ListVocabulariesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about vocabulary filters.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension TranscribeService {
             tokenKey: \ListVocabularyFiltersResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listVocabularyFiltersPaginator(
+        _ input: ListVocabularyFiltersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListVocabularyFiltersRequest, ListVocabularyFiltersResponse> {
+        return .init(
+            input: input,
+            command: listVocabularyFilters,
+            inputKey: \ListVocabularyFiltersRequest.nextToken,
+            outputKey: \ListVocabularyFiltersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

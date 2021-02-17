@@ -34,7 +34,7 @@ extension {{name}} {
             input: input,
             initialValue: initialValue,
             command: {{page.operation.funcName}},
-            tokenKey: \{{page.operation.outputShape}}.{{page.output}}{%if page.moreResults %},
+            tokenKey: \{{page.operation.outputShape}}.{{page.outputKey}}{%if page.moreResults %},
             moreResultsKey: \{{page.operation.outputShape}}.{{page.moreResults}}{%endif %},
             on: eventLoop,
             onPage: onPage
@@ -59,10 +59,34 @@ extension {{name}} {
         return client.paginate(
             input: input,
             command: {{page.operation.funcName}},
-            tokenKey: \{{page.operation.outputShape}}.{{page.output}}{%if page.moreResults %},
+            tokenKey: \{{page.operation.outputShape}}.{{page.outputKey}}{%if page.moreResults %},
             moreResultsKey: \{{page.operation.outputShape}}.{{page.moreResults}}{%endif %},
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+{%if page.operation.deprecated %}
+    @available(*, deprecated, message:"{{page.operation.deprecated}}")
+{%endif %}
+    public func {{page.operation.funcName}}Paginator(
+        _ input: {{page.operation.inputShape}},
+        logger: {{logger}} = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<{{page.operation.inputShape}}, {{page.operation.outputShape}}> {
+        return .init(
+            input: input,
+            command: {{page.operation.funcName}},
+            inputKey: \{{page.operation.inputShape}}.{{page.inputKey}},
+            outputKey: \{{page.operation.outputShape}}.{{page.outputKey}},
+            logger: logger,
+            on: eventLoop
         )
     }
 {%if not forloop.last +%}

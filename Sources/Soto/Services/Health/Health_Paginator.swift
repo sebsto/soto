@@ -70,6 +70,27 @@ extension Health {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeAffectedAccountsForOrganizationPaginator(
+        _ input: DescribeAffectedAccountsForOrganizationRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeAffectedAccountsForOrganizationRequest, DescribeAffectedAccountsForOrganizationResponse> {
+        return .init(
+            input: input,
+            command: describeAffectedAccountsForOrganization,
+            inputKey: \DescribeAffectedAccountsForOrganizationRequest.nextToken,
+            outputKey: \DescribeAffectedAccountsForOrganizationResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the AWS service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this. At least one event ARN is required. Results are sorted by the lastUpdatedTime of the entity, starting with the most recent.  This API operation uses pagination. Specify the nextToken parameter in the next request to return more results.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Health {
             tokenKey: \DescribeAffectedEntitiesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeAffectedEntitiesPaginator(
+        _ input: DescribeAffectedEntitiesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeAffectedEntitiesRequest, DescribeAffectedEntitiesResponse> {
+        return .init(
+            input: input,
+            command: describeAffectedEntities,
+            inputKey: \DescribeAffectedEntitiesRequest.nextToken,
+            outputKey: \DescribeAffectedEntitiesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Health {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeAffectedEntitiesForOrganizationPaginator(
+        _ input: DescribeAffectedEntitiesForOrganizationRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeAffectedEntitiesForOrganizationRequest, DescribeAffectedEntitiesForOrganizationResponse> {
+        return .init(
+            input: input,
+            command: describeAffectedEntitiesForOrganization,
+            inputKey: \DescribeAffectedEntitiesForOrganizationRequest.nextToken,
+            outputKey: \DescribeAffectedEntitiesForOrganizationResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns the number of events of each event type (issue, scheduled change, and account notification). If no filter is specified, the counts of all events in each category are returned.  This API operation uses pagination. Specify the nextToken parameter in the next request to return more results.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Health {
             tokenKey: \DescribeEventAggregatesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventAggregatesPaginator(
+        _ input: DescribeEventAggregatesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventAggregatesRequest, DescribeEventAggregatesResponse> {
+        return .init(
+            input: input,
+            command: describeEventAggregates,
+            inputKey: \DescribeEventAggregatesRequest.nextToken,
+            outputKey: \DescribeEventAggregatesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension Health {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventTypesPaginator(
+        _ input: DescribeEventTypesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventTypesRequest, DescribeEventTypesResponse> {
+        return .init(
+            input: input,
+            command: describeEventTypes,
+            inputKey: \DescribeEventTypesRequest.nextToken,
+            outputKey: \DescribeEventTypesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns information about events that meet the specified filter criteria. Events are returned in a summary form and do not include the detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the DescribeEventDetails and DescribeAffectedEntities operations. If no filter criteria are specified, all events are returned. Results are sorted by lastModifiedTime, starting with the most recent event.    When you call the DescribeEvents operation and specify an entity for the entityValues parameter, AWS Health might return public events that aren't specific to that resource. For example, if you call DescribeEvents and specify an ID for an Amazon Elastic Compute Cloud (Amazon EC2) instance, AWS Health might return events that aren't specific to that resource or service. To get events that are specific to a service, use the services parameter in the filter object. For more information, see Event.   This API operation uses pagination. Specify the nextToken parameter in the next request to return more results.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -325,6 +430,27 @@ extension Health {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsPaginator(
+        _ input: DescribeEventsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsRequest, DescribeEventsResponse> {
+        return .init(
+            input: input,
+            command: describeEvents,
+            inputKey: \DescribeEventsRequest.nextToken,
+            outputKey: \DescribeEventsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns information about events across your organization in AWS Organizations. You can use thefilters parameter to specify the events that you want to return. Events are returned in a summary form and don't include the affected accounts, detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the following operations:    DescribeAffectedAccountsForOrganization     DescribeEventDetailsForOrganization     DescribeAffectedEntitiesForOrganization    If you don't specify a filter, the DescribeEventsForOrganizations returns all events across your organization. Results are sorted by lastModifiedTime, starting with the most recent event.  For more information about the different types of AWS Health events, see Event. Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this, call the EnableHealthServiceAccessForOrganization operation from your organization's master AWS account.  This API operation uses pagination. Specify the nextToken parameter in the next request to return more results.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -373,6 +499,27 @@ extension Health {
             tokenKey: \DescribeEventsForOrganizationResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsForOrganizationPaginator(
+        _ input: DescribeEventsForOrganizationRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsForOrganizationRequest, DescribeEventsForOrganizationResponse> {
+        return .init(
+            input: input,
+            command: describeEventsForOrganization,
+            inputKey: \DescribeEventsForOrganizationRequest.nextToken,
+            outputKey: \DescribeEventsForOrganizationResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

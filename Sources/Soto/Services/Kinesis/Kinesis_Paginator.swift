@@ -72,6 +72,27 @@ extension Kinesis {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeStreamPaginator(
+        _ input: DescribeStreamInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeStreamInput, DescribeStreamOutput> {
+        return .init(
+            input: input,
+            command: describeStream,
+            inputKey: \DescribeStreamInput.exclusiveStartShardId,
+            outputKey: \DescribeStreamOutput.streamDescription.shards.last?.shardId,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the consumers registered to receive data from a stream using enhanced fan-out, and provides information about each consumer. This operation has a limit of 5 transactions per second per stream.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -120,6 +141,27 @@ extension Kinesis {
             tokenKey: \ListStreamConsumersOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStreamConsumersPaginator(
+        _ input: ListStreamConsumersInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStreamConsumersInput, ListStreamConsumersOutput> {
+        return .init(
+            input: input,
+            command: listStreamConsumers,
+            inputKey: \ListStreamConsumersInput.nextToken,
+            outputKey: \ListStreamConsumersOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -173,6 +215,27 @@ extension Kinesis {
             moreResultsKey: \ListStreamsOutput.hasMoreStreams,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listStreamsPaginator(
+        _ input: ListStreamsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListStreamsInput, ListStreamsOutput> {
+        return .init(
+            input: input,
+            command: listStreams,
+            inputKey: \ListStreamsInput.exclusiveStartStreamName,
+            outputKey: \ListStreamsOutput.streamNames.last,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

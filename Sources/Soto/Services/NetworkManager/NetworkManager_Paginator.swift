@@ -70,6 +70,27 @@ extension NetworkManager {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeGlobalNetworksPaginator(
+        _ input: DescribeGlobalNetworksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeGlobalNetworksRequest, DescribeGlobalNetworksResponse> {
+        return .init(
+            input: input,
+            command: describeGlobalNetworks,
+            inputKey: \DescribeGlobalNetworksRequest.nextToken,
+            outputKey: \DescribeGlobalNetworksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about one or more of your connections in a global network.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension NetworkManager {
             tokenKey: \GetConnectionsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getConnectionsPaginator(
+        _ input: GetConnectionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetConnectionsRequest, GetConnectionsResponse> {
+        return .init(
+            input: input,
+            command: getConnections,
+            inputKey: \GetConnectionsRequest.nextToken,
+            outputKey: \GetConnectionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension NetworkManager {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getCustomerGatewayAssociationsPaginator(
+        _ input: GetCustomerGatewayAssociationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetCustomerGatewayAssociationsRequest, GetCustomerGatewayAssociationsResponse> {
+        return .init(
+            input: input,
+            command: getCustomerGatewayAssociations,
+            inputKey: \GetCustomerGatewayAssociationsRequest.nextToken,
+            outputKey: \GetCustomerGatewayAssociationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about one or more of your devices in a global network.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension NetworkManager {
             tokenKey: \GetDevicesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getDevicesPaginator(
+        _ input: GetDevicesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetDevicesRequest, GetDevicesResponse> {
+        return .init(
+            input: input,
+            command: getDevices,
+            inputKey: \GetDevicesRequest.nextToken,
+            outputKey: \GetDevicesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension NetworkManager {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getLinkAssociationsPaginator(
+        _ input: GetLinkAssociationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetLinkAssociationsRequest, GetLinkAssociationsResponse> {
+        return .init(
+            input: input,
+            command: getLinkAssociations,
+            inputKey: \GetLinkAssociationsRequest.nextToken,
+            outputKey: \GetLinkAssociationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about one or more links in a specified global network. If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension NetworkManager {
             tokenKey: \GetLinksResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getLinksPaginator(
+        _ input: GetLinksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetLinksRequest, GetLinksResponse> {
+        return .init(
+            input: input,
+            command: getLinks,
+            inputKey: \GetLinksRequest.nextToken,
+            outputKey: \GetLinksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -376,6 +502,27 @@ extension NetworkManager {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getSitesPaginator(
+        _ input: GetSitesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetSitesRequest, GetSitesResponse> {
+        return .init(
+            input: input,
+            command: getSites,
+            inputKey: \GetSitesRequest.nextToken,
+            outputKey: \GetSitesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about one or more of your transit gateway Connect peer associations in a global network.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -427,6 +574,27 @@ extension NetworkManager {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getTransitGatewayConnectPeerAssociationsPaginator(
+        _ input: GetTransitGatewayConnectPeerAssociationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetTransitGatewayConnectPeerAssociationsRequest, GetTransitGatewayConnectPeerAssociationsResponse> {
+        return .init(
+            input: input,
+            command: getTransitGatewayConnectPeerAssociations,
+            inputKey: \GetTransitGatewayConnectPeerAssociationsRequest.nextToken,
+            outputKey: \GetTransitGatewayConnectPeerAssociationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets information about the transit gateway registrations in a specified global network.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -475,6 +643,27 @@ extension NetworkManager {
             tokenKey: \GetTransitGatewayRegistrationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func getTransitGatewayRegistrationsPaginator(
+        _ input: GetTransitGatewayRegistrationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<GetTransitGatewayRegistrationsRequest, GetTransitGatewayRegistrationsResponse> {
+        return .init(
+            input: input,
+            command: getTransitGatewayRegistrations,
+            inputKey: \GetTransitGatewayRegistrationsRequest.nextToken,
+            outputKey: \GetTransitGatewayRegistrationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

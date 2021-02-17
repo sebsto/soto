@@ -70,6 +70,27 @@ extension CodeStarconnections {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listConnectionsPaginator(
+        _ input: ListConnectionsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListConnectionsInput, ListConnectionsOutput> {
+        return .init(
+            input: input,
+            command: listConnections,
+            inputKey: \ListConnectionsInput.nextToken,
+            outputKey: \ListConnectionsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the hosts associated with your account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension CodeStarconnections {
             tokenKey: \ListHostsOutput.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listHostsPaginator(
+        _ input: ListHostsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListHostsInput, ListHostsOutput> {
+        return .init(
+            input: input,
+            command: listHosts,
+            inputKey: \ListHostsInput.nextToken,
+            outputKey: \ListHostsOutput.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

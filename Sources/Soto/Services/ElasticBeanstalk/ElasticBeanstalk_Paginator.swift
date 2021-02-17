@@ -70,6 +70,27 @@ extension ElasticBeanstalk {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEnvironmentManagedActionHistoryPaginator(
+        _ input: DescribeEnvironmentManagedActionHistoryRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult> {
+        return .init(
+            input: input,
+            command: describeEnvironmentManagedActionHistory,
+            inputKey: \DescribeEnvironmentManagedActionHistoryRequest.nextToken,
+            outputKey: \DescribeEnvironmentManagedActionHistoryResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Returns list of event descriptions matching criteria up to the last 6 weeks.  This action returns the most recent 1,000 events from the specified NextToken.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension ElasticBeanstalk {
             tokenKey: \EventDescriptionsMessage.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeEventsPaginator(
+        _ input: DescribeEventsMessage,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeEventsMessage, EventDescriptionsMessage> {
+        return .init(
+            input: input,
+            command: describeEvents,
+            inputKey: \DescribeEventsMessage.nextToken,
+            outputKey: \EventDescriptionsMessage.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension ElasticBeanstalk {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPlatformBranchesPaginator(
+        _ input: ListPlatformBranchesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPlatformBranchesRequest, ListPlatformBranchesResult> {
+        return .init(
+            input: input,
+            command: listPlatformBranches,
+            inputKey: \ListPlatformBranchesRequest.nextToken,
+            outputKey: \ListPlatformBranchesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the platform versions available for your account in an AWS Region. Provides summary information about each platform version. Compare to DescribePlatformVersion, which provides full details about a single platform version. For definitions of platform version and other platform-related terms, see AWS Elastic Beanstalk Platforms Glossary.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension ElasticBeanstalk {
             tokenKey: \ListPlatformVersionsResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPlatformVersionsPaginator(
+        _ input: ListPlatformVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPlatformVersionsRequest, ListPlatformVersionsResult> {
+        return .init(
+            input: input,
+            command: listPlatformVersions,
+            inputKey: \ListPlatformVersionsRequest.nextToken,
+            outputKey: \ListPlatformVersionsResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

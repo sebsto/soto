@@ -72,6 +72,27 @@ extension KMS {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAliasesPaginator(
+        _ input: ListAliasesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAliasesRequest, ListAliasesResponse> {
+        return .init(
+            input: input,
+            command: listAliases,
+            inputKey: \ListAliasesRequest.marker,
+            outputKey: \ListAliasesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of all grants for the specified customer master key (CMK).  You must specify the CMK in all requests. You can filter the grant list by grant ID or grantee principal.  The GranteePrincipal field in the ListGrants response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an AWS service, the GranteePrincipal field contains the service principal, which might represent several different grantee principals.   Cross-account use: Yes. To perform this operation on a CMK in a different AWS account, specify the key ARN in the value of the KeyId parameter.  Required permissions: kms:ListGrants (key policy)  Related operations:     CreateGrant     ListRetirableGrants     RetireGrant     RevokeGrant
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -122,6 +143,27 @@ extension KMS {
             moreResultsKey: \ListGrantsResponse.truncated,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listGrantsPaginator(
+        _ input: ListGrantsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListGrantsRequest, ListGrantsResponse> {
+        return .init(
+            input: input,
+            command: listGrants,
+            inputKey: \ListGrantsRequest.marker,
+            outputKey: \ListGrantsResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -178,6 +220,27 @@ extension KMS {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listKeyPoliciesPaginator(
+        _ input: ListKeyPoliciesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListKeyPoliciesRequest, ListKeyPoliciesResponse> {
+        return .init(
+            input: input,
+            command: listKeyPolicies,
+            inputKey: \ListKeyPoliciesRequest.marker,
+            outputKey: \ListKeyPoliciesResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Gets a list of all customer master keys (CMKs) in the caller's AWS account and Region.  Cross-account use: No. You cannot perform this operation on a CMK in a different AWS account.  Required permissions: kms:ListKeys (IAM policy)  Related operations:     CreateKey     DescribeKey     ListAliases     ListResourceTags
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -228,6 +291,27 @@ extension KMS {
             moreResultsKey: \ListKeysResponse.truncated,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listKeysPaginator(
+        _ input: ListKeysRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListKeysRequest, ListKeysResponse> {
+        return .init(
+            input: input,
+            command: listKeys,
+            inputKey: \ListKeysRequest.marker,
+            outputKey: \ListKeysResponse.nextMarker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

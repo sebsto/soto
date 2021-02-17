@@ -72,6 +72,27 @@ extension DataPipeline {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func describeObjectsPaginator(
+        _ input: DescribeObjectsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<DescribeObjectsInput, DescribeObjectsOutput> {
+        return .init(
+            input: input,
+            command: describeObjects,
+            inputKey: \DescribeObjectsInput.marker,
+            outputKey: \DescribeObjectsOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the pipeline identifiers for all active pipelines that you have permission to access.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -125,6 +146,27 @@ extension DataPipeline {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPipelinesPaginator(
+        _ input: ListPipelinesInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPipelinesInput, ListPipelinesOutput> {
+        return .init(
+            input: input,
+            command: listPipelines,
+            inputKey: \ListPipelinesInput.marker,
+            outputKey: \ListPipelinesOutput.marker,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Queries the specified pipeline for the names of objects that match the specified set of conditions.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -175,6 +217,27 @@ extension DataPipeline {
             moreResultsKey: \QueryObjectsOutput.hasMoreResults,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func queryObjectsPaginator(
+        _ input: QueryObjectsInput,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<QueryObjectsInput, QueryObjectsOutput> {
+        return .init(
+            input: input,
+            command: queryObjects,
+            inputKey: \QueryObjectsInput.marker,
+            outputKey: \QueryObjectsOutput.marker,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

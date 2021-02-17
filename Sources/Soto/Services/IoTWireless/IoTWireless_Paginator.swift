@@ -70,6 +70,27 @@ extension IoTWireless {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDestinationsPaginator(
+        _ input: ListDestinationsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDestinationsRequest, ListDestinationsResponse> {
+        return .init(
+            input: input,
+            command: listDestinations,
+            inputKey: \ListDestinationsRequest.nextToken,
+            outputKey: \ListDestinationsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the device profiles registered to your AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension IoTWireless {
             tokenKey: \ListDeviceProfilesResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDeviceProfilesPaginator(
+        _ input: ListDeviceProfilesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDeviceProfilesRequest, ListDeviceProfilesResponse> {
+        return .init(
+            input: input,
+            command: listDeviceProfiles,
+            inputKey: \ListDeviceProfilesRequest.nextToken,
+            outputKey: \ListDeviceProfilesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension IoTWireless {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listServiceProfilesPaginator(
+        _ input: ListServiceProfilesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListServiceProfilesRequest, ListServiceProfilesResponse> {
+        return .init(
+            input: input,
+            command: listServiceProfiles,
+            inputKey: \ListServiceProfilesRequest.nextToken,
+            outputKey: \ListServiceProfilesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the wireless devices registered to your AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -223,6 +286,27 @@ extension IoTWireless {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listWirelessDevicesPaginator(
+        _ input: ListWirelessDevicesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListWirelessDevicesRequest, ListWirelessDevicesResponse> {
+        return .init(
+            input: input,
+            command: listWirelessDevices,
+            inputKey: \ListWirelessDevicesRequest.nextToken,
+            outputKey: \ListWirelessDevicesResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Lists the wireless gateways registered to your AWS account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -271,6 +355,27 @@ extension IoTWireless {
             tokenKey: \ListWirelessGatewaysResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listWirelessGatewaysPaginator(
+        _ input: ListWirelessGatewaysRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListWirelessGatewaysRequest, ListWirelessGatewaysResponse> {
+        return .init(
+            input: input,
+            command: listWirelessGateways,
+            inputKey: \ListWirelessGatewaysRequest.nextToken,
+            outputKey: \ListWirelessGatewaysResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

@@ -70,6 +70,27 @@ extension CodeArtifact {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listDomainsPaginator(
+        _ input: ListDomainsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListDomainsRequest, ListDomainsResult> {
+        return .init(
+            input: input,
+            command: listDomains,
+            inputKey: \ListDomainsRequest.nextToken,
+            outputKey: \ListDomainsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of  AssetSummary  objects for assets in a package version.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension CodeArtifact {
             tokenKey: \ListPackageVersionAssetsResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPackageVersionAssetsPaginator(
+        _ input: ListPackageVersionAssetsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPackageVersionAssetsRequest, ListPackageVersionAssetsResult> {
+        return .init(
+            input: input,
+            command: listPackageVersionAssets,
+            inputKey: \ListPackageVersionAssetsRequest.nextToken,
+            outputKey: \ListPackageVersionAssetsResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension CodeArtifact {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPackageVersionsPaginator(
+        _ input: ListPackageVersionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPackageVersionsRequest, ListPackageVersionsResult> {
+        return .init(
+            input: input,
+            command: listPackageVersions,
+            inputKey: \ListPackageVersionsRequest.nextToken,
+            outputKey: \ListPackageVersionsResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of  PackageSummary  objects for packages in a repository that match the request parameters.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension CodeArtifact {
             tokenKey: \ListPackagesResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listPackagesPaginator(
+        _ input: ListPackagesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListPackagesRequest, ListPackagesResult> {
+        return .init(
+            input: input,
+            command: listPackages,
+            inputKey: \ListPackagesRequest.nextToken,
+            outputKey: \ListPackagesResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -274,6 +358,27 @@ extension CodeArtifact {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRepositoriesPaginator(
+        _ input: ListRepositoriesRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRepositoriesRequest, ListRepositoriesResult> {
+        return .init(
+            input: input,
+            command: listRepositories,
+            inputKey: \ListRepositoriesRequest.nextToken,
+            outputKey: \ListRepositoriesResult.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///   Returns a list of  RepositorySummary  objects. Each RepositorySummary contains information about a repository in the specified domain and that matches the input parameters.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -322,6 +427,27 @@ extension CodeArtifact {
             tokenKey: \ListRepositoriesInDomainResult.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listRepositoriesInDomainPaginator(
+        _ input: ListRepositoriesInDomainRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListRepositoriesInDomainRequest, ListRepositoriesInDomainResult> {
+        return .init(
+            input: input,
+            command: listRepositoriesInDomain,
+            inputKey: \ListRepositoriesInDomainRequest.nextToken,
+            outputKey: \ListRepositoriesInDomainResult.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }

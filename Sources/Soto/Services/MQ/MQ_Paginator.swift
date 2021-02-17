@@ -69,6 +69,27 @@ extension MQ {
             onPage: onPage
         )
     }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listBrokersPaginator(
+        _ input: ListBrokersRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListBrokersRequest, ListBrokersResponse> {
+        return .init(
+            input: input,
+            command: listBrokers,
+            inputKey: \ListBrokersRequest.nextToken,
+            outputKey: \ListBrokersResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
 }
 
 extension MQ.ListBrokersRequest: AWSPaginateToken {

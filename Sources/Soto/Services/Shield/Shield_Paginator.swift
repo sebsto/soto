@@ -70,6 +70,27 @@ extension Shield {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listAttacksPaginator(
+        _ input: ListAttacksRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListAttacksRequest, ListAttacksResponse> {
+        return .init(
+            input: input,
+            command: listAttacks,
+            inputKey: \ListAttacksRequest.nextToken,
+            outputKey: \ListAttacksResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the ProtectionGroup objects for the account.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -118,6 +139,27 @@ extension Shield {
             tokenKey: \ListProtectionGroupsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProtectionGroupsPaginator(
+        _ input: ListProtectionGroupsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProtectionGroupsRequest, ListProtectionGroupsResponse> {
+        return .init(
+            input: input,
+            command: listProtectionGroups,
+            inputKey: \ListProtectionGroupsRequest.nextToken,
+            outputKey: \ListProtectionGroupsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 
@@ -172,6 +214,27 @@ extension Shield {
         )
     }
 
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listProtectionsPaginator(
+        _ input: ListProtectionsRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListProtectionsRequest, ListProtectionsResponse> {
+        return .init(
+            input: input,
+            command: listProtections,
+            inputKey: \ListProtectionsRequest.nextToken,
+            outputKey: \ListProtectionsResponse.nextToken,
+            logger: logger,
+            on: eventLoop
+        )
+    }
+
     ///  Retrieves the resources that are included in the protection group.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
@@ -220,6 +283,27 @@ extension Shield {
             tokenKey: \ListResourcesInProtectionGroupResponse.nextToken,
             on: eventLoop,
             onPage: onPage
+        )
+    }
+
+    /// Return PaginatorSequence for operation.
+    ///
+    /// - Parameters:
+    ///   - input: Input for request
+    ///   - logger: Logger used flot logging
+    ///   - eventLoop: EventLoop to run this process on
+    public func listResourcesInProtectionGroupPaginator(
+        _ input: ListResourcesInProtectionGroupRequest,
+        logger: Logger = AWSClient.loggingDisabled,
+        on eventLoop: EventLoop? = nil
+    ) -> AWSClient.PaginatorSequence<ListResourcesInProtectionGroupRequest, ListResourcesInProtectionGroupResponse> {
+        return .init(
+            input: input,
+            command: listResourcesInProtectionGroup,
+            inputKey: \ListResourcesInProtectionGroupRequest.nextToken,
+            outputKey: \ListResourcesInProtectionGroupResponse.nextToken,
+            logger: logger,
+            on: eventLoop
         )
     }
 }
