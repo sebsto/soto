@@ -18,8 +18,8 @@ import SotoCore
 
 // MARK: Paginators
 
-extension KinesisVideoArchivedMedia {
-    ///  Returns a list of Fragment objects from the specified stream and timestamp range within the archived data. Listing fragments is eventually consistent. This means that even if the producer receives an acknowledgment that a fragment is persisted, the result might not be returned immediately from a request to ListFragments. However, results are typically available in less than one second.  You must first call the GetDataEndpoint API to get an endpoint. Then send the ListFragments requests to this endpoint using the --endpoint-url parameter.    If an error is thrown after invoking a Kinesis Video Streams archived media API, in addition to the HTTP status code and the response body, it includes the following pieces of information:     x-amz-ErrorType HTTP header – contains a more specific error type in addition to what the HTTP status code provides.     x-amz-RequestId HTTP header – if you want to report an issue to AWS, the support team can better diagnose the problem if given the Request Id.   Both the HTTP status code and the ErrorType header can be utilized to make programmatic decisions about whether errors are retry-able and under what conditions, as well as provide information on what actions the client programmer might need to take in order to successfully try again. For more information, see the Errors section at the bottom of this topic, as well as Common Errors.
+extension MediaTailor {
+    ///  Returns a list of the playback configurations defined in AWS Elemental MediaTailor. You can specify a maximum number of configurations to return at a time. The default maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations than the specified maximum, it provides parameters in the response that you can use to retrieve the next pageful.
     ///
     /// Provide paginated results to closure `onPage` for it to combine them into one result.
     /// This works in a similar manner to `Array.reduce<Result>(_:_:) -> Result`.
@@ -31,18 +31,18 @@ extension KinesisVideoArchivedMedia {
     ///   - eventLoop: EventLoop to run this process on
     ///   - onPage: closure called with each paginated response. It combines an accumulating result with the contents of response. This combined result is then returned
     ///         along with a boolean indicating if the paginate operation should continue.
-    public func listFragmentsPaginator<Result>(
-        _ input: ListFragmentsInput,
+    public func listPlaybackConfigurationsPaginator<Result>(
+        _ input: ListPlaybackConfigurationsRequest,
         _ initialValue: Result,
         logger: Logger = AWSClient.loggingDisabled,
         on eventLoop: EventLoop? = nil,
-        onPage: @escaping (Result, ListFragmentsOutput, EventLoop) -> EventLoopFuture<(Bool, Result)>
+        onPage: @escaping (Result, ListPlaybackConfigurationsResponse, EventLoop) -> EventLoopFuture<(Bool, Result)>
     ) -> EventLoopFuture<Result> {
         return client.paginate(
             input: input,
             initialValue: initialValue,
-            command: listFragments,
-            tokenKey: \ListFragmentsOutput.nextToken,
+            command: listPlaybackConfigurations,
+            tokenKey: \ListPlaybackConfigurationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
         )
@@ -55,30 +55,27 @@ extension KinesisVideoArchivedMedia {
     ///   - logger: Logger used flot logging
     ///   - eventLoop: EventLoop to run this process on
     ///   - onPage: closure called with each block of entries. Returns boolean indicating whether we should continue.
-    public func listFragmentsPaginator(
-        _ input: ListFragmentsInput,
+    public func listPlaybackConfigurationsPaginator(
+        _ input: ListPlaybackConfigurationsRequest,
         logger: Logger = AWSClient.loggingDisabled,
         on eventLoop: EventLoop? = nil,
-        onPage: @escaping (ListFragmentsOutput, EventLoop) -> EventLoopFuture<Bool>
+        onPage: @escaping (ListPlaybackConfigurationsResponse, EventLoop) -> EventLoopFuture<Bool>
     ) -> EventLoopFuture<Void> {
         return client.paginate(
             input: input,
-            command: listFragments,
-            tokenKey: \ListFragmentsOutput.nextToken,
+            command: listPlaybackConfigurations,
+            tokenKey: \ListPlaybackConfigurationsResponse.nextToken,
             on: eventLoop,
             onPage: onPage
         )
     }
 }
 
-extension KinesisVideoArchivedMedia.ListFragmentsInput: AWSPaginateToken {
-    public func usingPaginationToken(_ token: String) -> KinesisVideoArchivedMedia.ListFragmentsInput {
+extension MediaTailor.ListPlaybackConfigurationsRequest: AWSPaginateToken {
+    public func usingPaginationToken(_ token: String) -> MediaTailor.ListPlaybackConfigurationsRequest {
         return .init(
-            fragmentSelector: self.fragmentSelector,
             maxResults: self.maxResults,
-            nextToken: token,
-            streamARN: self.streamARN,
-            streamName: self.streamName
+            nextToken: token
         )
     }
 }

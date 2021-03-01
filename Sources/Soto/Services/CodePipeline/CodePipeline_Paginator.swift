@@ -341,7 +341,8 @@ extension CodePipeline.ListActionTypesInput: AWSPaginateToken {
     public func usingPaginationToken(_ token: String) -> CodePipeline.ListActionTypesInput {
         return .init(
             actionOwnerFilter: self.actionOwnerFilter,
-            nextToken: token
+            nextToken: token,
+            regionFilter: self.regionFilter
         )
     }
 }
